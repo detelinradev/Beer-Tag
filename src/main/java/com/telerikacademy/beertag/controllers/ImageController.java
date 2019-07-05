@@ -35,7 +35,6 @@ public class ImageController {
     public UploadFileResponse uploadFile(@RequestParam("file") final MultipartFile file,final HttpServletRequest req) {
         Image dbFile = imageService.storeFile(file,
                 userRepository.findFirstByUsername(authenticationService.getUsername(req)));
-        System.out.println(userRepository.findFirstByUsername(authenticationService.getUsername(req)));
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path("dbFile.getUserImageId()")
@@ -53,9 +52,10 @@ public class ImageController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/downloadImage/{imageId}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable final int imageId) {
-        Image dbFile = imageService.getFile(imageId);
+    @GetMapping("/downloadImage")
+    public ResponseEntity<Resource> downloadFile(final HttpServletRequest req) {
+        Image dbFile = imageService.getFile(userRepository.findFirstByUsername(
+                authenticationService.getUsername(req)).getImage().getId());
 
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(dbFile.getFileType()))
