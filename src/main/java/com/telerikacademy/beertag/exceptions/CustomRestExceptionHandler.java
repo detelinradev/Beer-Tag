@@ -1,5 +1,6 @@
 package com.telerikacademy.beertag.exceptions;
 
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
@@ -49,6 +50,16 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
                 new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), errors);
         return handleExceptionInternal(
                 ex, apiError, headers, apiError.getStatus(), request);
+    }
+    protected ResponseEntity<Object>handleExpiredJwtToken(ExpiredJwtException ex,  HttpHeaders headers,
+                                                          HttpStatus status,
+                                                          WebRequest request){
+
+        ApiError apiError =
+                new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), ex.getCause().getMessage());
+        return handleExceptionInternal(
+                ex, apiError, headers, apiError.getStatus(), request);
+
     }
 
     @Override
