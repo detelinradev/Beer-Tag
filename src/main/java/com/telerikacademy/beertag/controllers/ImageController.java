@@ -31,11 +31,11 @@ public class ImageController {
     private final AuthenticationService authenticationService;
 
 
-    @PostMapping("/uploadImage")
+    @PutMapping("/uploadImage")
     public UploadFileResponse uploadFile(@RequestParam("file") final MultipartFile file,final HttpServletRequest req) {
         Image dbFile = imageService.storeFile(file,
                 userRepository.findFirstByUsername(authenticationService.getUsername(req)));
-
+        System.out.println(userRepository.findFirstByUsername(authenticationService.getUsername(req)));
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path("dbFile.getUserImageId()")

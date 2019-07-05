@@ -1,5 +1,6 @@
 package com.telerikacademy.beertag.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.telerikacademy.beertag.models.base.MappedAudibleBase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class Image extends MappedAudibleBase {
     @Column(nullable = false)
     private byte[] data;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user")
     private User user;
 
