@@ -14,7 +14,8 @@ class HomePage extends React.Component {
 
   render() {
     return (
-        <div>
+        <div style={{ marginTop: "6rem" }}>
+          <BeerList />
         </div>
     );
   }

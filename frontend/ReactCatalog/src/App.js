@@ -14,9 +14,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import AdminPage from "./components/AdminPage";
 import Login from "./components/users/Login";
-import Team from "./components/Team";
 import "./App.css";
-import BeerList from "./components/BeerList";
 class App extends Component {
 
 
@@ -26,7 +24,6 @@ class App extends Component {
     role: "USER"
   };
 
-  //update username
   updateUsername(value) {
     this.setState({ username: value });
   }
@@ -36,6 +33,10 @@ class App extends Component {
 
   logout = event => {
     this.setState({ username: null, role: "USER" });
+  };
+
+  profile = event => {
+this.setState({username: this.state.username})
   };
 
 
@@ -49,21 +50,18 @@ class App extends Component {
   closeCollapse = collapseID => () =>
     this.state.collapseID === collapseID && this.setState({ collapseID: "" });
 
-  showLog = event => {
-
-  }
 
   render() {
     const login =
       this.state.username == null ? (
-        <div />
-      ) : (
         <MDBNavItem>
           <Login
             updateRole={this.updateRole.bind(this)}
             updateUsername={this.updateUsername.bind(this)}
           />
         </MDBNavItem>
+      ) : (
+        <div />
       );
 
     const logoutlink =
@@ -77,31 +75,22 @@ class App extends Component {
         </MDBNavItem>
       );
 
-    const loginlink =
-        this.state.username == null ? (
-            <MDBNavItem>
-              <MDBBtn color="danger" size="sm" onClick={this.showLog}>
-                Login
-              </MDBBtn>
-            </MDBNavItem>
-        ) : (
-            <div />
-        );
+      const profile =
+          this.state.username == null ? (
+              <div />
+          ) : (
+              <MDBNavItem>
+                  <MDBBtn color="primary" size="sm" onClick={this.profile}>
+                      Profile
+                  </MDBBtn>
+              </MDBNavItem>
+          );
 
-    const listBeers =
-        this.state.username == null ? (
-            <MDBNavItem>
-              <MDBBtn color="danger" size="sm" onClick={this.showBeers}>
-                Beers
-              </MDBBtn>
-            </MDBNavItem>
-        ) : (
-            <div />
-        );
 
     const home =
       this.state.username === null ? (
-        <HomePage role={this.state.role} username={this.state.username} />
+        //<HomePage role={this.state.role} username={this.state.username} />
+          <HomePage/>
       ) : (
         <div />
       );
@@ -148,20 +137,18 @@ class App extends Component {
               isOpen={this.state.collapseID}
               navbar
             >
+                <MDBNavbarNav right>
               <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
-              <a>
-              <MDBNavbarNav right>{listBeers}</MDBNavbarNav>
-              </a>
-              <a>
-              <MDBNavbarNav right>{loginlink}</MDBNavbarNav>
-              </a>
+              <MDBNavbarNav right>{profile}</MDBNavbarNav>
+                </MDBNavbarNav>
             </MDBCollapse>
           </MDBNavbar>
           {collapseID && overlay}
-          <main style={{ marginTop: "4rem" }}>
+          <main style={{ marginTop: "8rem" }}>
             {login}
             {home}
             {admin}
+            {profile}
 
             {/*<Team />*/}
           </main>
@@ -169,11 +156,11 @@ class App extends Component {
             <p className="footer-copyright mb-0 py-3 text-center">
               &copy; {new Date().getFullYear()}{" "}
               <a
-                href="https://github.com/timganev/productcatalog"
+                href="https://github.com/antonmadzharov/Beer-Tag"
                 target="_blank"
               >
                 {" "}
-                Product Catalog App - GitHub{" "}
+                Beer Tag App - GitHub{" "}
                 <MDBIcon
                   fab
                   icon="github"
