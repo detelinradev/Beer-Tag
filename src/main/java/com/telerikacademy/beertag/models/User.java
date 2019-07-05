@@ -52,8 +52,6 @@ public class User extends MappedAudibleBase {
     @Column(nullable = false)
     private String role;
 
-   // private boolean deleted;
-
     @OneToOne
     @JoinColumn(name = "image")
     private Image image;
