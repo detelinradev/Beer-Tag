@@ -2,6 +2,8 @@ package com.telerikacademy.beertag.controllers;
 
 import com.telerikacademy.beertag.models.Image;
 import com.telerikacademy.beertag.payload.UploadFileResponse;
+import com.telerikacademy.beertag.repositories.UserRepository;
+import com.telerikacademy.beertag.security.AuthenticationService;
 import com.telerikacademy.beertag.service.ImageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ByteArrayResource;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,11 +27,14 @@ import java.util.stream.Collectors;
 public class ImageController {
 
     private final ImageService imageService;
+    private final UserRepository userRepository;
+    private final AuthenticationService authenticationService;
 
 
     @PostMapping("/uploadImage")
-    public UploadFileResponse uploadFile(@RequestParam("file") final MultipartFile file) {
-        Image dbFile = imageService.storeFile(file);
+    public UploadFileResponse uploadFile(@RequestParam("file") final MultipartFile file,final HttpServletRequest req) {
+        Image dbFile = imageService.storeFile(file,
+                userRepository.findFirstByUsername(authenticationService.getUsername(req)));
 
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
@@ -40,9 +46,10 @@ public class ImageController {
     }
 
     @PostMapping("/uploadMultipleImages")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") final MultipartFile[] files) {
+    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files")
+                                                            final MultipartFile[] files,final HttpServletRequest req) {
         return Arrays.stream(files)
-                .map(this::uploadFile)
+                .map(k->uploadFile(k,req))
                 .collect(Collectors.toList());
     }
 

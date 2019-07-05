@@ -3,6 +3,7 @@ package com.telerikacademy.beertag.service;
 import com.telerikacademy.beertag.exceptions.FileStorageException;
 import com.telerikacademy.beertag.exceptions.MyFileNotFoundException;
 import com.telerikacademy.beertag.models.Image;
+import com.telerikacademy.beertag.models.User;
 import com.telerikacademy.beertag.repositories.UserImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,15 +18,14 @@ public class ImageServiceImpl implements ImageService {
 
     private final UserImageRepository userImageRepository;
 
-    public Image storeFile(final MultipartFile file) {
+    public Image storeFile(final MultipartFile file,User user) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-
         try {
             if(fileName.contains("..")) {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
-            Image dbFile = new Image(fileName, file.getContentType(),file.getBytes());
+            Image dbFile = new Image(fileName, file.getContentType(),file.getBytes(),user);
 
             return userImageRepository.save(dbFile);
         } catch (IOException ex) {

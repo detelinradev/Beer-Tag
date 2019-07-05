@@ -25,4 +25,8 @@ public class Image extends MappedAudibleBase {
     @Column(nullable = false)
     private byte[] data;
 
+    @OneToOne
+    @JoinColumn(name = "user")
+    private User user;
+
 }
