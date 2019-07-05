@@ -13,6 +13,16 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    provided
+}
+
+sourceSets {
+    main.compileClasspath += configurations.provided
+    test.compileClasspath += configurations.provided
+    test.runtimeClasspath += configurations.provided
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'

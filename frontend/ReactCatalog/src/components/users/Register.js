@@ -14,6 +14,7 @@ class Register extends Component {
       lastName: "",
       username: "",
       password: "",
+      email: "",
       age: "",
       isAuthenticated: false,
       login: false,
@@ -39,8 +40,9 @@ class Register extends Component {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       username: this.state.username,
+      email: this.state.email,
+      age: this.state.age,
       password: this.state.password,
-      age: this.state.age
     };
     fetch(SERVER_URL + "sign-up", {
       method: "POST",
@@ -122,6 +124,20 @@ class Register extends Component {
                     className="form-control"
                     placeholder="Last name"
                     name="lastName"
+                    onChange={this.handleChange}
+                />
+              </div>
+              <div className="input-group form-group">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    <i className="fas fa-user" />
+                  </span>
+                </div>
+                <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Email"
+                    name="email"
                     onChange={this.handleChange}
                 />
               </div>

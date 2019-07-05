@@ -4,6 +4,7 @@ import "./HomePage.css";
 
 import BeerList from "./BeerList";
 import Team from "./Team";
+import Wishlist from "./Wishlist";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Profile extends React.Component {
 
     render() {
         return (
-            <div style={{ marginTop: "6rem" }}>
+            <div style={{ marginTop: "2rem" }}>
                 <Team/>
             </div>
         );

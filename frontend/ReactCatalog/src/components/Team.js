@@ -1,76 +1,130 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "react-table/react-table.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import "./Team.css";
 import {SERVER_URL} from "../constants";
 
 class Team extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { firstName: "",
-      lastName: "",
-      username: "",
-      age: "",
-      open: false,
-      message: "" };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstName: "",
+            lastName: "",
+            username: "",
+            email: "",
+            age: "",
+            open: false,
+            message: "",
+            image: "",
+            selectedFile: null
+        };
+    }
 
-  handleClose = (event, reason) => {
-    this.setState({ open: false });
-  };
+    handleClose = (event, reason) => {
+        this.setState({open: false});
+    };
 
-  componentDidMount() {
-    this.fetchLists();
-  }
+    componentDidMount() {
+        this.fetchLists();
+        this.fetchImage();
+    }
 
-  // Fetch all users
-  fetchLists = () => {
-    const token = sessionStorage.getItem("jwt");
-    fetch(SERVER_URL + "me", {
-      headers: { Authorization: token }
-    })
-        .then(response => response.json())
-        .then(responseData => {
-          this.setState({
-            firstName: responseData._embedded.users.firstName,
-            lastName: responseData._embedded.users.lastName,
-            username: responseData._embedded.users.username,
-          });
+    fetchImage = () => {
+        const token = sessionStorage.getItem("jwt");
+        fetch("http://localhost:8080/userImage/downloadImage", {
+            method: 'GET',
+            headers: {Authorization: token}
         })
-        .catch(err => console.error(err));
-  };
+            .then(response => response.json())
+            .then(responseData => {
+                    console.log(responseData.image);
+                this.setState({
+                    image: responseData.image.body
+                });
+            })
+            .catch(err => console.error(err));
+    };
 
-  render() {
-    return (
-        <div className="App">
-          {/*<p>   NAMES {this.state.firstName} {this.state.lastName}</p>*/}
 
-      <div className="d-flex justify-content-center">
-        <div center className="team-leader-box p-4 rounded">
-          <h3>{this.state.firstName} {this.state.lastName}</h3>
-          <div className="m-3 team-leader wow fadeInDown delay-03s">
-            <div className="team-leader-shadow">
-              <a href="#" />
+    // Fetch all users
+    fetchLists = () => {
+        const token = sessionStorage.getItem("jwt");
+        fetch(SERVER_URL + "me", {
+            headers: {Authorization: token}
+        })
+            .then(response => response.json())
+            .then(responseData => {
+                this.setState({
+                    firstName: responseData.firstName,
+                    lastName: responseData.lastName,
+                    username: responseData.username,
+                    email: responseData.email,
+                    age: responseData.age
+                });
+            })
+            .catch(err => console.error(err));
+    };
+
+    handleChange = event => {
+        this.setState({[event.target.name]: event.target.value});
+    };
+
+    // downloadRandomImage = () => {
+    //     const token = sessionStorage.getItem("jwt");
+    //     fetch('http://localhost:8080/userImage/downloadImage', {
+    //         headers: {Authorization: token}
+    //     })
+    //         .then(response => {
+    //             this.setState({
+    //                 image: response.
+    //             })
+    //         });
+    // }
+
+    render() {
+        return (
+            <div>
+                <div className="d-flex justify-content-center h-40">
+                    <div className="card">
+                        <div className="card-header">
+                            <h3>Profile</h3>
+                        </div>
+                        <div className="card-body">
+                            <h3>{this.state.firstName} {this.state.lastName}</h3>
+                            <div className="m-3 team-leader wow fadeInDown delay-03s">
+                                <div className="team-leader-shadow">
+                                    <a href="#"/>
+                                </div>
+
+                                <img src="img/antonmadzharov.png" alt=""/>
+                                <ul>
+                                    <li>
+                                        <a
+                                            href="https://app.enhancv.com/share/5886cb7d?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
+                                            target="_blank"
+                                        >
+                                            more info
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                                {/*<div className="App-intro">*/}
+                                {/*    <h3>Download a random file</h3>*/}
+                                {/*    <button onClick={this.downloadRandomImage}>Download</button>*/}
+                                {/*</div>*/}
+                            <h3 className="wow fadeInDown delay-03s">@{this.state.username}</h3>
+                            <h3 className="wow fadeInDown delay-03s">{this.state.email}</h3>
+                            <h4 className="wow fadeInDown delay-03s">{this.state.age} years old</h4>
+                            <div>
+                                <input type="file" onClick={this.fileSelectedHandler}/>
+                                <button onClick={this.fileUploadHandler}>Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img src="img/tim.jpg" alt="" />
-            <ul>
-              <li>
-                <a
-                  href="https://app.enhancv.com/share/5886cb7d?utm_medium=growth&utm_campaign=share-resume&utm_source=dynamic"
-                  target="_blank"
-                >
-                  more info
-                </a>
-              </li>
-            </ul>
-          </div>
-          <h3 className="wow fadeInDown delay-03s">Tihomir Ganev</h3>
-          <span className="wow fadeInDown delay-03s">timganev@gmail.com</span>
-        </div>
-      </div>
-        </div>
-    );
-  }
+        );
+    }
 }
 
 export default Team;

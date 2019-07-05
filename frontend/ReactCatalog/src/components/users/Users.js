@@ -22,7 +22,7 @@ class Users extends Component {
   // Fetch all users
   fetchLists = () => {
     const token = sessionStorage.getItem("jwt");
-    fetch(SERVER_URL + "api/users", {
+    fetch(SERVER_URL + "users", {
       headers: { Authorization: token }
     })
       .then(response => response.json())

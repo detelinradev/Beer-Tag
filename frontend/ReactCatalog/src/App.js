@@ -57,13 +57,11 @@ this.setState({profile: true})
   render() {
     const login =
       this.state.username == null ? (
-        <MDBNavItem>
           <Login
             updateRole={this.updateRole.bind(this)}
             updateUsername={this.updateUsername.bind(this)}
             profile={this.profile.bind(this)}
           />
-        </MDBNavItem>
       ) : (
         <div />
       );
@@ -103,7 +101,7 @@ this.setState({profile: true})
           <AdminPage />
         </MDBNavItem>
       ) : (
-        <div />
+        <div/>
       );
 
     const overlay = (
@@ -129,7 +127,7 @@ this.setState({profile: true})
             fixed="top"
             scrolling
           >
-            <MDBNavbarBrand href="/" style={{backgroundColor: "orange", radius: "10px"}}>
+            <MDBNavbarBrand href="/" style={{backgroundColor: "orange"}}>
               Beer Tag {"          "}
               <Logo style={{ height: "2.5rem", width: "2.5rem" }} />
               Welcome {this.state.username}
@@ -146,7 +144,7 @@ this.setState({profile: true})
             </MDBCollapse>
           </MDBNavbar>
           {collapseID && overlay}
-          <main style={{ marginTop: "8rem" }}>
+          <main style={{ marginTop: "6rem" }}>
             {login}
             {home}
             {admin}
