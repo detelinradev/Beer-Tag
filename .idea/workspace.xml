@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87ca1c62-c646-4a2c-989c-71320690a137" name="Default Changelist" comment="Initializing project">
-      <change afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="87ca1c62-c646-4a2c-989c-71320690a137" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Team.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Team.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -55,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-804">
-              <caret line="80" column="15" lean-forward="true" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
+            <state relative-caret-position="692">
+              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -64,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
@@ -77,9 +74,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Team.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-774">
+            <state relative-caret-position="-112">
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -120,6 +141,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Anton Madzharov &lt;anton.madzharovbs@gmail.com&gt;" />
         <option value="antonmadzharov &lt;45007797+antonmadzharov@users.noreply.github.com&gt;" />
       </list>
     </option>
@@ -130,8 +152,9 @@
       <list>
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Team.js" />
       </list>
     </option>
   </component>
@@ -255,7 +278,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562328252634</updated>
-      <workItem from="1562328255501" duration="3400000" />
+      <workItem from="1562328255501" duration="4947000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing project">
       <created>1562329050175</created>
@@ -264,11 +287,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562329050175</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="keep up with project">
+      <created>1562332174469</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562332174469</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3400000" />
+    <option name="totallyTimeSpent" value="4947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="23" width="1680" height="954" extended-state="0" />
@@ -317,7 +347,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initializing project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initializing project" />
+    <MESSAGE value="keep up with project" />
+    <option name="LAST_COMMIT_MESSAGE" value="keep up with project" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/BeersDrunk.java">
@@ -354,31 +385,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-804">
-          <caret line="80" column="15" lean-forward="true" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-774">
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

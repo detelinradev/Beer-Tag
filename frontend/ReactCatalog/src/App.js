@@ -14,14 +14,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import AdminPage from "./components/AdminPage";
 import Login from "./components/users/Login";
+import Team from "./components/Team";
 import "./App.css";
+import Profile from "./components/Profile";
 class App extends Component {
 
 
   state = {
     collapseID: "",
     username: null,
-    role: "USER"
+    role: "USER",
+      profile: false
   };
 
   updateUsername(value) {
@@ -36,7 +39,7 @@ class App extends Component {
   };
 
   profile = event => {
-this.setState({username: this.state.username})
+this.setState({profile: true})
   };
 
 
@@ -58,6 +61,7 @@ this.setState({username: this.state.username})
           <Login
             updateRole={this.updateRole.bind(this)}
             updateUsername={this.updateUsername.bind(this)}
+            profile={this.profile.bind(this)}
           />
         </MDBNavItem>
       ) : (
@@ -80,9 +84,7 @@ this.setState({username: this.state.username})
               <div />
           ) : (
               <MDBNavItem>
-                  <MDBBtn color="primary" size="sm" onClick={this.profile}>
-                      Profile
-                  </MDBBtn>
+                      <Profile />
               </MDBNavItem>
           );
 
@@ -139,7 +141,6 @@ this.setState({username: this.state.username})
             >
                 <MDBNavbarNav right>
               <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
-              <MDBNavbarNav right>{profile}</MDBNavbarNav>
                 </MDBNavbarNav>
             </MDBCollapse>
           </MDBNavbar>
@@ -148,7 +149,7 @@ this.setState({username: this.state.username})
             {login}
             {home}
             {admin}
-            {profile}
+              {profile}
 
             {/*<Team />*/}
           </main>
