@@ -28,13 +28,13 @@ class BeerList extends Component {
   }
 
   // Fetch all products
-  fetchProducts = async () => {
-    this.setState({
-      beers: []
-    });
+  fetchProducts =  () => {
+    // this.setState({
+    //   beers: []
+    // });
 
     const token = sessionStorage.getItem("jwt");
-    await fetch(SERVER_URL + "beers", {
+     fetch(SERVER_URL + "beers", {
       headers: { Authorization: token }
     })
       .then(response => response.json())
@@ -46,14 +46,14 @@ class BeerList extends Component {
       .catch(err => console.error(err));
   };
 
-  customFilter = (filter, row) => {
-    const id = filter.pivotId || filter.id;
-    if (row[id] !== null && typeof row[id] === "string") {
-      return row[id] !== undefined
-        ? String(row[id].toLowerCase()).includes(filter.value.toLowerCase())
-        : true;
-    }
-  };
+  // customFilter = (filter, row) => {
+  //   const id = filter.pivotId || filter.id;
+  //   if (row[id] !== null && typeof row[id] === "string") {
+  //     return row[id] !== undefined
+  //       ? String(row[id].toLowerCase()).includes(filter.value.toLowerCase())
+  //       : true;
+  //   }
+  // };
 
   confirmDelete = link => {
     confirmAlert({
@@ -119,23 +119,23 @@ class BeerList extends Component {
       );
   }
 
-  renderEditable = cellInfo => {
-    return (
-      <div
-        style={{ backgroundColor: "#fafafa" }}
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={e => {
-          const data = [...this.state.products];
-          data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
-          this.setState({ products: data });
-        }}
-        dangerouslySetInnerHTML={{
-          __html: this.state.products[cellInfo.index][cellInfo.column.id]
-        }}
-      />
-    );
-  };
+  // renderEditable = cellInfo => {
+  //   return (
+  //     <div
+  //       style={{ backgroundColor: "#fafafa" }}
+  //       contentEditable
+  //       suppressContentEditableWarning
+  //       onBlur={e => {
+  //         const data = [...this.state.products];
+  //         data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+  //         this.setState({ products: data });
+  //       }}
+  //       dangerouslySetInnerHTML={{
+  //         __html: this.state.products[cellInfo.index][cellInfo.column.id]
+  //       }}
+  //     />
+  //   );
+  // };
 
   handleClose = (event, reason) => {
     this.setState({ open: false });
@@ -235,24 +235,24 @@ class BeerList extends Component {
       }
     ];
 
-    const NewPlayListlink =
-      this.props.role !== "ADMIN" ? (
-        <div />
-      ) : (
-        <NewPlayList
-          className="align-middle"
-          username={this.props.username}
-          addProduct={this.addProduct}
-          fetchProducts={this.fetchProducts}
-        />
-      );
+    // const NewPlayListlink =
+    //   this.props.role !== "ADMIN" ? (
+    //     <div />
+    //   ) : (
+    //     <NewPlayList
+    //       className="align-middle"
+    //       username={this.props.username}
+    //       addProduct={this.addProduct}
+    //       fetchProducts={this.fetchProducts}
+    //     />
+    //   );
 
     return (
       <div className="App">
-        <MDBFormInline>{NewPlayListlink}</MDBFormInline>
+        {/*<MDBFormInline>{NewPlayListlink}</MDBFormInline>*/}
 
         <ReactTable
-          data={this.state.products}
+          data={this.state.beers}
           columns={columns}
           filterable={true}
           defaultFilterMethod={this.customFilter}

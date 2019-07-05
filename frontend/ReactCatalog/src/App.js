@@ -9,14 +9,24 @@ import {
   MDBIcon,
   MDBBtn
 } from "mdbreact";
+import {
+  Route,
+  NavLink,
+  BrowserRouter as Router,
+  Switch
+} from "react-router-dom";
 import { ReactComponent as Logo } from "./assets/logo.svg";
-import { BrowserRouter as Router } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import AdminPage from "./components/AdminPage";
 import Login from "./components/users/Login";
 import Team from "./components/Team";
 import "./App.css";
 import Profile from "./components/Profile";
+import Users from "./components/users/Users";
+import HomePageBeers from "./components/HomePageBeers";
+import BeerList from "./components/BeerList";
+
+
 class App extends Component {
 
 
@@ -118,6 +128,7 @@ this.setState({profile: true})
 
     return (
       <Router>
+
         <div className="flyout">
           <MDBNavbar
              // transparent="true"
@@ -133,25 +144,48 @@ this.setState({profile: true})
               Welcome {this.state.username}
             </MDBNavbarBrand>
 
+
             <MDBCollapse
               id="mainNavbarCollapse"
               isOpen={this.state.collapseID}
               navbar
             >
                 <MDBNavbarNav right>
+                  <MDBNavbarNav  style={{marginLeft: "4rem"}}>
+                          <NavLink exact Home="active" to="/">
+                            Home
+                          </NavLink>
+                  </MDBNavbarNav>
+                  <MDBNavbarNav  style={{marginLeft: "4rem"}}>
+                          <NavLink Users="active" to="/users">
+                            Users
+                          </NavLink>
+                  </MDBNavbarNav>
+                  <MDBNavbarNav  style={{marginLeft: "4rem"}}>
+                          <NavLink Beer="active" to="/login">
+                            Login
+                          </NavLink>
+                  </MDBNavbarNav>
+
+                    {/*{login}*/}
+                    {/*{home}*/}
+                    {/*{admin}*/}
+                    {/*  {profile}*/}
+
+                    {/*<Team />*/}
               <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
                 </MDBNavbarNav>
             </MDBCollapse>
           </MDBNavbar>
-          {collapseID && overlay}
-          <main style={{ marginTop: "6rem" }}>
-            {login}
-            {home}
-            {admin}
-              {profile}
-
-            {/*<Team />*/}
+          <main style={{marginTop: "10rem"}}>
+          <Switch >
+            <Route exact path="/" component={HomePageBeers}/>
+            <Route path="/users" component={Users}/>
+            <Route path="/login" component={Login}/>
+            <Route component={BeerList}/>
+          </Switch>
           </main>
+          {collapseID && overlay}
           <MDBFooter m-5 color="elegant-color">
             <p className="footer-copyright mb-0 py-3 text-center">
               &copy; {new Date().getFullYear()}{" "}
