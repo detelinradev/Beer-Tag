@@ -37,7 +37,7 @@ class Team extends Component {
         })
             .then(response => response.json())
             .then(responseData => {
-                    console.log(responseData.image);
+                    console.log(responseData.body);
                 this.setState({
                     image: responseData.image.body
                 });
@@ -46,7 +46,6 @@ class Team extends Component {
     };
 
 
-    // Fetch all users
     fetchLists = () => {
         const token = sessionStorage.getItem("jwt");
         fetch(SERVER_URL + "me", {
