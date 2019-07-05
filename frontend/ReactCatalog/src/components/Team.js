@@ -2,15 +2,37 @@ import React, { Component } from "react";
 import "react-table/react-table.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import "./Team.css";
+import {SERVER_URL} from "../constants";
 
 class Team extends Component {
   constructor(props) {
     super(props);
-    this.state = { users: [], open: false, message: "" };
+    this.state = { user: [],
+      open: false,
+      message: "" };
   }
 
   handleClose = (event, reason) => {
     this.setState({ open: false });
+  };
+
+  componentDidMount() {
+    this.fetchLists();
+  }
+
+  // Fetch all users
+  fetchLists = () => {
+    const token = sessionStorage.getItem("jwt");
+    fetch(SERVER_URL + "me", {
+      headers: { Authorization: token }
+    })
+        .then(response => response.json())
+        .then(responseData => {
+          this.setState({
+            users: responseData._embedded.users
+          });
+        })
+        .catch(err => console.error(err));
   };
 
   render() {
