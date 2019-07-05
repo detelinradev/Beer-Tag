@@ -75,20 +75,20 @@ class Users extends Component {
       });
   };
 
-  // Add new user
-  addPlaylist(playlist) {
-    const token = sessionStorage.getItem("jwt");
-    fetch(SERVER_URL + "api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token
-      },
-      body: JSON.stringify(playlist)
-    })
-      .then(res => this.fetchLists())
-      .catch(err => console.error(err));
-  }
+  // // Add new user
+  // addPlaylist(playlist) {
+  //   const token = sessionStorage.getItem("jwt");
+  //   fetch(SERVER_URL + "api/users", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: token
+  //     },
+  //     body: JSON.stringify(playlist)
+  //   })
+  //     .then(res => this.fetchLists())
+  //     .catch(err => console.error(err));
+  // }
 
   handleCheck = event => {
     this.setState({ [event.target.name]: event.target.checked });
