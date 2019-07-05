@@ -2,7 +2,7 @@ import React from "react";
 import { MDBEdgeHeader, MDBContainer, MDBIcon, MDBJumbotron } from "mdbreact";
 import "./HomePage.css";
 
-import HomePageBeers from "./BeerList";
+import BeerList from "./BeerList";
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class HomePage extends React.Component {
                             <MDBIcon icon="window-restore" className="grey-text mr-2" />
                             CATALOG
                         </h2>
-                        <CatalogList
+                        <BeerList
                             role={this.props.role}
                             username={this.props.username}
                         />

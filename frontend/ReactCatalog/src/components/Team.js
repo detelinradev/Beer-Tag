@@ -7,7 +7,10 @@ import {SERVER_URL} from "../constants";
 class Team extends Component {
   constructor(props) {
     super(props);
-    this.state = { user: [],
+    this.state = { firstName: "",
+      lastName: "",
+      username: "",
+      age: "",
       open: false,
       message: "" };
   }
@@ -29,7 +32,9 @@ class Team extends Component {
         .then(response => response.json())
         .then(responseData => {
           this.setState({
-            users: responseData._embedded.users
+            firstName: responseData._embedded.users.firstName,
+            lastName: responseData._embedded.users.lastName,
+            username: responseData._embedded.users.username,
           });
         })
         .catch(err => console.error(err));
@@ -37,9 +42,12 @@ class Team extends Component {
 
   render() {
     return (
+        <div className="App">
+          {/*<p>   NAMES {this.state.firstName} {this.state.lastName}</p>*/}
+
       <div className="d-flex justify-content-center">
         <div center className="team-leader-box p-4 rounded">
-          <h3>Developer</h3>
+          <h3>{this.state.firstName} {this.state.lastName}</h3>
           <div className="m-3 team-leader wow fadeInDown delay-03s">
             <div className="team-leader-shadow">
               <a href="#" />
@@ -60,6 +68,7 @@ class Team extends Component {
           <span className="wow fadeInDown delay-03s">timganev@gmail.com</span>
         </div>
       </div>
+        </div>
     );
   }
 }
