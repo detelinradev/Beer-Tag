@@ -122,13 +122,14 @@ this.setState({profile: true})
       <Router>
         <div className="flyout">
           <MDBNavbar
+             // transparent="true"
             color="elegant-color"
-            dark
+            light
             expand="md"
             fixed="top"
             scrolling
           >
-            <MDBNavbarBrand href="/">
+            <MDBNavbarBrand href="/" style={{backgroundColor: "orange", radius: "10px"}}>
               Beer Tag {"          "}
               <Logo style={{ height: "2.5rem", width: "2.5rem" }} />
               Welcome {this.state.username}
