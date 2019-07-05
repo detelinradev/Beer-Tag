@@ -1,0 +1,40 @@
+package com.telerikacademy.beertag.security;
+
+import com.telerikacademy.beertag.models.User;
+import com.telerikacademy.beertag.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import java.util.*;
+
+@Service
+public class UserDetailServiceImpl implements UserDetailsService {
+
+    private final UserRepository repository;
+
+    public UserDetailServiceImpl(UserRepository repository) {
+        this.repository = repository;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User currentUser = repository.findFirstByUsername(username);
+        return new org.springframework.security.core.userdetails.User(username, currentUser.getPassword()
+                , true, true, true,
+                true, getAuthorities(currentUser));
+    }
+
+    private Set<SimpleGrantedAuthority> getAuthorities(User user) {
+        Set<SimpleGrantedAuthority> authorities = new HashSet<>();
+
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
+
+        return authorities;
+    }
+}
