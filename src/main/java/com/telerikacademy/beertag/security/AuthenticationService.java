@@ -62,7 +62,7 @@ import static java.util.Collections.emptyList;
         String bearerToken = req.getHeader("Authorization");
         if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
             String token =  bearerToken.substring(7);
-            Jwts.parser().setSigningKey(SIGNINGKEY).parseClaimsJws(token).getBody().getSubject();
+           return Jwts.parser().setSigningKey(SIGNINGKEY).parseClaimsJws(token).getBody().getSubject();
         }
         return null;
     }

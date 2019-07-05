@@ -19,13 +19,13 @@ import javax.validation.Valid;
 public class UserController {
 
     private final UserRepository userRepository;
-//update
 
     private final UserService userService;
     private final AuthenticationService authenticationService;
 
     @GetMapping(value = "api/me")
     public ResponseEntity<User> getUserOwnInfo(final HttpServletRequest req) {
+
         return new ResponseEntity<>(userRepository.findFirstByUsername(
                 authenticationService.getUsername(req)), HttpStatus.OK);
     }

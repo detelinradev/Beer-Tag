@@ -31,6 +31,30 @@ class Login extends Component {
     this.setState({ register: true });
   };
 
+  // login = () => {
+  //   const user = {
+  //     username: this.state.username,
+  //     password: this.state.password
+  //   };
+  //   fetch(SERVER_URL + "login", {
+  //     method: "POST",
+  //     body: JSON.stringify(user)
+  //   })
+  //     .then(res => {
+  //       const jwtToken = res.headers.get("Authorization");
+  //       if (jwtToken !== null) {
+  //         sessionStorage.setItem("jwt", jwtToken);
+  //         this.props.updateUsername(this.state.username);
+  //
+  //         //this.updateRole(this.state.username);
+  //         this.setState({ isAuthenticated: true });
+  //         this.setState({modal: !this.state.modal});
+  //       } else {
+  //         this.setState({ open: true});
+  //       }
+  //     })
+  //     .catch(err => console.error(err));
+  // };
   login = () => {
     const user = {
       username: this.state.username,
@@ -40,21 +64,32 @@ class Login extends Component {
       method: "POST",
       body: JSON.stringify(user)
     })
-      .then(res => {
-        const jwtToken = res.headers.get("Authorization");
-        if (jwtToken !== null) {
-          sessionStorage.setItem("jwt", jwtToken);
-          this.props.updateUsername(this.state.username);
+        .then(res => {
+          const jwtToken = res.headers.get("Authorization");
+          if (jwtToken !== null) {
+            sessionStorage.setItem("jwt", jwtToken);
+            this.props.updateUsername(this.state.username);
+            this.props.updateRole(this.parseJwt(jwtToken).scope.substring(5));
+            console.log(this.parseJwt(jwtToken).scope.substring(5))
+            this.setState({isAuthenticated: true});
+            this.setState({
+              modal: !this.state.modal
+            });
+          } else {
+            this.setState({open: true});
+          }
+        })
+        .catch(err => console.error(err));
+  }
+  parseJwt = (token) => {
+    if (!token) {
+      return;
+    }
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace('-', '+').replace('_', '/');
+    return JSON.parse(window.atob(base64));
+  }
 
-          //this.updateRole(this.state.username);
-          this.setState({ isAuthenticated: true });
-          this.setState({modal: !this.state.modal});
-        } else {
-          this.setState({ open: true});
-        }
-      })
-      .catch(err => console.error(err));
-  };
 
   render() {
     if (this.state.register === true) {
