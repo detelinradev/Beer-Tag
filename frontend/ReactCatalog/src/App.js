@@ -1,21 +1,21 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBCollapse,
-  MDBNavItem,
-  MDBFooter,
-  MDBIcon,
-  MDBBtn
+    MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarNav,
+    MDBCollapse,
+    MDBNavItem,
+    MDBFooter,
+    MDBIcon,
+    MDBBtn
 } from "mdbreact";
 import {
-  Route,
-  NavLink,
-  BrowserRouter as Router,
-  Switch
+    Route,
+    NavLink,
+    BrowserRouter as Router,
+    Switch
 } from "react-router-dom";
-import { ReactComponent as Logo } from "./assets/logo.svg";
+import {ReactComponent as Logo} from "./assets/logo.svg";
 import HomePage from "./components/HomePage";
 import AdminPage from "./components/AdminPage";
 import Login from "./components/users/Login";
@@ -30,184 +30,193 @@ import BeerList from "./components/BeerList";
 class App extends Component {
 
 
-  state = {
-    collapseID: "",
-    username: null,
-    role: "USER",
-      profile: false
-  };
+    state = {
+        collapseID: "",
+        username: null,
+        role: "ANONYMOUS",
+        profile: false
+    };
 
-  updateUsername(value) {
-    this.setState({ username: value });
-  }
-  updateRole(value) {
-    this.setState({ role: value });
-  }
+    updateUsername = (value) => {
+        this.setState({username: value});
+    }
 
-  logout = event => {
-    this.setState({ username: null, role: "USER" });
-  };
-
-  profile = event => {
-this.setState({profile: true})
-  };
+    updateRole =(value) => {
+        this.setState({role: value});
+    }
 
 
 
+    logout = event => {
+        this.setState({username: null, role: ""});
+    };
 
-  toggleCollapse = collapseID => () =>
-    this.setState(prevState => ({
-      collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    }));
-
-  closeCollapse = collapseID => () =>
-    this.state.collapseID === collapseID && this.setState({ collapseID: "" });
-
-
-  render() {
-    const login =
-      this.state.username == null ? (
-          <Login
-            updateRole={this.updateRole.bind(this)}
-            updateUsername={this.updateUsername.bind(this)}
-            profile={this.profile.bind(this)}
-          />
-      ) : (
-        <div />
-      );
-
-    const logoutlink =
-      this.state.username == null ? (
-        <div />
-      ) : (
-        <MDBNavItem>
-          <MDBBtn color="danger" size="sm" onClick={this.logout}>
-            Logout
-          </MDBBtn>
-        </MDBNavItem>
-      );
-
-      const profile =
-          this.state.username == null ? (
-              <div />
-          ) : (
-              <MDBNavItem>
-                      <Profile />
-              </MDBNavItem>
-          );
+    profile = event => {
+        this.setState({profile: true})
+    };
 
 
-    const home =
-      this.state.username === null ? (
-        //<HomePage role={this.state.role} username={this.state.username} />
-          <HomePage/>
-      ) : (
-        <div />
-      );
+    toggleCollapse = collapseID => () =>
+        this.setState(prevState => ({
+            collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+        }));
 
-    const admin =
-      this.state.role === "ADMIN" ? (
-        <MDBNavItem>
-          <AdminPage />
-        </MDBNavItem>
-      ) : (
-        <div/>
-      );
-
-    const overlay = (
-      <div
-        id="sidenav-overlay"
-        style={{ backgroundColor: "transparent" }}
-        onClick={this.toggleCollapse("mainNavbarCollapse")}
-      />
-    );
-
-    const { collapseID } = this.state;
+    closeCollapse = collapseID => () =>
+        this.state.collapseID === collapseID && this.setState({collapseID: ""});
 
 
+    render() {
+            // const login =
+            //     this.state.username == null ? (
+                    {/*<Login*/}
+                    {/*    updateRole={this.updateRole.bind(this)}*/}
+                    {/*    updateUsername={this.updateUsername.bind(this)}*/}
+                    {/*    profile={this.profile.bind(this)}*/}
+                    {/*/>*/}
+                // ) : (
+                //     <div/>
+                // );
 
-    return (
-      <Router>
+        const logoutlink =
+            this.state.username == null ? (
+                <div/>
+            ) : (
+                <MDBNavItem>
+                    <MDBBtn color="danger" size="sm" onClick={this.logout}>
+                        Logout
+                    </MDBBtn>
+                </MDBNavItem>
+            );
 
-        <div className="flyout">
-          <MDBNavbar
-             // transparent="true"
-            color="elegant-color"
-            light
-            expand="md"
-            fixed="top"
-            scrolling
-          >
-            <MDBNavbarBrand href="/" style={{backgroundColor: "orange"}}>
-              Beer Tag {"          "}
-              <Logo style={{ height: "2.5rem", width: "2.5rem" }} />
-              Welcome {this.state.username}
-            </MDBNavbarBrand>
+        const profile =
+            this.state.username == null ? (
+                <div/>
+            ) : (
+                <MDBNavItem>
+                    <Profile/>
+                </MDBNavItem>
+            );
 
 
-            <MDBCollapse
-              id="mainNavbarCollapse"
-              isOpen={this.state.collapseID}
-              navbar
-            >
-                <MDBNavbarNav right>
-                  <MDBNavbarNav  style={{marginLeft: "4rem"}}>
-                          <NavLink exact Home="active" to="/">
-                            Home
-                          </NavLink>
-                  </MDBNavbarNav>
-                  <MDBNavbarNav  style={{marginLeft: "4rem"}}>
-                          <NavLink Users="active" to="/users">
-                            Users
-                          </NavLink>
-                  </MDBNavbarNav>
-                  <MDBNavbarNav  style={{marginLeft: "4rem"}}>
-                          <NavLink Beer="active" to="/login">
-                            Login
-                          </NavLink>
-                  </MDBNavbarNav>
+        const home =
+            this.state.username === null ? (
+                //<HomePage role={this.state.role} username={this.state.username} />
+                <HomePage/>
+            ) : (
+                <div/>
+            );
 
-                    {/*{login}*/}
-                    {/*{home}*/}
-                    {/*{admin}*/}
-                    {/*  {profile}*/}
+        const admin =
+            this.state.role === "ADMIN" ? (
+                <MDBNavItem>
+                    <AdminPage/>
+                </MDBNavItem>
+            ) : (
+                <div/>
+            );
 
-                    {/*<Team />*/}
-              <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
-                </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBNavbar>
-          <main style={{marginTop: "10rem"}}>
-          <Switch >
-            <Route exact path="/" component={HomePageBeers}/>
-            <Route path="/users" component={Users}/>
-            <Route path="/login" component={Login}/>
-            <Route component={BeerList}/>
-          </Switch>
-          </main>
-          {collapseID && overlay}
-          <MDBFooter m-5 color="elegant-color">
-            <p className="footer-copyright mb-0 py-3 text-center">
-              &copy; {new Date().getFullYear()}{" "}
-              <a
-                href="https://github.com/antonmadzharov/Beer-Tag"
-                target="_blank"
-              >
-                {" "}
-                Beer Tag App - GitHub{" "}
-                <MDBIcon
-                  fab
-                  icon="github"
-                  className="grey-text mr-2"
-                  size="2x"
-                />
-              </a>
-            </p>
-          </MDBFooter>
-        </div>
-      </Router>
-    );
-  }
+        const overlay = (
+            <div
+                id="sidenav-overlay"
+                style={{backgroundColor: "transparent"}}
+                onClick={this.toggleCollapse("mainNavbarCollapse")}
+            />
+        );
+
+        const {collapseID} = this.state;
+
+
+        return (
+            <Router>
+
+                <div className="flyout">
+                    <MDBNavbar
+                        // transparent="true"
+                        color="elegant-color"
+                        light
+                        expand="md"
+                        fixed="top"
+                        scrolling
+                    >
+                        <MDBNavbarBrand href="/" style={{backgroundColor: "orange"}}>
+                            Beer Tag {"          "}
+                            <Logo style={{height: "2.5rem", width: "2.5rem"}}/>
+                            Welcome {this.state.username}
+                        </MDBNavbarBrand>
+
+
+
+                            <MDBNavbarNav right>
+                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                    <NavLink exact activeClassName="active" to="/">
+                                        Home
+                                    </NavLink>
+                                </MDBNavbarNav>
+                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                    <NavLink activeClassName="active" to="/users">
+                                        Users
+                                    </NavLink>
+                                </MDBNavbarNav>
+                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                    <NavLink activeClassName="active" to="/me">
+                                        Your profile
+                                    </NavLink>
+                                </MDBNavbarNav>
+                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                    <NavLink activeClassName="active" to="/login">
+                                        Login
+                                    </NavLink>
+                                </MDBNavbarNav>
+                                <MDBCollapse
+                                    id="mainNavbarCollapse"
+                                    isOpen={this.state.collapseID}
+                                    navbar
+                                >
+                                    <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
+                                    {/*{login}*/}
+                                </MDBCollapse>
+
+                                {/*{home}*/}
+                                {/*{admin}*/}
+                                {/*  {profile}*/}
+
+                                {/*<Team />*/}
+
+                            </MDBNavbarNav>
+
+                    </MDBNavbar>
+                    {collapseID && overlay}
+                    <main style={{marginTop: "10rem"}}>
+                        <Switch>
+                            <Route exact path="/" component={HomePageBeers}/>
+                            <Route path="/users" component={Users}/>
+                            <Route path="/login" component={Login}/>
+                            <Route path="/me" component={Team}/>
+                            <Route component={BeerList}/>
+                        </Switch>
+                    </main>
+                    <MDBFooter m-5 color="elegant-color">
+                        <p className="footer-copyright mb-0 py-3 text-center">
+                            &copy; {new Date().getFullYear()}{" "}
+                            <a
+                                href="https://github.com/antonmadzharov/Beer-Tag"
+                                target="_blank"
+                            >
+                                {" "}
+                                Beer Tag App - GitHub{" "}
+                                <MDBIcon
+                                    fab
+                                    icon="github"
+                                    className="grey-text mr-2"
+                                    size="2x"
+                                />
+                            </a>
+                        </p>
+                    </MDBFooter>
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default App;
