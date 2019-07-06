@@ -131,6 +131,7 @@ class App extends Component {
             <MDBNavbarNav style={{marginLeft: "4rem"}}>
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/beers" component={HomePageBeers}/>
+                <Route path="/me" component={() => <Team/>}/>
                 <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
                                                           updateUsername={this.updateUsername.bind(this)}
                                                           profile={this.profile.bind(this)}/>}/>
@@ -182,6 +183,11 @@ class App extends Component {
                                 isOpen={this.state.collapseID}
                                 navbar
                             >
+                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                    <NavLink activeClassName="active" to="/me">
+                                        Profile
+                                    </NavLink>
+                                </MDBNavbarNav>
                             <MDBNavbarNav style={{marginLeft: "4rem"}}>
                                 <NavLink activeClassName="active" to="/login">
                                     Login
