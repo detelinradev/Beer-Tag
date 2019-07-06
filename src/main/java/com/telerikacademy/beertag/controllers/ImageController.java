@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/userImage")
+@RequestMapping("/api/userImage")
 public class ImageController {
 
     private final ImageService imageService;

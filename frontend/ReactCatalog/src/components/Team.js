@@ -4,6 +4,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import "./Team.css";
 import {SERVER_URL} from "../constants";
 
+
 class Team extends Component {
     constructor(props) {
         super(props);
@@ -15,36 +16,51 @@ class Team extends Component {
             age: "",
             open: false,
             message: "",
-            image: "",
+            img: '',
             selectedFile: null
         };
     }
+
+    arrayBufferToBase64(buffer) {
+        let binary = '';
+        let bytes = [].slice.call(new Uint8Array(buffer));
+        bytes.forEach((b) => binary += String.fromCharCode(b));
+        return window.btoa(binary);
+    };
 
     handleClose = (event, reason) => {
         this.setState({open: false});
     };
 
     componentDidMount() {
+        console.log(111111);
         this.fetchLists();
         this.fetchImage();
     }
 
     fetchImage = () => {
+        console.log(22222);
         const token = sessionStorage.getItem("jwt");
-        fetch("http://localhost:8080/userImage/downloadImage", {
-            method: 'GET',
+        fetch(SERVER_URL + "userImage/downloadImage", {
             headers: {Authorization: token}
+
         })
-            .then(response => response.json())
-            .then(responseData => {
-                    console.log(responseData.body);
+
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(555555);
+                const base64Flag = 'data:image/jpeg;base64,';
+                const imageStr =
+                    this.arrayBufferToBase64(data.body);
+                console.log(33333)
                 this.setState({
-                    image: responseData.image.body
-                });
+                    img: base64Flag + imageStr
+
+                })
+                console.log(444444);
             })
             .catch(err => console.error(err));
     };
-
 
     fetchLists = () => {
         const token = sessionStorage.getItem("jwt");
@@ -95,7 +111,7 @@ class Team extends Component {
                                     <a href="#"/>
                                 </div>
 
-                                <img src="img/antonmadzharov.png" alt=""/>
+                                <img src= "" alt=""/>
                                 <ul>
                                     <li>
                                         <a
