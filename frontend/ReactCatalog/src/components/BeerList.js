@@ -154,10 +154,8 @@ class BeerList extends Component {
         Cell: this.renderEditable
       },
       {
-        Header: "Price",
-        filterable: false,
-        accessor: "price",
-        width: 78,
+        Header: "Brewery",
+        accessor: "breweryName",
         Cell: this.renderEditable
       },
       {
@@ -166,74 +164,65 @@ class BeerList extends Component {
         Cell: this.renderEditable
       },
       {
-        Header: "Created by",
-        accessor: "username",
-        width: 110
+        Header: " Alcohol by volume",
+        accessor: "alcoholByVolume",
       },
       {
-        Header: "Image URL",
-        accessor: "image",
-        filterable: false,
+        Header: "Style",
+        accessor: "beerStyle",
         Cell: this.renderEditable
       },
 
       {
-        Header: "Image",
-        accessor: "image",
-        sortable: false,
-        filterable: false,
-        width: 78,
-        Cell: ({ value }) => (
-          <div>
-            <img alt="" src={value} width="60" height="60" />
-          </div>
-        )
+        Header: "Rating",
+        accessor: "ratings",
+        Cell: this.renderEditable
       },
 
-      {
-        Header: "Save",
-        id: "savebutton",
-        sortable: false,
-        filterable: false,
-        width: 80,
-        accessor: "_links.self.href",
-        Cell: ({ value, row }) =>
-          this.props.role === "ADMIN" ? (
-            <MDBBtn
-              color="primary"
-              size="sm"
-              onClick={() => {
-                this.updateProduct(row, value);
-              }}
-            >
-              <MDBIcon icon="marker" size="2x" className="white-text" />
-            </MDBBtn>
-          ) : (
-            <div />
-          )
-      },
-      {
-        Header: "Delete",
-        id: "delbutton",
-        sortable: false,
-        filterable: false,
-        width: 100,
-        accessor: "_links.self.href",
-        Cell: ({ value, row }) =>
-          this.props.role === "ADMIN" ? (
-            <MDBBtn
-              color="danger"
-              size="sm"
-              onClick={() => {
-                this.confirmDelete(value);
-              }}
-            >
-              <MDBIcon icon="trash" size="2x" className="white-text" />
-            </MDBBtn>
-          ) : (
-            <div />
-          )
-      }
+      // {
+      //   Header: "Save",
+      //   id: "savebutton",
+      //   sortable: false,
+      //   filterable: false,
+      //   width: 80,
+      //   accessor: "_links.self.href",
+      //   Cell: ({ value, row }) =>
+      //     this.props.role === "ADMIN" ? (
+      //       <MDBBtn
+      //         color="primary"
+      //         size="sm"
+      //         onClick={() => {
+      //           this.updateProduct(row, value);
+      //         }}
+      //       >
+      //         <MDBIcon icon="marker" size="2x" className="white-text" />
+      //       </MDBBtn>
+      //     ) : (
+      //       <div />
+      //     )
+      // },
+      // {
+      //   Header: "Delete",
+      //   id: "delbutton",
+      //   sortable: false,
+      //   filterable: false,
+      //   width: 100,
+      //   accessor: "_links.self.href",
+      //   Cell: ({ value, row }) =>
+      //     this.props.role === "ADMIN" ? (
+      //       <MDBBtn
+      //         color="danger"
+      //         size="sm"
+      //         onClick={() => {
+      //           this.confirmDelete(value);
+      //         }}
+      //       >
+      //         <MDBIcon icon="trash" size="2x" className="white-text" />
+      //       </MDBBtn>
+      //     ) : (
+      //       <div />
+      //     )
+      // }
     ];
 
     // const NewPlayListlink =
@@ -250,9 +239,9 @@ class BeerList extends Component {
 
     return (
       <div className="App">
-        {/*<MDBFormInline>{NewPlayListlink}</MDBFormInline>*/}
 
         <ReactTable
+            className="align-middle"
           data={this.state.beers}
           columns={columns}
           filterable={true}

@@ -5,6 +5,8 @@ import {MDBBtn, MDBFormInline} from "mdbreact";
 import {SERVER_URL} from "../../constants";
 import Snackbar from "@material-ui/core/Snackbar";
 import Register from "./Register";
+import Profile from "../Profile";
+import {withRouter} from "react-router-dom";
 
 class Login extends Component {
     constructor(props) {
@@ -20,8 +22,11 @@ class Login extends Component {
         };
     }
 
-    handleChange = event => {
+    handleChange = async event => {
+
+
         this.setState({[event.target.name]: event.target.value});
+
     };
     handleClose = event => {
         this.setState({open: false});
@@ -79,6 +84,7 @@ class Login extends Component {
                     this.setState({open: true});
                 }
             })
+            .then(        this.props.history.push("/beers"))
             .catch(err => console.error(err));
     }
     parseJwt = (token) => {
@@ -92,7 +98,6 @@ class Login extends Component {
 
 
     render() {
-
         if (this.state.register === true) {
             return <Register/>;
         } else {
@@ -172,4 +177,4 @@ class Login extends Component {
 }
 
 
-    export default Login;
+export default withRouter(Login);

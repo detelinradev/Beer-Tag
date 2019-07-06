@@ -7,7 +7,7 @@ import {
     MDBNavItem,
     MDBFooter,
     MDBIcon,
-    MDBBtn
+    MDBBtn, Navbar
 } from "mdbreact";
 import {
     Route,
@@ -25,6 +25,8 @@ import Profile from "./components/Profile";
 import Users from "./components/users/Users";
 import HomePageBeers from "./components/HomePageBeers";
 import BeerList from "./components/BeerList";
+import BrowserRouter from "react-router-dom/es/BrowserRouter";
+import Redirect from "react-router-dom/es/Redirect";
 
 
 class App extends Component {
@@ -46,7 +48,7 @@ class App extends Component {
     }
 
 
-    logout = event => {
+    logout = async event => {
         this.setState({username: null, role: ""});
     };
 
@@ -63,14 +65,6 @@ class App extends Component {
     closeCollapse = collapseID => () =>
         this.state.collapseID === collapseID && this.setState({collapseID: ""});
 
-    login = () => {
-        if (this.state.username === null)
-            return <Login
-                updateRole={this.updateRole.bind(this)}
-                updateUsername={this.updateUsername.bind(this)}
-                profile={this.profile.bind(this)}
-            />
-    }
 
 
     render() {
@@ -87,13 +81,13 @@ class App extends Component {
 
         const logoutlink =
             this.state.username == null ? (
+                <div/>
+            ) : (
                 <MDBNavItem>
                     <MDBBtn color="danger" size="sm" onClick={this.logout}>
                         Logout
                     </MDBBtn>
                 </MDBNavItem>
-            ) : (
-                <div/>
             );
 
         const profile =
@@ -126,16 +120,35 @@ class App extends Component {
         const overlay = (
             <div
                 id="sidenav-overlay"
-                style={{backgroundColor: "transparent"}}
+                style={{backgroundColor: "black"}}
                 onClick={this.toggleCollapse("mainNavbarCollapse")}
             />
         );
 
         const {collapseID} = this.state;
 
+        const LoginContainer = () => (
+            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                <Route exact path="/" component={HomePage}/>
+                <Route exact path="/beers" component={HomePageBeers}/>
+                <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
+                                                          updateUsername={this.updateUsername.bind(this)}
+                                                          profile={this.profile.bind(this)}/>}/>
+            </MDBNavbarNav>
+        );
+
+        const DefaultContainer = () => (
+            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                    <Route exact path="/" component={HomePage}/>
+                    <Route exact path="/beers" component={HomePageBeers}/>
+                    <Route path="/me" component={() => <Team/>}/>
+
+            </MDBNavbarNav>
+        );
+
 
         return (
-            <Router>
+            <BrowserRouter>
 
                 <div className="flyout">
                     <MDBNavbar
@@ -146,13 +159,13 @@ class App extends Component {
                         fixed="top"
                         scrolling
                     >
-                        <MDBNavbarBrand href="/" style={{backgroundColor: "orange"}}>
+                        <MDBNavbarBrand href="/" style={{backgroundColor: "lightblue"}}>
                             Beer Tag {"          "}
                             <Logo style={{height: "2.5rem", width: "2.5rem"}}/>
                             Welcome {this.state.username}
                         </MDBNavbarBrand>
 
-
+                        <MDBNavbarNav >{logoutlink}</MDBNavbarNav>
                         <MDBNavbarNav right>
                             <MDBNavbarNav style={{marginLeft: "4rem"}}>
                                 <NavLink exact activeClassName="active" to="/">
@@ -160,18 +173,8 @@ class App extends Component {
                                 </NavLink>
                             </MDBNavbarNav>
                             <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                <NavLink activeClassName="active" to="/users">
-                                    Users
-                                </NavLink>
-                            </MDBNavbarNav>
-                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                <NavLink activeClassName="active" to="/me">
-                                    Profile
-                                </NavLink>
-                            </MDBNavbarNav>
-                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                <NavLink activeClassName="active" to="/login">
-                                    Login
+                                <NavLink exact activeClassName="active" to="/beers">
+                                    Beers
                                 </NavLink>
                             </MDBNavbarNav>
                             <MDBCollapse
@@ -179,7 +182,12 @@ class App extends Component {
                                 isOpen={this.state.collapseID}
                                 navbar
                             >
-                                <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
+                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                <NavLink activeClassName="active" to="/login">
+                                    Login
+                                </NavLink>
+                            </MDBNavbarNav>
+
                                 {/*{login}*/}
                             </MDBCollapse>
 
@@ -194,14 +202,16 @@ class App extends Component {
                     </MDBNavbar>
                     {collapseID && overlay}
                     <main style={{marginTop: "10rem"}}>
+
                         <Switch>
-                            <Route exact path="/" component={HomePageBeers}/>
-                            <Route path="/users" component={Users}/>
-                            <Route path="/login" component={() => <Login updateRole={this.updateRole.bind(this)}
-                                                                         updateUsername={this.updateUsername.bind(this)}
-                                                                         profile={this.profile.bind(this)}/>}/>
-                            <Route path="/me" component={() => <Team/>}/>
-                            <Route component={BeerList}/>
+                            <Route exact path="/login" component={LoginContainer}/>
+                            <Route component={DefaultContainer}/>
+                            {/*<Route exact path="/" component={HomePage}/>*/}
+                            {/*<Route exact path="/beers" component={HomePageBeers}/>*/}
+                            {/*<Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}*/}
+                            {/*                                             updateUsername={this.updateUsername.bind(this)}*/}
+                            {/*                                             profile={this.profile.bind(this)}/>}/>*/}
+                            {/*<Route path="/me" component={() => <Team/>}/>*/}
                         </Switch>
                     </main>
                     <MDBFooter m-5 color="elegant-color">
@@ -223,7 +233,7 @@ class App extends Component {
                         </p>
                     </MDBFooter>
                 </div>
-            </Router>
+            </BrowserRouter>
         );
     }
 }

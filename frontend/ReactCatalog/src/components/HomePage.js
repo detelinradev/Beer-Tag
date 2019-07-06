@@ -2,7 +2,6 @@ import React from "react";
 import { MDBEdgeHeader, MDBContainer, MDBIcon, MDBJumbotron } from "mdbreact";
 import "./HomePage.css";
 
-import BeerList from "./BeerList";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -15,7 +14,6 @@ class HomePage extends React.Component {
   render() {
     return (
         <div style={{ marginTop: "6rem" }}>
-          <BeerList />
         </div>
     );
   }
