@@ -74,26 +74,26 @@ class App extends Component {
 
 
     render() {
-        // const login =
-        //   this.state.username == null ? (
-        //       <Login
-        //           updateRole={this.updateRole.bind(this)}
-        //           updateUsername={this.updateUsername.bind(this)}
-        //           profile={this.profile.bind(this)}
-        //       />
-        //   ) : (
-        //       <div/>
-        //   );
+        const login =
+          this.state.username == null ? (
+              <Login
+                  updateRole={this.updateRole.bind(this)}
+                  updateUsername={this.updateUsername.bind(this)}
+                  profile={this.profile.bind(this)}
+              />
+          ) : (
+              <div/>
+          );
 
         const logoutlink =
             this.state.username == null ? (
-                <div/>
-            ) : (
                 <MDBNavItem>
                     <MDBBtn color="danger" size="sm" onClick={this.logout}>
                         Logout
                     </MDBBtn>
                 </MDBNavItem>
+            ) : (
+                <div/>
             );
 
         const profile =
@@ -166,7 +166,7 @@ class App extends Component {
                             </MDBNavbarNav>
                             <MDBNavbarNav style={{marginLeft: "4rem"}}>
                                 <NavLink activeClassName="active" to="/me">
-                                    Your profile
+                                    Profile
                                 </NavLink>
                             </MDBNavbarNav>
                             <MDBNavbarNav style={{marginLeft: "4rem"}}>
@@ -197,8 +197,10 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" component={HomePageBeers}/>
                             <Route path="/users" component={Users}/>
-                            <Route path="/login" component={Login}/>
-                            <Route path="/me" component={Team}/>
+                            <Route path="/login" component={() => <Login updateRole={this.updateRole.bind(this)}
+                                                                         updateUsername={this.updateUsername.bind(this)}
+                                                                         profile={this.profile.bind(this)}/>}/>
+                            <Route path="/me" component={() => <Team/>}/>
                             <Route component={BeerList}/>
                         </Switch>
                     </main>

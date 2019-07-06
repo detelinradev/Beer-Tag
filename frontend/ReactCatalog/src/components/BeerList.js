@@ -35,6 +35,7 @@ class BeerList extends Component {
 
     const token = sessionStorage.getItem("jwt");
      fetch(SERVER_URL + "beers", {
+       method: 'GET',
       headers: { Authorization: token }
     })
       .then(response => response.json())
