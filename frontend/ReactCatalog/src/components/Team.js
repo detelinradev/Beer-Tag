@@ -39,13 +39,12 @@ class Team extends Component {
     }
 
     fetchImage = () => {
-        console.log(22222);
+       // console.log(22222);
         const token = sessionStorage.getItem("jwt");
-        fetch(SERVER_URL + "userImage/downloadImage", {
+        console.log(token);
+        fetch( "http://localhost:8080/userImage/downloadImage", {
             headers: {Authorization: token}
-
         })
-
             .then((response) => response.json())
             .then((data) => {
                 console.log(555555);

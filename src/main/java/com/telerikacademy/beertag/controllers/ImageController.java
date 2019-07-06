@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/userImage")
+@RequestMapping("/userImage")
 public class ImageController {
 
     private final ImageService imageService;
@@ -54,9 +54,10 @@ public class ImageController {
 
     @GetMapping("/downloadImage")
     public ResponseEntity<Resource> downloadFile(final HttpServletRequest req) {
+        System.out.println(222222);
         Image dbFile = imageService.getFile(userRepository.findFirstByUsername(
                 authenticationService.getUsername(req)).getImage().getId());
-
+        System.out.println(11111);
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(dbFile.getFileType()))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
