@@ -4,7 +4,7 @@ import "./HomePage.css";
 
 import Users from "./users/Users";
 
-class HomePage extends React.Component {
+class AdminPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <MDBEdgeHeader color="indigo darken-3" />
 
         <MDBContainer className="mt-5  ">
           <MDBJumbotron>
@@ -31,4 +30,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default AdminPage;

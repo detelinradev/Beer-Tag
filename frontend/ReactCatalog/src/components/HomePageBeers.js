@@ -19,7 +19,7 @@ class HomePage extends React.Component {
                     <MDBJumbotron>
                         <h2>
                             <MDBIcon icon="window-restore" className="grey-text mr-2" />
-                            CATALOG
+                            BEERS
                         </h2>
                         <BeerList
                             role={this.props.role}

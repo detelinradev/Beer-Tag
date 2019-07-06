@@ -24,11 +24,11 @@ class BeerList extends Component {
   }
 
   componentDidMount() {
-    this.fetchProducts();
+    this.fetchBeers();
   }
 
   // Fetch all products
-  fetchProducts =  () => {
+  fetchBeers =  () => {
     // this.setState({
     //   beers: []
     // });
@@ -164,6 +164,7 @@ class BeerList extends Component {
       {
         Header: " Alcohol by volume",
         accessor: "alcoholByVolume",
+
       },
       {
         Header: "Style",

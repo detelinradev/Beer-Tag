@@ -62,11 +62,14 @@ class Users extends Component {
   onDelClick = link => {
     const token = sessionStorage.getItem("jwt");
     fetch(link, {
-      method: "DELETE",
-      headers: { Authorization: token }
-    })
+      method: "PATCH",
+      headers: { Authorization: token,
+        "Content-Type": "application/json"},
+      body: JSON.stringify({"active": "false"})
+      }
+    )
       .then(res => {
-        this.setState({ open: true, message: "Deleted" });
+        this.setState({ open: true, message: "Disabled account" });
         this.fetchLists();
       })
       .catch(err => {
@@ -95,7 +98,7 @@ class Users extends Component {
   };
 
   // Update user
-  updatePlaylist(user, link) {
+  updateUser(user, link) {
     const token = sessionStorage.getItem("jwt");
     fetch(link, {
       method: "PATCH",
@@ -137,7 +140,12 @@ class Users extends Component {
     const columns = [
       {
         Header: "Username",
-        accessor: "username"
+        accessor: "username",
+        Cell: this.renderEditable
+      },      {
+        Header: "Email",
+        accessor: "email",
+        Cell: this.renderEditable
       },
 
       {
@@ -159,7 +167,7 @@ class Users extends Component {
             color="primary"
             size="sm"
             onClick={() => {
-              this.updatePlaylist(row, value);
+              this.updateUser(row, value);
             }}
           >
             <MDBIcon icon="marker" size="2x" className="white-text" />
@@ -197,6 +205,7 @@ class Users extends Component {
         <ReactTable
           data={this.state.users}
           columns={columns}
+          editable={true}
           filterable={true}
           defaultFilterMethod={this.customFilter}
           pageSize={5}

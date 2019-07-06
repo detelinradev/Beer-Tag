@@ -28,10 +28,10 @@ import BeerList from "./components/BeerList";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
 import Redirect from "react-router-dom/es/Redirect";
 import Wishlist from "./components/Wishlist";
+import Link from "react-router-dom/es/Link";
 
 
 class App extends Component {
-
 
     state = {
         collapseID: "",
@@ -39,6 +39,7 @@ class App extends Component {
         role: "ANONYMOUS",
         profile: false
     };
+
 
     updateUsername = (value) => {
         this.setState({username: value});
@@ -51,6 +52,7 @@ class App extends Component {
 
     logout = async event => {
         this.setState({username: null, role: ""});
+        sessionStorage.clear();
     };
 
     profile = event => {
@@ -67,8 +69,8 @@ class App extends Component {
         this.state.collapseID === collapseID && this.setState({collapseID: ""});
 
 
-
     render() {
+
         const login =
           this.state.username == null ? (
               <Login
@@ -85,9 +87,11 @@ class App extends Component {
                 <Wishlist/>
             ) : (
                 <MDBNavItem>
+                        <Link to="/login">
                     <MDBBtn color="danger" size="sm" onClick={this.logout}>
-                        Logout
+                            Logout
                     </MDBBtn>
+                        </Link>
                 </MDBNavItem>
             );
 
@@ -103,19 +107,24 @@ class App extends Component {
             );
 
 
-        const home =
-            this.state.username === null ? (
-                //<HomePage role={this.state.role} username={this.state.username} />
-                <HomePage/>
-            ) : (
+        const wishlist =
+            this.state.role !== "USER" ? (
                 <div/>
+            ) : (
+                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                    <NavLink exact activeClassName="active" to="/wishlist">
+                        Wishlist
+                    </NavLink>
+                </MDBNavbarNav>
             );
 
-        const admin =
+        const users =
             this.state.role === "ADMIN" ? (
-                <MDBNavItem>
-                    <AdminPage/>
-                </MDBNavItem>
+                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                    <NavLink exact activeClassName="active" to="/users">
+                        Users
+                    </NavLink>
+                </MDBNavbarNav>
             ) : (
                 <div/>
             );
@@ -133,7 +142,9 @@ class App extends Component {
         const LoginContainer = () => (
             <MDBNavbarNav style={{marginRight: "4rem"}}>
                 <Route exact path="/" component={HomePage}/>
-                <Route exact path="/beers" component={HomePageBeers}/>
+                <Route path="/users" component={AdminPage}/>
+                <Route path="/beers" component={HomePageBeers}/>
+                <Route path="/wishlist" component={Wishlist}/>
                 <Route path="/me" component={() => <Team/>}/>
                 <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
                                                           updateUsername={this.updateUsername.bind(this)}
@@ -150,10 +161,8 @@ class App extends Component {
             </MDBNavbarNav>
         );
 
-
         return (
             <BrowserRouter>
-
                 <div className="flyout">
                     <MDBNavbar
                         // transparent="true"
@@ -177,17 +186,21 @@ class App extends Component {
                                 isOpen={this.state.collapseID}
                                 navbar
                             >
+
+
                                 <MDBNavbarNav style={{marginRight: "4rem"}}>
                                     <NavLink exact activeClassName="active" to="/">
                                         Home
                                     </NavLink>
                                 </MDBNavbarNav>
+                                <MDBNavbarNav >{wishlist}</MDBNavbarNav>
                                 <MDBNavbarNav style={{marginRight: "4rem"}}>
                                     <NavLink exact activeClassName="active" to="/beers">
                                         Beers
                                     </NavLink>
                                 </MDBNavbarNav>
 
+                                <MDBNavbarNav >{users}</MDBNavbarNav>
                                 <MDBNavbarNav >{profile}</MDBNavbarNav>
                                 <MDBNavbarNav >{logoutlink}</MDBNavbarNav>
                                 {/*{login}*/}
@@ -206,7 +219,7 @@ class App extends Component {
                     <main style={{marginTop: "10rem"}}>
 
                         <Switch>
-                            <Route exact path="/login" component={LoginContainer}/>
+                            <Route  component={LoginContainer}/>
                             <Route component={DefaultContainer}/>
                             {/*<Route exact path="/" component={HomePage}/>*/}
                             {/*<Route exact path="/beers" component={HomePageBeers}/>*/}
