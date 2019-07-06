@@ -8,7 +8,9 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import { MDBBtn, MDBIcon, MDBFormInline } from "mdbreact";
 import Snackbar from "@material-ui/core/Snackbar";
 
-import NewPlayList from "./NewPlaylist";
+import NewPlayList from "./NewBeer";
+import Beer from "./Beer";
+import Link from "react-router-dom/es/Link";
 
 class BeerList extends Component {
   constructor(props) {
@@ -17,6 +19,8 @@ class BeerList extends Component {
       username: this.props.username,
       role: this.props.role,
       beers: [],
+      beer: [],
+      info: false,
       open: false,
       message: "",
       duration: 0
@@ -29,9 +33,6 @@ class BeerList extends Component {
 
   // Fetch all products
   fetchBeers =  () => {
-    // this.setState({
-    //   beers: []
-    // });
 
      fetch(SERVER_URL + "beers", {
        method: 'GET',
@@ -44,6 +45,20 @@ class BeerList extends Component {
       })
       .catch(err => console.error(err));
   };
+
+  // fetchBeer =  () => {
+  //
+  //    fetch(value, {
+  //      method: 'GET',
+  //   })
+  //     .then(response => response.json())
+  //     .then(responseData => {
+  //       this.setState({
+  //         beers: responseData._embedded.beers
+  //       });
+  //     })
+  //     .catch(err => console.error(err));
+  // };
 
   // customFilter = (filter, row) => {
   //   const id = filter.pivotId || filter.id;
@@ -78,12 +93,27 @@ class BeerList extends Component {
     })
       .then(res => {
         this.setState({ open: true, message: "Deleted" });
-        this.fetchProducts();
+        this.fetchBeers();
       })
       .catch(err => {
         this.setState({ open: true, message: "Error when deleting" });
         console.error(err);
       });
+  };
+
+  getBeer = link => {
+    const token = sessionStorage.getItem("jwt");
+    fetch(link, {
+      method: "GET",
+    })
+        .then(response => response.json())
+        .then(responseData => {
+          this.setState({
+            beer: responseData._embedded.beers,
+            info: true
+          });
+        })
+        .catch(err => console.error(err));
   };
 
   // Add new product from child
@@ -97,7 +127,7 @@ class BeerList extends Component {
       },
       body: JSON.stringify(beer)
     })
-      .then(res => this.fetchProducts())
+      .then(res => this.fetchBeers())
       .catch(err => console.error(err));
   }
 
@@ -118,23 +148,23 @@ class BeerList extends Component {
       );
   }
 
-  // renderEditable = cellInfo => {
-  //   return (
-  //     <div
-  //       style={{ backgroundColor: "#fafafa" }}
-  //       contentEditable
-  //       suppressContentEditableWarning
-  //       onBlur={e => {
-  //         const data = [...this.state.products];
-  //         data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
-  //         this.setState({ products: data });
-  //       }}
-  //       dangerouslySetInnerHTML={{
-  //         __html: this.state.products[cellInfo.index][cellInfo.column.id]
-  //       }}
-  //     />
-  //   );
-  // };
+  renderEditable = cellInfo => {
+    return (
+        <div
+            style={{ backgroundColor: "#fafafa" }}
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={e => {
+              const data = [...this.state.beers];
+              data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+              this.setState({ beers: data });
+            }}
+            dangerouslySetInnerHTML={{
+              __html: this.state.beers[cellInfo.index][cellInfo.column.id]
+            }}
+        />
+    );
+  };
 
   handleClose = (event, reason) => {
     this.setState({ open: false });
@@ -143,6 +173,8 @@ class BeerList extends Component {
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
+
+
 
   render() {
     const columns = [
@@ -163,8 +195,7 @@ class BeerList extends Component {
       },
       {
         Header: " Alcohol by volume",
-        accessor: "alcoholByVolume",
-
+        accessor: "alcoholByVolume"
       },
       {
         Header: "Style",
@@ -172,75 +203,58 @@ class BeerList extends Component {
         Cell: this.renderEditable
       },
 
-      {
-        Header: "Rating",
-        accessor: "ratings",
-        Cell: this.renderEditable
-      },
 
-      // {
-      //   Header: "Save",
-      //   id: "savebutton",
-      //   sortable: false,
-      //   filterable: false,
-      //   width: 80,
-      //   accessor: "_links.self.href",
-      //   Cell: ({ value, row }) =>
-      //     this.props.role === "ADMIN" ? (
-      //       <MDBBtn
-      //         color="primary"
-      //         size="sm"
-      //         onClick={() => {
-      //           this.updateProduct(row, value);
-      //         }}
-      //       >
-      //         <MDBIcon icon="marker" size="2x" className="white-text" />
-      //       </MDBBtn>
-      //     ) : (
-      //       <div />
-      //     )
-      // },
-      // {
-      //   Header: "Delete",
-      //   id: "delbutton",
-      //   sortable: false,
-      //   filterable: false,
-      //   width: 100,
-      //   accessor: "_links.self.href",
-      //   Cell: ({ value, row }) =>
-      //     this.props.role === "ADMIN" ? (
-      //       <MDBBtn
-      //         color="danger"
-      //         size="sm"
-      //         onClick={() => {
-      //           this.confirmDelete(value);
-      //         }}
-      //       >
-      //         <MDBIcon icon="trash" size="2x" className="white-text" />
-      //       </MDBBtn>
-      //     ) : (
-      //       <div />
-      //     )
-      // }
+      {
+        Header: "Info",
+        sortable: false,
+        filterable: false,
+        accessor: "_links.self.href",
+        id: 'links',
+        Cell: ({ row }) => (<Link to={{ pathname: `/beers/{id}` }}>More info</Link>)
+      },
+      {
+        Header: "Delete",
+        id: "delbutton",
+        sortable: false,
+        filterable: false,
+        width: 100,
+        accessor: "_links.self.href",
+        Cell: ({ value, row }) =>
+          this.props.role !== "ANONYMOUS" ? (
+            <MDBBtn
+              color="danger"
+              size="sm"
+              onClick={() => {
+                this.getBeer(value);
+              }}
+            >
+              (<Link to={{ pathname: `/beers/{id}` }}>More info</Link>)
+            </MDBBtn>
+          ) : (
+            <div />
+          )
+      }
     ];
 
-    // const NewPlayListlink =
-    //   this.props.role !== "ADMIN" ? (
-    //     <div />
-    //   ) : (
-    //     <NewPlayList
-    //       className="align-middle"
-    //       username={this.props.username}
-    //       addProduct={this.addProduct}
-    //       fetchProducts={this.fetchProducts}
-    //     />
-    //   );
+    const NewPlayListlink =
+      this.props.role === "ANONYMOUS" ? (
+        <div />
+      ) : (
+        <NewPlayList
+          className="align-middle"
+          username={this.props.username}
+          addProduct={this.addProduct}
+          fetchProducts={this.fetchBeers}
+        />
+      );
+
 
     return (
       <div className="App">
+        <MDBFormInline>{NewPlayListlink}</MDBFormInline>
 
         <ReactTable
-            className="align-middle"
+            className="align-middle react-table"
           data={this.state.beers}
           columns={columns}
           filterable={true}

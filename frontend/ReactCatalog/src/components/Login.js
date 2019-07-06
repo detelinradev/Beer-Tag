@@ -2,10 +2,9 @@ import React, {Component} from "react";
 import "./Login.css";
 
 import {MDBBtn, MDBFormInline} from "mdbreact";
-import {SERVER_URL} from "../../constants";
+import {SERVER_URL} from "../constants";
 import Snackbar from "@material-ui/core/Snackbar";
 import Register from "./Register";
-import Profile from "../Profile";
 import {withRouter} from "react-router-dom";
 
 class Login extends Component {

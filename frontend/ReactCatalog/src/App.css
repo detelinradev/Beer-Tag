@@ -1,6 +1,16 @@
 h4 {
   color: white;
 }
-.active{
-  color:red;
+
+.test {
+  height: 8%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.test-footer {
+  height: 8%;
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }

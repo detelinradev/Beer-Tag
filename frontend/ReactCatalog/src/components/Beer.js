@@ -1,23 +1,27 @@
 import React, {Component} from "react";
 import "react-table/react-table.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import "./Team.css";
+import "./Profile.css";
 import {SERVER_URL} from "../constants";
 
 
-class Team extends Component {
+class Beer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: "",
-            lastName: "",
-            username: "",
-            email: "",
-            age: "",
+            modal: false,
+            username: this.props.username,
+            name: "",
+            breweryName: "",
+            description: "",
+            alcoholByVolume: "",
+            beerStyle: "",
             open: false,
             message: "",
-            img: '',
-            selectedFile: null
+            image:
+                "https://banner2.kisspng.com/20180604/pol/kisspng-react-javascript-angularjs-ionic-atom-5b154be6709500.6532453515281223424611.jpg",
+            value: 50,
+            data: []
         };
     }
 
@@ -39,7 +43,7 @@ class Team extends Component {
     }
 
     fetchImage = () => {
-       // console.log(22222);
+        // console.log(22222);
         const token = sessionStorage.getItem("jwt");
         console.log(token);
         fetch( "http://localhost:8080/userImage/downloadImage", {
@@ -61,7 +65,7 @@ class Team extends Component {
             .catch(err => console.error(err));
     };
 
-    fetchLists = () => {
+    fetchBeer = () => {
         const token = sessionStorage.getItem("jwt");
         fetch(SERVER_URL + "me", {
             headers: {Authorization: token}
@@ -122,10 +126,10 @@ class Team extends Component {
                                     </li>
                                 </ul>
                             </div>
-                                {/*<div className="App-intro">*/}
-                                {/*    <h3>Download a random file</h3>*/}
-                                {/*    <button onClick={this.downloadRandomImage}>Download</button>*/}
-                                {/*</div>*/}
+                            {/*<div className="App-intro">*/}
+                            {/*    <h3>Download a random file</h3>*/}
+                            {/*    <button onClick={this.downloadRandomImage}>Download</button>*/}
+                            {/*</div>*/}
                             <h3 className="wow fadeInDown delay-03s">@{this.state.username}</h3>
                             <h3 className="wow fadeInDown delay-03s">{this.state.email}</h3>
                             <h4 className="wow fadeInDown delay-03s">{this.state.age} years old</h4>
@@ -141,4 +145,4 @@ class Team extends Component {
     }
 }
 
-export default Team;
+export default Beer;

@@ -11,15 +11,17 @@ import {
 } from "mdbreact";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-class ModalPage extends Component {
+class NewBeer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
       username: this.props.username,
       name: "",
-      price: "",
+      breweryName: "",
       description: "",
+      alcoholByVolume: "",
+      beerStyle: "",
       open: false,
       message: "",
       image:
@@ -42,12 +44,14 @@ class ModalPage extends Component {
     var newPlaylist = {
       username: this.props.username,
       name: this.state.name,
-      price: this.state.price,
+      breweryName: this.state.breweryName,
       description: this.state.description,
+      alcoholByVolume: this.state.alcoholByVolume,
+      beerStyle: this.state.beerStyle,
       image: this.state.image
     };
     this.props.addProduct(newPlaylist);
-    this.setState({ name: "", price: "", description: "" });
+    this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "" });
     this.toggle();
   };
 
@@ -62,8 +66,8 @@ class ModalPage extends Component {
   render() {
     return (
       <MDBContainer>
-        <MDBBtn color="primary" size="sm" onClick={this.toggle}>
-          New Product
+        <MDBBtn color="primary" size="md" onClick={this.toggle}>
+          New Beer
         </MDBBtn>
         <MDBModal
           isOpen={this.state.modal}
@@ -71,9 +75,9 @@ class ModalPage extends Component {
           centered
           backdrop={false}
         >
-          <MDBModalHeader toggle={this.toggle}>
-            New Product {this.props.username}
-          </MDBModalHeader>
+          <MDBModalBody toggle={this.toggle}>
+            New Beer {this.props.username}
+          </MDBModalBody>
           <MDBModalBody>
             <MDBInput
               className="w-100"
@@ -86,11 +90,10 @@ class ModalPage extends Component {
 
             <MDBInput
               className="w-100"
-              type="number"
               min={0}
-              label="Price"
+              label="Brewery"
               outline
-              name="price"
+              name="breweryName"
               onChange={this.handleChange}
               value={this.state.price}
             />
@@ -104,6 +107,24 @@ class ModalPage extends Component {
               value={this.state.description}
             />
 
+            <MDBInput
+                className="w-100"
+                label="Alcohol"
+                outline
+                name="alcoholByVolume"
+                onChange={this.handleChange}
+                value={this.state.price}
+            />
+            <MDBInput
+                className="w-100"
+                label="Style"
+                outline
+                name="beerStyle"
+                onChange={this.handleChange}
+                value={this.state.price}
+            />
+
+
             <MDBFormInline>
               <MDBInput
                 className="w-60"
@@ -114,11 +135,11 @@ class ModalPage extends Component {
                 value={this.state.image}
               />
 
-              <img src={this.state.image} height="55" />
+              <img src={this.state.image} height="55" alt=" image"/>
             </MDBFormInline>
           </MDBModalBody>
           <MDBModalFooter>
-            <MDBBtn color="secondary" onClick={this.toggle}>
+            <MDBBtn color="danger" onClick={this.toggle}>
               Close
             </MDBBtn>
             <MDBBtn color="primary" onClick={this.handleSubmit}>
@@ -131,4 +152,4 @@ class ModalPage extends Component {
   }
 }
 
-export default ModalPage;
+export default NewBeer;

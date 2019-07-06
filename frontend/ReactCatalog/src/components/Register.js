@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Login.css";
 
 import { MDBBtn, MDBFormInline } from "mdbreact";
-import { SERVER_URL } from "../../constants";
+import { SERVER_URL } from "../constants";
 import Snackbar from "@material-ui/core/Snackbar";
 
 class Register extends Component {

@@ -18,17 +18,17 @@ import {
 import {ReactComponent as Logo} from "./assets/logo.svg";
 import HomePage from "./components/HomePage";
 import AdminPage from "./components/AdminPage";
-import Login from "./components/users/Login";
-import Team from "./components/Team";
+import Login from "./components/Login";
 import "./App.css";
 import Profile from "./components/Profile";
-import Users from "./components/users/Users";
+import Users from "./components/Users";
 import HomePageBeers from "./components/HomePageBeers";
 import BeerList from "./components/BeerList";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
 import Redirect from "react-router-dom/es/Redirect";
 import Wishlist from "./components/Wishlist";
 import Link from "react-router-dom/es/Link";
+import Beer from "./components/Beer";
 
 
 class App extends Component {
@@ -37,9 +37,13 @@ class App extends Component {
         collapseID: "",
         username: null,
         role: "ANONYMOUS",
-        profile: false
+        profile: false,
+        beerName: null
     };
 
+    updateBeerName = (value) => {
+        this.setState({beerName: value});
+    }
 
     updateUsername = (value) => {
         this.setState({username: value});
@@ -143,12 +147,13 @@ class App extends Component {
             <MDBNavbarNav style={{marginRight: "4rem"}}>
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/users" component={AdminPage}/>
-                <Route path="/beers" component={HomePageBeers}/>
+                <Route exact path="/beers" component={HomePageBeers}/>
                 <Route path="/wishlist" component={Wishlist}/>
-                <Route path="/me" component={() => <Team/>}/>
+                <Route path="/me" component={() => <Profile/>}/>
                 <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
                                                           updateUsername={this.updateUsername.bind(this)}
                                                           profile={this.profile.bind(this)}/>}/>
+
             </MDBNavbarNav>
         );
 
@@ -156,7 +161,7 @@ class App extends Component {
             <MDBNavbarNav style={{marginRight: "4rem"}}>
                     <Route exact path="/" component={HomePage}/>
                     <Route exact path="/beers" component={HomePageBeers}/>
-                    <Route path="/me" component={() => <Team/>}/>
+                    <Route path="/me" component={() => <Profile/>}/>
 
             </MDBNavbarNav>
         );
@@ -164,15 +169,15 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className="flyout">
-                    <MDBNavbar
-                        // transparent="true"
+                    <MDBNavbar className="test"
+                         transparent="true"
                         color="elegant-color"
-                        light
+                        dark
                         expand="md"
                         fixed="top"
                         scrolling
                     >
-                        <MDBNavbarBrand href="/" style={{backgroundColor: "lightblue"}}>
+                        <MDBNavbarBrand href="/">
                             Beer Tag {"          "}
                             <Logo style={{height: "2.5rem", width: "2.5rem"}}/>
                             Welcome {this.state.username}
@@ -229,7 +234,7 @@ class App extends Component {
                             {/*<Route path="/me" component={() => <Team/>}/>*/}
                         </Switch>
                     </main>
-                    <MDBFooter m-5 color="elegant-color" scrolling  fixed="bottom">
+                    <MDBFooter className="test-footer" m-5 color="elegant-color">
                         <p className="footer-copyright mb-0 py-3 text-center">
                             &copy; {new Date().getFullYear()}{" "}
                             <a

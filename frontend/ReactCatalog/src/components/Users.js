@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import { SERVER_URL } from "../../constants.js";
+import { SERVER_URL } from "../constants.js";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import Grid from "@material-ui/core/Grid";
@@ -141,7 +141,6 @@ class Users extends Component {
       {
         Header: "Username",
         accessor: "username",
-        Cell: this.renderEditable
       },      {
         Header: "Email",
         accessor: "email",
