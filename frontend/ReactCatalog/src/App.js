@@ -41,10 +41,9 @@ class App extends Component {
         this.setState({username: value});
     }
 
-    updateRole =(value) => {
+    updateRole = (value) => {
         this.setState({role: value});
     }
-
 
 
     logout = event => {
@@ -64,18 +63,27 @@ class App extends Component {
     closeCollapse = collapseID => () =>
         this.state.collapseID === collapseID && this.setState({collapseID: ""});
 
+    login = () => {
+        if (this.state.username === null)
+            return <Login
+                updateRole={this.updateRole.bind(this)}
+                updateUsername={this.updateUsername.bind(this)}
+                profile={this.profile.bind(this)}
+            />
+    }
+
 
     render() {
-            // const login =
-            //     this.state.username == null ? (
-                    {/*<Login*/}
-                    {/*    updateRole={this.updateRole.bind(this)}*/}
-                    {/*    updateUsername={this.updateUsername.bind(this)}*/}
-                    {/*    profile={this.profile.bind(this)}*/}
-                    {/*/>*/}
-                // ) : (
-                //     <div/>
-                // );
+        // const login =
+        //   this.state.username == null ? (
+        //       <Login
+        //           updateRole={this.updateRole.bind(this)}
+        //           updateUsername={this.updateUsername.bind(this)}
+        //           profile={this.profile.bind(this)}
+        //       />
+        //   ) : (
+        //       <div/>
+        //   );
 
         const logoutlink =
             this.state.username == null ? (
@@ -145,44 +153,43 @@ class App extends Component {
                         </MDBNavbarBrand>
 
 
-
-                            <MDBNavbarNav right>
-                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                    <NavLink exact activeClassName="active" to="/">
-                                        Home
-                                    </NavLink>
-                                </MDBNavbarNav>
-                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                    <NavLink activeClassName="active" to="/users">
-                                        Users
-                                    </NavLink>
-                                </MDBNavbarNav>
-                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                    <NavLink activeClassName="active" to="/me">
-                                        Your profile
-                                    </NavLink>
-                                </MDBNavbarNav>
-                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                    <NavLink activeClassName="active" to="/login">
-                                        Login
-                                    </NavLink>
-                                </MDBNavbarNav>
-                                <MDBCollapse
-                                    id="mainNavbarCollapse"
-                                    isOpen={this.state.collapseID}
-                                    navbar
-                                >
-                                    <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
-                                    {/*{login}*/}
-                                </MDBCollapse>
-
-                                {/*{home}*/}
-                                {/*{admin}*/}
-                                {/*  {profile}*/}
-
-                                {/*<Team />*/}
-
+                        <MDBNavbarNav right>
+                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                <NavLink exact activeClassName="active" to="/">
+                                    Home
+                                </NavLink>
                             </MDBNavbarNav>
+                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                <NavLink activeClassName="active" to="/users">
+                                    Users
+                                </NavLink>
+                            </MDBNavbarNav>
+                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                <NavLink activeClassName="active" to="/me">
+                                    Your profile
+                                </NavLink>
+                            </MDBNavbarNav>
+                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+                                <NavLink activeClassName="active" to="/login">
+                                    Login
+                                </NavLink>
+                            </MDBNavbarNav>
+                            <MDBCollapse
+                                id="mainNavbarCollapse"
+                                isOpen={this.state.collapseID}
+                                navbar
+                            >
+                                <MDBNavbarNav right>{logoutlink}</MDBNavbarNav>
+                                {/*{login}*/}
+                            </MDBCollapse>
+
+                            {/*{home}*/}
+                            {/*{admin}*/}
+                            {/*  {profile}*/}
+
+                            {/*<Team />*/}
+
+                        </MDBNavbarNav>
 
                     </MDBNavbar>
                     {collapseID && overlay}

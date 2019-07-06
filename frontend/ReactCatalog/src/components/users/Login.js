@@ -9,13 +9,11 @@ import Register from "./Register";
 class Login extends Component {
     constructor(props) {
         super(props);
-
-
         this.state = {
             modal: false,
-            username: "",
+            username: null,
             password: "",
-            role: "USER",
+            role: "ANONYMOUS",
             isAuthenticated: false,
             register: false,
             open: false
@@ -70,7 +68,7 @@ class Login extends Component {
                 const jwtToken = res.headers.get("Authorization");
                 if (jwtToken !== null) {
                     sessionStorage.setItem("jwt", jwtToken);
-                    this.props.updateUsername(user.username);
+                    this.props.updateUsername(this.state.username);
                     this.props.updateRole(this.parseJwt(jwtToken).scope.substring(5));
                     console.log(this.parseJwt(jwtToken).scope.substring(5))
                     this.setState({isAuthenticated: true});
@@ -173,4 +171,5 @@ class Login extends Component {
     }
 }
 
-export default Login;
+
+    export default Login;
