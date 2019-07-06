@@ -27,6 +27,7 @@ import HomePageBeers from "./components/HomePageBeers";
 import BeerList from "./components/BeerList";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
 import Redirect from "react-router-dom/es/Redirect";
+import Wishlist from "./components/Wishlist";
 
 
 class App extends Component {
@@ -81,7 +82,7 @@ class App extends Component {
 
         const logoutlink =
             this.state.username == null ? (
-                <div/>
+                <Wishlist/>
             ) : (
                 <MDBNavItem>
                     <MDBBtn color="danger" size="sm" onClick={this.logout}>
@@ -94,9 +95,11 @@ class App extends Component {
             this.state.username == null ? (
                 <div/>
             ) : (
-                <MDBNavItem>
-                    <Profile/>
-                </MDBNavItem>
+                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                    <NavLink activeClassName="active" to="/me">
+                        Profile
+                    </NavLink>
+                </MDBNavbarNav>
             );
 
 
@@ -128,7 +131,7 @@ class App extends Component {
         const {collapseID} = this.state;
 
         const LoginContainer = () => (
-            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+            <MDBNavbarNav style={{marginRight: "4rem"}}>
                 <Route exact path="/" component={HomePage}/>
                 <Route exact path="/beers" component={HomePageBeers}/>
                 <Route path="/me" component={() => <Team/>}/>
@@ -139,7 +142,7 @@ class App extends Component {
         );
 
         const DefaultContainer = () => (
-            <MDBNavbarNav style={{marginLeft: "4rem"}}>
+            <MDBNavbarNav style={{marginRight: "4rem"}}>
                     <Route exact path="/" component={HomePage}/>
                     <Route exact path="/beers" component={HomePageBeers}/>
                     <Route path="/me" component={() => <Team/>}/>
@@ -166,34 +169,27 @@ class App extends Component {
                             Welcome {this.state.username}
                         </MDBNavbarBrand>
 
-                        <MDBNavbarNav >{logoutlink}</MDBNavbarNav>
+
                         <MDBNavbarNav right>
-                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                <NavLink exact activeClassName="active" to="/">
-                                    Home
-                                </NavLink>
-                            </MDBNavbarNav>
-                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                <NavLink exact activeClassName="active" to="/beers">
-                                    Beers
-                                </NavLink>
-                            </MDBNavbarNav>
+
                             <MDBCollapse
                                 id="mainNavbarCollapse"
                                 isOpen={this.state.collapseID}
                                 navbar
                             >
-                                <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                    <NavLink activeClassName="active" to="/me">
-                                        Profile
+                                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                                    <NavLink exact activeClassName="active" to="/">
+                                        Home
                                     </NavLink>
                                 </MDBNavbarNav>
-                            <MDBNavbarNav style={{marginLeft: "4rem"}}>
-                                <NavLink activeClassName="active" to="/login">
-                                    Login
-                                </NavLink>
-                            </MDBNavbarNav>
+                                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                                    <NavLink exact activeClassName="active" to="/beers">
+                                        Beers
+                                    </NavLink>
+                                </MDBNavbarNav>
 
+                                <MDBNavbarNav >{profile}</MDBNavbarNav>
+                                <MDBNavbarNav >{logoutlink}</MDBNavbarNav>
                                 {/*{login}*/}
                             </MDBCollapse>
 
@@ -220,7 +216,7 @@ class App extends Component {
                             {/*<Route path="/me" component={() => <Team/>}/>*/}
                         </Switch>
                     </main>
-                    <MDBFooter m-5 color="elegant-color">
+                    <MDBFooter m-5 color="elegant-color" scrolling  fixed="bottom">
                         <p className="footer-copyright mb-0 py-3 text-center">
                             &copy; {new Date().getFullYear()}{" "}
                             <a
