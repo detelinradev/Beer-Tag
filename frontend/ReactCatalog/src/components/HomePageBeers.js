@@ -4,7 +4,7 @@ import "./HomePage.css";
 
 import BeerList from "./BeerList";
 
-class HomePage extends React.Component {
+class HomePageBeers extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +23,7 @@ class HomePage extends React.Component {
                         </h2>
                         <BeerList
                             role={this.props.role}
-                            username={this.props.username}
+                            username={this.state.username}
                         />
                     </MDBJumbotron>
                 </MDBContainer>
@@ -32,4 +32,4 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+export default HomePageBeers;

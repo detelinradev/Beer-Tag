@@ -25,7 +25,7 @@ class NewBeer extends Component {
       open: false,
       message: "",
       image:
-        "https://banner2.kisspng.com/20180604/pol/kisspng-react-javascript-angularjs-ionic-atom-5b154be6709500.6532453515281223424611.jpg",
+        "https://target.scene7.com/is/image/Target/GUEST_e8853023-d976-477f-bca5-cec1df085307?wid=488&hei=488&fmt=pjpeg",
       value: 50,
       data: []
     };
@@ -42,7 +42,6 @@ class NewBeer extends Component {
     event.preventDefault();
 
     var newPlaylist = {
-      username: this.props.username,
       name: this.state.name,
       breweryName: this.state.breweryName,
       description: this.state.description,
@@ -66,7 +65,7 @@ class NewBeer extends Component {
   render() {
     return (
       <MDBContainer>
-        <MDBBtn color="primary" size="md" onClick={this.toggle}>
+        <MDBBtn color="primary" size="md" onClick={this.toggle} disabled={!this.state.username}>
           New Beer
         </MDBBtn>
         <MDBModal
@@ -76,7 +75,7 @@ class NewBeer extends Component {
           backdrop={false}
         >
           <MDBModalBody toggle={this.toggle}>
-            New Beer {this.props.username}
+            New Beer {this.state.username}
           </MDBModalBody>
           <MDBModalBody>
             <MDBInput
@@ -95,7 +94,7 @@ class NewBeer extends Component {
               outline
               name="breweryName"
               onChange={this.handleChange}
-              value={this.state.price}
+              value={this.state.breweryName}
             />
 
             <MDBInput
@@ -113,7 +112,7 @@ class NewBeer extends Component {
                 outline
                 name="alcoholByVolume"
                 onChange={this.handleChange}
-                value={this.state.price}
+                value={this.state.alcoholByVolume}
             />
             <MDBInput
                 className="w-100"
@@ -121,7 +120,7 @@ class NewBeer extends Component {
                 outline
                 name="beerStyle"
                 onChange={this.handleChange}
-                value={this.state.price}
+                value={this.state.beerStyle}
             />
 
 
@@ -137,6 +136,7 @@ class NewBeer extends Component {
 
               <img src={this.state.image} height="55" alt=" image"/>
             </MDBFormInline>
+
           </MDBModalBody>
           <MDBModalFooter>
             <MDBBtn color="danger" onClick={this.toggle}>

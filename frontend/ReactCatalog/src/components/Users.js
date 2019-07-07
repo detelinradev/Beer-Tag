@@ -155,6 +155,13 @@ class Users extends Component {
         Cell: this.renderEditable
       },
       {
+        Header: "Active",
+        accessor: "active",
+        filterable: false,
+        width: 100,
+        Cell: this.renderEditable
+      },
+      {
         Header: "Save",
         id: "savebutton",
         sortable: false,

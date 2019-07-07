@@ -7,12 +7,11 @@ import {
     MDBNavItem,
     MDBFooter,
     MDBIcon,
-    MDBBtn, Navbar
+    MDBBtn,
 } from "mdbreact";
 import {
     Route,
     NavLink,
-    BrowserRouter as Router,
     Switch
 } from "react-router-dom";
 import {ReactComponent as Logo} from "./assets/logo.svg";
@@ -21,14 +20,10 @@ import AdminPage from "./components/AdminPage";
 import Login from "./components/Login";
 import "./App.css";
 import Profile from "./components/Profile";
-import Users from "./components/Users";
 import HomePageBeers from "./components/HomePageBeers";
-import BeerList from "./components/BeerList";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
-import Redirect from "react-router-dom/es/Redirect";
 import Wishlist from "./components/Wishlist";
 import Link from "react-router-dom/es/Link";
-import Beer from "./components/Beer";
 
 
 class App extends Component {
@@ -41,17 +36,14 @@ class App extends Component {
         beerName: null
     };
 
-    updateBeerName = (value) => {
-        this.setState({beerName: value});
-    }
 
     updateUsername = (value) => {
         this.setState({username: value});
-    }
+    };
 
     updateRole = (value) => {
         this.setState({role: value});
-    }
+    };
 
 
     logout = async event => {
@@ -64,27 +56,27 @@ class App extends Component {
     };
 
 
-    toggleCollapse = collapseID => () =>
-        this.setState(prevState => ({
-            collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-        }));
-
-    closeCollapse = collapseID => () =>
-        this.state.collapseID === collapseID && this.setState({collapseID: ""});
+    // toggleCollapse = collapseID => () =>
+    //     this.setState(prevState => ({
+    //         collapseID: prevState.collapseID !== collapseID ? collapseID : ""
+    //     }));
+    //
+    // closeCollapse = collapseID => () =>
+    //     this.state.collapseID === collapseID && this.setState({collapseID: ""});
 
 
     render() {
 
-        const login =
-          this.state.username == null ? (
-              <Login
-                  updateRole={this.updateRole.bind(this)}
-                  updateUsername={this.updateUsername.bind(this)}
-                  profile={this.profile.bind(this)}
-              />
-          ) : (
-              <div/>
-          );
+        // const login =
+        //   this.state.username == null ? (
+        //       <Login
+        //           updateRole={this.updateRole.bind(this)}
+        //           updateUsername={this.updateUsername.bind(this)}
+        //           profile={this.profile.bind(this)}
+        //       />
+        //   ) : (
+        //       <div/>
+        //   );
 
         const logoutlink =
             this.state.username == null ? (
@@ -133,21 +125,21 @@ class App extends Component {
                 <div/>
             );
 
-        const overlay = (
-            <div
-                id="sidenav-overlay"
-                style={{backgroundColor: "black"}}
-                onClick={this.toggleCollapse("mainNavbarCollapse")}
-            />
-        );
-
-        const {collapseID} = this.state;
+        // const overlay = (
+        //     <div
+        //         id="sidenav-overlay"
+        //         style={{backgroundColor: "black"}}
+        //         onClick={this.toggleCollapse("mainNavbarCollapse")}
+        //     />
+        // );
+        //
+        // const {collapseID} = this.state;
 
         const LoginContainer = () => (
             <MDBNavbarNav style={{marginRight: "4rem"}}>
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/users" component={AdminPage}/>
-                <Route exact path="/beers" component={HomePageBeers}/>
+                <Route exact path="/beers" render={props => <HomePageBeers username={this.state.username}/>}/>
                 <Route path="/wishlist" component={Wishlist}/>
                 <Route path="/me" component={() => <Profile/>}/>
                 <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
@@ -160,15 +152,19 @@ class App extends Component {
         const DefaultContainer = () => (
             <MDBNavbarNav style={{marginRight: "4rem"}}>
                     <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/beers" component={HomePageBeers}/>
+                    <Route exact path="/beers" render={props => <HomePageBeers {...props} username={this.state.username}/>}/>
                     <Route path="/me" component={() => <Profile/>}/>
 
             </MDBNavbarNav>
         );
 
+
         return (
             <BrowserRouter>
                 <div className="flyout">
+
+
+ {/*Navbar                   */}
                     <MDBNavbar className="test"
                          transparent="true"
                         color="elegant-color"
@@ -177,6 +173,8 @@ class App extends Component {
                         fixed="top"
                         scrolling
                     >
+
+ {/*Navbar header                       */}
                         <MDBNavbarBrand href="/">
                             Beer Tag {"          "}
                             <Logo style={{height: "2.5rem", width: "2.5rem"}}/>
@@ -184,8 +182,8 @@ class App extends Component {
                         </MDBNavbarBrand>
 
 
+  {/*Navbar buttons                     */}
                         <MDBNavbarNav right>
-
                             <MDBCollapse
                                 id="mainNavbarCollapse"
                                 isOpen={this.state.collapseID}
@@ -208,32 +206,23 @@ class App extends Component {
                                 <MDBNavbarNav >{users}</MDBNavbarNav>
                                 <MDBNavbarNav >{profile}</MDBNavbarNav>
                                 <MDBNavbarNav >{logoutlink}</MDBNavbarNav>
-                                {/*{login}*/}
                             </MDBCollapse>
-
-                            {/*{home}*/}
-                            {/*{admin}*/}
-                            {/*  {profile}*/}
-
-                            {/*<Team />*/}
-
                         </MDBNavbarNav>
 
+
                     </MDBNavbar>
-                    {collapseID && overlay}
+
+
                     <main style={{marginTop: "10rem"}}>
 
                         <Switch>
                             <Route  component={LoginContainer}/>
                             <Route component={DefaultContainer}/>
-                            {/*<Route exact path="/" component={HomePage}/>*/}
-                            {/*<Route exact path="/beers" component={HomePageBeers}/>*/}
-                            {/*<Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}*/}
-                            {/*                                             updateUsername={this.updateUsername.bind(this)}*/}
-                            {/*                                             profile={this.profile.bind(this)}/>}/>*/}
-                            {/*<Route path="/me" component={() => <Team/>}/>*/}
                         </Switch>
                     </main>
+
+
+ {/*Footer                   */}
                     <MDBFooter className="test-footer" m-5 color="elegant-color">
                         <p className="footer-copyright mb-0 py-3 text-center">
                             &copy; {new Date().getFullYear()}{" "}
@@ -252,6 +241,8 @@ class App extends Component {
                             </a>
                         </p>
                     </MDBFooter>
+
+
                 </div>
             </BrowserRouter>
         );
