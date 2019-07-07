@@ -30,4 +30,8 @@ public class Image extends MappedAudibleBase {
     @JoinColumn(name = "user",unique = true)
     private User user;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "beer",unique = true)
+    private Beer beer;
+
 }

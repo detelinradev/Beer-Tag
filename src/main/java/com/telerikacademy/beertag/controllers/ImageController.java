@@ -1,5 +1,6 @@
 package com.telerikacademy.beertag.controllers;
 
+import com.telerikacademy.beertag.models.Beer;
 import com.telerikacademy.beertag.models.Image;
 import com.telerikacademy.beertag.payload.UploadFileResponse;
 import com.telerikacademy.beertag.repositories.UserRepository;
@@ -34,10 +35,14 @@ public class ImageController {
 
 
     @PostMapping("/uploadImage")
-    public ResponseEntity<Void> uploadFile(@RequestParam("file") final MultipartFile file, final HttpServletRequest req) {
-        imageService.storeFile(file, userRepository.findFirstByUsername(authenticationService.getUsername(req)));
+    public ResponseEntity<Void> uploadFile(@RequestParam("file") final MultipartFile file,
+                                           final HttpServletRequest req,@RequestParam(name = "name",required = false) String beerName) {
+        System.out.println(11111);
+        imageService.storeFile(file, userRepository.findFirstByUsername(authenticationService.getUsername(req)),beerName);
+        System.out.println(22222);
         URI fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUri();
 
+        System.out.println(33333);
         return ResponseEntity.created(fileDownloadUri).build();
     }
 

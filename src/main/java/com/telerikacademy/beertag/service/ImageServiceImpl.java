@@ -2,8 +2,10 @@ package com.telerikacademy.beertag.service;
 
 import com.telerikacademy.beertag.exceptions.FileStorageException;
 import com.telerikacademy.beertag.exceptions.MyFileNotFoundException;
+import com.telerikacademy.beertag.models.Beer;
 import com.telerikacademy.beertag.models.Image;
 import com.telerikacademy.beertag.models.User;
+import com.telerikacademy.beertag.repositories.BeerRepository;
 import com.telerikacademy.beertag.repositories.UserImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,8 +19,9 @@ import java.io.IOException;
 public class ImageServiceImpl implements ImageService {
 
     private final UserImageRepository userImageRepository;
+    private final BeerRepository beerRepository;
 
-    public Image storeFile(final MultipartFile file,User user) {
+    public void storeFile(final MultipartFile file, User user, String beerName) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         try {
             if(fileName.contains("..")) {
@@ -26,11 +29,11 @@ public class ImageServiceImpl implements ImageService {
             }
             Image image = new Image(file.getOriginalFilename(),
                     file.getContentType(),
-                    file.getBytes(),user);
+                    file.getBytes(),user,beerRepository.findByName(beerName));
 
           //  Image dbFile = new Image(fileName, file.getContentType(),file.getBytes(),user);
 
-            return userImageRepository.save(image);
+             userImageRepository.save(image);
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }

@@ -3,6 +3,7 @@ import "react-table/react-table.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import "./Profile.css";
 import {SERVER_URL} from "../constants";
+import axios from "axios";
 
 
 class Profile extends Component {
@@ -70,7 +71,7 @@ class Profile extends Component {
         this.setState({ selectedFile: event.target.files[0] })
     }
     uploadHandler = () => {
-        axios.post('my-domain.com/file-upload', this.state.selectedFile)
+        axios.post('http://localhost:8080/userImage/uploadImage', this.state.selectedFile)
     }
 
     render() {
