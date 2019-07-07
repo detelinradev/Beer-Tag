@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/userImage")
+@CrossOrigin(value = {"*"}, exposedHeaders = {"Content-Disposition"})
 public class ImageController {
 
     private final ImageService imageService;
@@ -31,36 +33,35 @@ public class ImageController {
     private final AuthenticationService authenticationService;
 
 
-    @PutMapping("/uploadImage")
-    public UploadFileResponse uploadFile(@RequestParam("file") final MultipartFile file,final HttpServletRequest req) {
-        Image dbFile = imageService.storeFile(file,
-                userRepository.findFirstByUsername(authenticationService.getUsername(req)));
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path("dbFile.getUserImageId()")
-                .toUriString();
+    @PostMapping("/uploadImage")
+    public ResponseEntity<Void> uploadFile(@RequestParam("file") final MultipartFile file, final HttpServletRequest req) {
+        imageService.storeFile(file, userRepository.findFirstByUsername(authenticationService.getUsername(req)));
+        URI fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUri();
 
-        return new UploadFileResponse(dbFile.getFileName(), fileDownloadUri,
-                file.getContentType(), file.getSize());
+        return ResponseEntity.created(fileDownloadUri).build();
     }
 
-    @PostMapping("/uploadMultipleImages")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files")
-                                                            final MultipartFile[] files,final HttpServletRequest req) {
-        return Arrays.stream(files)
-                .map(k->uploadFile(k,req))
-                .collect(Collectors.toList());
-    }
+//    @PostMapping("/uploadMultipleImages")
+//    public ResponseEntity<Void> uploadMultipleFiles(@RequestParam("files") final MultipartFile[] files, final HttpServletRequest req) {
+//        return Arrays.stream(files)
+//                .map(k -> uploadFile(k, req))
+//                .collect(Collectors.toList());
+//    }
 
     @GetMapping("/downloadImage")
-    public ResponseEntity<Resource> downloadFile(final HttpServletRequest req) {
+    public ResponseEntity<byte[]>  downloadFile(final HttpServletRequest req) {
         System.out.println(222222);
         Image dbFile = imageService.getFile(userRepository.findFirstByUsername(
                 authenticationService.getUsername(req)).getImage().getId());
         System.out.println(11111);
-        return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(dbFile.getFileType()))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
-                .body(new ByteArrayResource(dbFile.getData()));
+        HttpHeaders header = new HttpHeaders();
+        header.setContentType(MediaType.valueOf(dbFile.getFileType()));
+        header.setContentLength(dbFile.getData().length);
+        header.set("Content-Disposition", "attachment; filename=" + dbFile.getFileName());
+        return new ResponseEntity<>(dbFile.getData(), header, HttpStatus.OK);
+//        return ResponseEntity.ok()
+//                .contentType(MediaType.parseMediaType(dbFile.getFileType()))
+//                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
+//                .body(new ByteArrayResource(dbFile.getData()));
     }
 }

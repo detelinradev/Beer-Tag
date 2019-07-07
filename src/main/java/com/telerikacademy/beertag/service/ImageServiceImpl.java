@@ -24,10 +24,13 @@ public class ImageServiceImpl implements ImageService {
             if(fileName.contains("..")) {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
+            Image image = new Image(file.getOriginalFilename(),
+                    file.getContentType(),
+                    file.getBytes(),user);
 
-            Image dbFile = new Image(fileName, file.getContentType(),file.getBytes(),user);
+          //  Image dbFile = new Image(fileName, file.getContentType(),file.getBytes(),user);
 
-            return userImageRepository.save(dbFile);
+            return userImageRepository.save(image);
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
