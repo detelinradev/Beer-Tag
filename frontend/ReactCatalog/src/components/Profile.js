@@ -17,49 +17,19 @@ class Profile extends Component {
             open: false,
             message: "",
             img: '',
-            selectedFile: null
+            selectedFile: null,
+            src:null
         };
     }
-
-    arrayBufferToBase64(buffer) {
-        let binary = '';
-        let bytes = [].slice.call(new Uint8Array(buffer));
-        bytes.forEach((b) => binary += String.fromCharCode(b));
-        return window.btoa(binary);
-    };
 
     handleClose = (event, reason) => {
         this.setState({open: false});
     };
 
     componentDidMount() {
-        console.log(111111);
         this.fetchLists();
         this.fetchImage();
     }
-
-    fetchImage = () => {
-       // console.log(22222);
-        const token = sessionStorage.getItem("jwt");
-        console.log(token);
-        fetch( "http://localhost:8080/userImage/downloadImage", {
-            headers: {Authorization: token}
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(555555);
-                const base64Flag = 'data:image/jpeg;base64,';
-                const imageStr =
-                    this.arrayBufferToBase64(data.body);
-                console.log(33333)
-                this.setState({
-                    img: base64Flag + imageStr
-
-                })
-                console.log(444444);
-            })
-            .catch(err => console.error(err));
-    };
 
     fetchLists = () => {
         const token = sessionStorage.getItem("jwt");
@@ -83,19 +53,29 @@ class Profile extends Component {
         this.setState({[event.target.name]: event.target.value});
     };
 
-    // downloadRandomImage = () => {
-    //     const token = sessionStorage.getItem("jwt");
-    //     fetch('http://localhost:8080/userImage/downloadImage', {
-    //         headers: {Authorization: token}
-    //     })
-    //         .then(response => {
-    //             this.setState({
-    //                 image: response.
-    //             })
-    //         });
-    // }
+
+    fetchImage = () => {
+        const token = sessionStorage.getItem("jwt");
+        fetch(`http://localhost:8080/userImage/downloadImage`,
+            { headers: {Authorization: token}}
+            )
+            // .then(validateResponse)
+            .then(response => response.blob())
+            .then(blob => {
+                this.setState({ src: URL.createObjectURL(blob) })
+            })
+
+    };
+    fileChangedHandler = event => {
+        this.setState({ selectedFile: event.target.files[0] })
+    }
+    uploadHandler = () => {
+        axios.post('my-domain.com/file-upload', this.state.selectedFile)
+    }
 
     render() {
+        const {img} = this.state;
+        console.log(img)
         return (
             <div>
                 <div className="d-flex justify-content-center h-40">
@@ -107,10 +87,9 @@ class Profile extends Component {
                             <h3>{this.state.firstName} {this.state.lastName}</h3>
                             <div className="m-3 team-leader wow fadeInDown delay-03s">
                                 <div className="team-leader-shadow">
-                                    <a href="#"/>
+                                    <a href=""/>
                                 </div>
-
-                                <img src= "" alt=""/>
+                                <img  src= {this.state.src} alt=""/>
                                 <ul>
                                     <li>
                                         <a
@@ -130,8 +109,8 @@ class Profile extends Component {
                             <h3 className="wow fadeInDown delay-03s">{this.state.email}</h3>
                             <h4 className="wow fadeInDown delay-03s">{this.state.age} years old</h4>
                             <div>
-                                <input type="file" onClick={this.fileSelectedHandler}/>
-                                <button onClick={this.fileUploadHandler}>Upload</button>
+                                <input type="file" onClick={this.fileChangedHandler}/>
+                                <button onClick={this.uploadHandler}>Upload</button>
                             </div>
                         </div>
                     </div>
