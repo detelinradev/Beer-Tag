@@ -24,7 +24,7 @@ class BeerList extends Component {
       // description: this.props.description,
       // alcoholByVolume: this.props.alcoholByVolume,
       // beerStyle: this.props.beerStyle,
-      name: "test",
+      name: "",
       breweryName: "",
       description: "",
       alcoholByVolume: "",
@@ -39,6 +39,7 @@ class BeerList extends Component {
 
   componentDidMount() {
     this.fetchBeers();
+      this.getBeer(`http://localhost:8080/api/beers/search/findByName?name=${this.state.name}`);
   }
 
   // Fetch all products
@@ -114,15 +115,23 @@ class BeerList extends Component {
       });
   };
 
-  getBeer = () => {
+  getBeer = (link) => {
     const token = sessionStorage.getItem("jwt");
-    fetch('http://localhost:8080/api/beers/1', {
+    // fetch('http://localhost:8080/api/beers/search/findByName?name=' + link, {
+    fetch(link, {
       method: "GET",
-    })
+        headers: { Authorization: token }
+    }
+    )
         .then(response => response.json())
         .then(responseData => {
           this.setState({
             name: responseData.name,
+            breweryName: responseData.breweryName,
+            description: responseData.description,
+            alcoholByVolume: responseData.alcoholByVolume,
+            beerStyle: responseData.beerStyle,
+            image: responseData._links.image
           });
         })
         .catch(err => console.error(err));
@@ -216,6 +225,10 @@ class BeerList extends Component {
         accessor: "beerStyle",
         Cell: this.renderEditable
       },
+        {
+            Header: "Creator",
+            accessor: "creator"
+        },
       {
       Header: "Image",
         accessor: "image",
@@ -227,33 +240,34 @@ class BeerList extends Component {
           <img alt="" src={value} width="60" height="60" />
         </div>
     )
-  },
-      //
-      //
-      // {
-      //   Header: "Info",
-      //   sortable: false,
-      //   filterable: false,
-      //   accessor: "_links.self.href",
-      //   id: 'links',
-      //   Cell: ({ row }) => (<Link to={{ pathname: `/beers/{id}` }}>More info</Link>)
-      // },
+  }, {
+        Header: "Info",
+        sortable: false,
+        filterable: false,
+        accessor: "name",
+        id: 'links',
+            Cell: ({ link }) => (
+                <div>
+                    {moreinfo}
+                </div>
+            )
+},
       {
         Header: "Details",
         id: "savebutton",
         sortable: false,
         filterable: false,
         accessor: "_links.self.href",
-        Cell: ({ link, row }) =>
+        Cell: ( link) =>
           this.props.role !== "ANONYMOUS" ? (
             <MDBBtn
               color="danger"
               size="sm"
               onClick={() => {
-                this.getBeer();
+                this.getBeer(link);
               }}
             >
-              {moreinfo}
+                Click
             </MDBBtn>
           ) : (
             <div />
@@ -281,6 +295,10 @@ class BeerList extends Component {
                 className="align-middle"
                 username={this.state.username}
                 name={this.state.name}
+                breweryName={this.state.breweryName}
+                description={this.state.description}
+                alcoholByVolume={this.state.alcoholByVolume}
+                beerStyle={this.state.beerStyle}
                 image={this.state.image}
                 getBeer={this.getBeer}
             />
