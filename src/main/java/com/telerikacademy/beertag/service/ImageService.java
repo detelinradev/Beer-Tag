@@ -7,7 +7,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface ImageService {
 
-    void storeFile(MultipartFile file, User user, String beerName);
+    void storeBeerImage(MultipartFile file, String beerName);
+
+    void storeUserImage(MultipartFile file, User user);
 
     Image getFile(int fileId);
 }

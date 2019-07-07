@@ -18,8 +18,14 @@ class Profile extends Component {
             open: false,
             message: "",
             img: '',
-            selectedFile: null,
-            src:null
+            title: '',
+            content: '',
+            image:null,
+           // selectedFile: null,
+            src:null,
+            error:'',
+            msg:'',
+            file:''
         };
     }
 
@@ -50,14 +56,14 @@ class Profile extends Component {
             .catch(err => console.error(err));
     };
 
-    handleChange = event => {
-        this.setState({[event.target.name]: event.target.value});
-    };
+    // handleChange = event => {
+    //     this.setState({[event.target.name]: event.target.value});
+    // };
 
 
-    fetchImage = () => {
+    fetchImage = async () => {
         const token = sessionStorage.getItem("jwt");
-        fetch(`http://localhost:8080/userImage/downloadImage`,
+       await fetch(`http://localhost:8080/image/downloadImage`,
             { headers: {Authorization: token}}
             )
             // .then(validateResponse)
@@ -67,19 +73,99 @@ class Profile extends Component {
             })
 
     };
-    fileChangedHandler = event => {
-        this.setState({ selectedFile: event.target.files[0] })
+    // fileChangedHandler = event => {
+    //     this.setState({ selectedFile: event.target.files[0] })
+    //     console.log(this.state.selectedFile)
+    // };
+    // uploadHandler = () => {
+    //     const token = sessionStorage.getItem("jwt");
+    //     // axios.post( 'http://localhost:8080/image/uploadUserImage',{"file": this.state.selectedFile},
+    //     //     {headers:{Authorization:token}})
+    //     fetch("http://localhost:8080/image/uploadUserImage", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "multipart/form-data",
+    //             Authorization: token
+    //         },
+    //         body: this.state.selectedFile
+    //     })
+    //         .catch(err => console.error(err));
+    //     console.log(this.state.selectedFile)
+    // };
+      // console.log(this.state.selectedFile)
+
+    // axios({ method: 'POST', url: 'you http api here', headers: {autorizacion: localStorage.token}, data: { user: 'name' } })
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    };
+
+    // handleImageChange = (e) => {
+    //     this.setState({
+    //         image: e.target.files[0]
+    //     })
+    // };
+    //
+    // handleSubmit = (e) => {
+    //     const token = sessionStorage.getItem("jwt");
+    //     e.preventDefault();
+    //     console.log(this.state);
+    //     let form_data = new FormData();
+    //    // form_data.append('image', this.state.image, this.state.image.name);
+    //     // form_data.append('title', this.state.title);
+    //     // form_data.append('content', this.state.content);
+    //     let url = 'http://localhost:8080/image/uploadUserImage';
+    //     axios.post(url, form_data, {
+    //         headers: {
+    //            'content-type': 'multipart/form-data',
+    //             Authorization : token
+    //         }
+    //     })
+    //         .then(res => {
+    //             console.log(res.data);
+    //         })
+    //         .catch(err => console.log(err))
+    // };
+    onFileChange = (event) => {
+        this.setState({
+            file: event.target.files[0]
+        });
     }
-    uploadHandler = () => {
-        axios.post('http://localhost:8080/userImage/uploadImage', this.state.selectedFile)
+    uploadFile = (event) => {
+        event.preventDefault();
+        this.setState({error: '', msg: ''});
+        if(!this.state.file) {
+            this.setState({error: 'Please upload a file.'})
+            return;
+        }
+        if(this.state.file.size >= 2000000) {
+            this.setState({error: 'File size exceeds limit of 2MB.'})
+            return;
+        }
+        const token = sessionStorage.getItem("jwt");
+        let data = new FormData();
+        data.append('file', this.state.file);
+        data.append('name', this.state.file.name);
+        fetch('http://localhost:8080/image/uploadUserImage', {
+            method: 'POST',
+            headers:{Authorization:token},
+            body: data
+        }).then(response => {
+            this.setState({error: '', msg: 'Sucessfully uploaded file'});
+        }).catch(err => {
+            this.setState({error: err});
+        });
     }
 
     render() {
-        const {img} = this.state;
-        console.log(img)
+        // const {img} = this.state;
+        // console.log(img)
         return (
             <div>
                 <div className="d-flex justify-content-center h-40">
+                    <form onSubmit={this.handleSubmit}>
                     <div className="card">
                         <div className="card-header">
                             <h3>Profile</h3>
@@ -90,7 +176,7 @@ class Profile extends Component {
                                 <div className="team-leader-shadow">
                                     <a href=""/>
                                 </div>
-                                <img  src= {this.state.src} alt=""/>
+                                <img  src= {this.state.src} alt="No image"/>
                                 <ul>
                                     <li>
                                         <a
@@ -110,11 +196,16 @@ class Profile extends Component {
                             <h3 className="wow fadeInDown delay-03s">{this.state.email}</h3>
                             <h4 className="wow fadeInDown delay-03s">{this.state.age} years old</h4>
                             <div>
-                                <input type="file" onClick={this.fileChangedHandler}/>
-                                <button onClick={this.uploadHandler}>Upload</button>
+                                {/*<input type="file" name ="name" onChange={this.fileChangedHandler}/>*/}
+                                {/*<button type="submit" onClick={this.uploadHandler}>Upload</button>*/}
+                                {/*<input type="file"  onChange={this.handleImageChange} required/>*/}
+                                {/*<input type="submit"/>*/}
+                                <input onChange={this.onFileChange} type="file"></input>
+                                <button onClick={this.uploadFile}>Upload</button>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         );

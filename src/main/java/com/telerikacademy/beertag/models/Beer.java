@@ -42,8 +42,8 @@ public class Beer extends MappedAudibleBase {
 
     private String country;
 
-    @OneToOne
-    @JoinColumn(name = "image")
+    @OneToOne(mappedBy = "beer")
+    @JsonIgnore
     private Image image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "beer")

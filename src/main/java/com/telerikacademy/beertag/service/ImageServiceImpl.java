@@ -21,7 +21,7 @@ public class ImageServiceImpl implements ImageService {
     private final UserImageRepository userImageRepository;
     private final BeerRepository beerRepository;
 
-    public void storeFile(final MultipartFile file, User user, String beerName) {
+    public void storeBeerImage(final MultipartFile file , final String beerName) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         try {
             if(fileName.contains("..")) {
@@ -29,11 +29,24 @@ public class ImageServiceImpl implements ImageService {
             }
             Image image = new Image(file.getOriginalFilename(),
                     file.getContentType(),
-                    file.getBytes(),user,beerRepository.findByName(beerName));
-
-          //  Image dbFile = new Image(fileName, file.getContentType(),file.getBytes(),user);
+                    file.getBytes(),beerRepository.findByName(beerName));
 
              userImageRepository.save(image);
+        } catch (IOException ex) {
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+        }
+    }
+    public void storeUserImage(final MultipartFile file,final User user) {
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        try {
+            if(fileName.contains("..")) {
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+            Image image = new Image(file.getOriginalFilename(),
+                    file.getContentType(),
+                    file.getBytes(),user);
+
+            userImageRepository.save(image);
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
