@@ -80,7 +80,11 @@ class App extends Component {
 
         const logoutlink =
             this.state.username == null ? (
-                <Wishlist/>
+                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                    <NavLink exact activeClassName="active" to="/login">
+                        Login
+                    </NavLink>
+                </MDBNavbarNav>
             ) : (
                 <MDBNavItem>
                         <Link to="/login">
