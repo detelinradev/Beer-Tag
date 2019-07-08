@@ -32,7 +32,7 @@ public class UserControllerTests {
         RequestBuilder request = MockMvcRequestBuilders
                 .post("/api/sign-up")
                 .accept(MediaType.APPLICATION_JSON)
-                .content("{\"firstName\":\"firstName\",\"lastName\":\"lastName\",\"username\":\"username\",\"password\":\"password\"}")
+                .content("{\"firstName\":\"firstName\",\"lastName\":\"lastName\",\"username\":\"username1\",\"password\":\"Password!1\",\"age\":\"20\",\"email\":\"clover88bg@yahoo.com\",\"active\":\"false\"}")
                 .contentType(MediaType.APPLICATION_JSON);
 
         // Act
@@ -44,7 +44,8 @@ public class UserControllerTests {
     @Test
     public void postNewUser_Should_ReturnStatusOK_When_UserIsNotCreated() throws Exception {
         // Arrange
-        UserDto userDto = new UserDto("firstName","lastName","username","password",18);
+        UserDto userDto = new UserDto("firstName","lastName","username","password",
+                18,"email@email.com",true);
         Mockito.when(userServiceMock.save(userDto))
                 .thenThrow(IllegalArgumentException.class);
 

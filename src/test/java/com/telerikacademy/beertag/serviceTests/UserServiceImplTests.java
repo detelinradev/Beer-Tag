@@ -26,7 +26,8 @@ public class UserServiceImplTests {
     public void getByUserName_Should_ReturnUser_When_UserWithSameUserNameExit() {
         // Arrange
 
-        UserDto user = new UserDto("firstName","lastName","username","password",18);
+        UserDto user = new UserDto("firstName","lastName","username",
+                "password",18,"email@email.com",true);
         User user1 = new User();
 
         Mockito.when(userRepositoryMock.findFirstByUsername("username"))
@@ -40,7 +41,8 @@ public class UserServiceImplTests {
     @Test(expected = Exception.class)
     public void getById_Should_ThrowException_When_UserNotExist() {
         // Arrange
-        UserDto user = new UserDto("firstName","lastName","username","password",18);
+        UserDto user = new UserDto("firstName","lastName","username",
+                "password",18,"email@email.com",true);
         User user1 = new User();
         Mockito.when(userRepositoryMock.findFirstByUsername("username"))
                 .thenReturn(null);
@@ -54,7 +56,8 @@ public class UserServiceImplTests {
     @Test
     public void create_Should_CallRepositoryCreate_When_EmployeeNameIsUnique() {
         // Arrange
-        UserDto user = new UserDto("firstName","lastName","username","password",18);
+        UserDto user = new UserDto("firstName","lastName","username",
+                "password",18,"email@email.com",true);
         User user1 = new User();
         // Act
         service.save(user);

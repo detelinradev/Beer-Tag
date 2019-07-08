@@ -132,7 +132,7 @@ class Profile extends Component {
         this.setState({
             file: event.target.files[0]
         });
-    }
+    };
     uploadFile = (event) => {
         event.preventDefault();
         this.setState({error: '', msg: ''});
@@ -153,11 +153,11 @@ class Profile extends Component {
             headers:{Authorization:token},
             body: data
         }).then(response => {
-            this.setState({error: '', msg: 'Sucessfully uploaded file'});
+            this.setState({error: '', msg: 'Successfully uploaded file'});
         }).catch(err => {
             this.setState({error: err});
         });
-    }
+    };
 
     render() {
         // const {img} = this.state;

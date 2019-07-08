@@ -117,6 +117,7 @@
     <orderEntry type="library" name="Gradle: org.mariadb.jdbc:mariadb-java-client:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-rest:2.1.5.RELEASE" level="project" />
+    <orderEntry type="module" module-name="beertag.main" scope="TEST" />
   </component>
   <component name="TestModuleProperties" production-module="beertag.main" />
 </module>

@@ -12,7 +12,6 @@ import java.util.Set;
 
 public class BeerTests {
 
-    @Autowired
     private Beer beer;
     @Before
     public void InitVariables() {
@@ -21,8 +20,8 @@ public class BeerTests {
         Set<Rating> ratings = new HashSet<>();
         Set<BeersWantToDrink> beersWantToDrinks = new HashSet<>();
         Set<Tag> tags = new HashSet<>();
-        Beer beer = new Beer("BeerName","BreweryName",4,"Description",
-                "BeerStyle",true,"Country",image,beerDrunks,ratings,beersWantToDrinks,tags );
+        beer = new Beer("BeerName","BreweryName",4,"Description",
+                "BeerStyle","Country",image,beerDrunks,ratings,beersWantToDrinks,tags );
     }
 
     @Test
@@ -47,7 +46,7 @@ public class BeerTests {
     }
     @Test
     public void createBeer_ShouldGetIsDeleted_WhenCorrectParsedParameters() {
-        Assert.assertTrue(beer.isActive());
+        Assert.assertFalse(beer.isActive());
     }
     @Test
     public void createBeer_ShouldGetCountry_WhenCorrectParsedParameters() {
