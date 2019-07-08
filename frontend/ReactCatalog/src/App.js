@@ -95,6 +95,7 @@ class App extends Component {
             this.state.username == null ? (
                 <div/>
             ) : (
+
                 <MDBNavbarNav style={{marginRight: "4rem"}}>
                     <NavLink activeClassName="active" to="/me">
                         Profile

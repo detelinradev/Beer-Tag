@@ -18,17 +18,21 @@ class Beer extends Component {
             modal: false,
             username: this.props.username,
             name: this.props.name,
-            beer: "",
-            breweryName: "",
-            description: "",
-            alcoholByVolume: "",
-            beerStyle: "",
+            beer: this.props.beer,
+            breweryName: this.props.breweryName,
+            description: this.props.description,
+            alcoholByVolume: this.props.alcoholByVolume,
+            beerStyle: this.props.beerStyle,
             open: false,
             message: "",
             image: this.props.image,
             value: 50,
             data: []
         };
+    }
+
+    componentDidMount() {
+        this.props.getBeer(`http://localhost:8080/api/beers/search/findByName?name=${this.state.name}`);
     }
 
     toggle = () => {
@@ -38,25 +42,24 @@ class Beer extends Component {
     };
 
     // Save and close modal form
-    // handleSubmit = event => {
-    //     event.preventDefault();
-    //
-    //     var newPlaylist = {
-    //         username: this.props.username,
-    //         name: this.state.name,
-    //         breweryName: this.state.breweryName,
-    //         description: this.state.description,
-    //         alcoholByVolume: this.state.alcoholByVolume,
-    //         beerStyle: this.state.beerStyle,
-    //         image: this.state.image
-    //     };
-    //     this.props.addProduct(newPlaylist);
-    //     this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "" });
-    //     this.toggle();
-    // };
+    handleSubmit = event => {
+        event.preventDefault();
+
+        var newPlaylist = {
+            username: this.props.username,
+            name: this.state.name,
+            breweryName: this.state.breweryName,
+            description: this.state.description,
+            alcoholByVolume: this.state.alcoholByVolume,
+            beerStyle: this.state.beerStyle,
+            image: this.state.image
+        };
+        this.props.addProduct(newPlaylist);
+        this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "" });
+        this.toggle();
+    };
 
     handleChange = event => {
-        this.props.getBeer();
         this.setState({ [event.target.name]: event.target.value });
     };
 
@@ -70,7 +73,8 @@ class Beer extends Component {
         return (
             <MDBContainer>
                 <MDBBtn color="primary" size="sm" onClick={this.toggle}>
-                    New Beer
+                    {this.props.getBeer}
+                    Details
                 </MDBBtn>
                 <MDBModal
                     isOpen={this.state.modal}
@@ -78,9 +82,7 @@ class Beer extends Component {
                     centered
                     backdrop={false}
                 >
-                    <MDBModalBody toggle={this.toggle}>
-                        New Beer {this.state.username}
-                    </MDBModalBody>
+
                     <MDBModalBody>
                         <MDBInput
                             className="w-100"
@@ -90,9 +92,8 @@ class Beer extends Component {
                             onChange={this.handleChange}
                             value={this.state.name}
                         />
-                        <MDBBtn>
-                            {this.props.getBeer()}
-                         imeto tuk {this.state.name}--
+                        <MDBBtn onClick={this.props.getBeer}>
+                         imeto tuk {this.state.username}--
                         </MDBBtn>
 
                         <MDBInput

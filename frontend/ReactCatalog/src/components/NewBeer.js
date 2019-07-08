@@ -7,9 +7,8 @@ import {
   MDBModalHeader,
   MDBModalFooter,
   MDBInput,
-  MDBFormInline
+  MDBFormInline, MDBDropdownItem, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBBtnGroup
 } from "mdbreact";
-import "react-confirm-alert/src/react-confirm-alert.css";
 
 class NewBeer extends Component {
   constructor(props) {
@@ -31,6 +30,8 @@ class NewBeer extends Component {
     };
   }
 
+
+
   toggle = () => {
     this.setState({
       modal: !this.state.modal
@@ -47,7 +48,7 @@ class NewBeer extends Component {
       description: this.state.description,
       alcoholByVolume: this.state.alcoholByVolume,
       beerStyle: this.state.beerStyle,
-      image: this.state.image
+      // image: this.state.image
     };
     this.props.addProduct(newPlaylist);
     this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "" });
@@ -63,6 +64,16 @@ class NewBeer extends Component {
   };
 
   render() {
+
+    const techCompanies = [
+      { label: "Light", value: 1 },
+      { label: "Dark", value: 2 },
+      { label: "Ale", value: 3 },
+      { label: "Strong Ale", value: 4 },
+      { label: "Wheat", value: 5 },
+      { label: "Cask ale", value: 6 },
+    ];
+
     return (
       <MDBContainer>
         <MDBBtn color="primary" size="md" onClick={this.toggle} disabled={!this.state.username}>
@@ -114,6 +125,8 @@ class NewBeer extends Component {
                 onChange={this.handleChange}
                 value={this.state.alcoholByVolume}
             />
+
+
             <MDBInput
                 className="w-100"
                 label="Style"
@@ -121,21 +134,22 @@ class NewBeer extends Component {
                 name="beerStyle"
                 onChange={this.handleChange}
                 value={this.state.beerStyle}
-            />
+            >
+            </MDBInput>
 
 
-            <MDBFormInline>
-              <MDBInput
-                className="w-60"
-                label="Image URL"
-                outline
-                name="image"
-                onChange={this.handleChange}
-                value={this.state.image}
-              />
+            {/*<MDBFormInline>*/}
+            {/*  <MDBInput*/}
+            {/*    className="w-60"*/}
+            {/*    label="Image URL"*/}
+            {/*    outline*/}
+            {/*    name="image"*/}
+            {/*    onChange={this.handleChange}*/}
+            {/*    value={this.state.image}*/}
+            {/*  />*/}
 
-              <img src={this.state.image} height="55" alt=" image"/>
-            </MDBFormInline>
+            {/*  <img src={this.state.image} height="55" alt=" image"/>*/}
+            {/*</MDBFormInline>*/}
 
           </MDBModalBody>
           <MDBModalFooter>
