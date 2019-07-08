@@ -52,8 +52,8 @@ public class User extends MappedAudibleBase {
     @Column(nullable = false)
     private String role;
 
-    @OneToOne(mappedBy = "user")
-    @JsonIgnore
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image",unique = true)
     private Image image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
