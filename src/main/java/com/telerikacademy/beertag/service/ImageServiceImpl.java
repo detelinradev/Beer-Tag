@@ -21,7 +21,7 @@ public class ImageServiceImpl implements ImageService {
     private final UserImageRepository userImageRepository;
     private final BeerRepository beerRepository;
 
-    public void storeBeerImage(final MultipartFile file , final String beerName) {
+    public void storeBeerImage(final MultipartFile file , final int beerID) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         try {
             if(fileName.contains("..")) {
@@ -29,9 +29,9 @@ public class ImageServiceImpl implements ImageService {
             }
             Image image = new Image(file.getOriginalFilename(),
                     file.getContentType(),
-                    file.getBytes(),beerRepository.findBeerByName(beerName));
+                    file.getBytes(),beerRepository.getOne(beerID));
 
-            beerRepository.findBeerByName(beerName);
+            System.out.println(beerRepository.findById(beerID));
              userImageRepository.save(image);
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);

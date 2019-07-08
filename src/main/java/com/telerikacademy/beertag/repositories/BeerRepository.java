@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface BeerRepository extends  JpaRepository<Beer, Integer> {
 
-    Beer findBeerByName (@Param("name") String name);
+    Beer findBeerByName (String name);
     List<Beer> findAllByActiveIsFalse(Pageable pageable);
     List<Beer> findAllByActiveIsTrue(Pageable pageable);
     List<Beer> findByTagsContent(@Param("description") String description);

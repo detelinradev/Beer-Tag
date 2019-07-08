@@ -188,18 +188,10 @@ class Profile extends Component {
                                     </li>
                                 </ul>
                             </div>
-                                {/*<div className="App-intro">*/}
-                                {/*    <h3>Download a random file</h3>*/}
-                                {/*    <button onClick={this.downloadRandomImage}>Download</button>*/}
-                                {/*</div>*/}
                             <h3 className="wow fadeInDown delay-03s">@{this.state.username}</h3>
                             <h3 className="wow fadeInDown delay-03s">{this.state.email}</h3>
                             <h4 className="wow fadeInDown delay-03s">{this.state.age} years old</h4>
                             <div>
-                                {/*<input type="file" name ="name" onChange={this.fileChangedHandler}/>*/}
-                                {/*<button type="submit" onClick={this.uploadHandler}>Upload</button>*/}
-                                {/*<input type="file"  onChange={this.handleImageChange} required/>*/}
-                                {/*<input type="submit"/>*/}
                                 <input onChange={this.onFileChange} type="file"></input>
                                 <button onClick={this.uploadFile}>Upload</button>
                             </div>

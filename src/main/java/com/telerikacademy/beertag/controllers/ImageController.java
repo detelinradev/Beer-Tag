@@ -29,8 +29,8 @@ public class ImageController {
 
     @PostMapping("/uploadBeerImage")
     public ResponseEntity<Void> uploadFile(@RequestParam(value = "file")
-                                               final MultipartFile file, @RequestParam("name")final String beerName) {
-        imageService.storeBeerImage(file, beerName);
+                                               final MultipartFile file, @RequestParam("beerID")final int beerID) {
+        imageService.storeBeerImage(file, beerID);
         URI fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUri();
 
         return ResponseEntity.created(fileDownloadUri).build();
