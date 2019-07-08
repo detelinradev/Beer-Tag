@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Formula;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
@@ -47,6 +48,9 @@ public class Beer extends MappedAudibleBase {
     @OneToOne(mappedBy = "beer")
     @JsonIgnore
     private Image image;
+
+    @Formula("SELECT AVG(rate) FROM rating r WHERE r.beer.APPL_SESSION_ID =APPL_SESSION_ID;")
+    private int averageRating;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "beer")
     @JsonIgnore

@@ -32,7 +32,7 @@ public class UserControllerTests {
         RequestBuilder request = MockMvcRequestBuilders
                 .post("/api/sign-up")
                 .accept(MediaType.APPLICATION_JSON)
-                .content("{\"firstName\":\"firstName\",\"lastName\":\"lastName\",\"username\":\"username1\",\"password\":\"Password!1\",\"age\":\"20\",\"email\":\"clover88bg@yahoo.com\",\"active\":\"false\"}")
+                .content("{\"firstName\":\"firstName\",\"lastName\":\"lastName\",\"username\":\"username1\",\"password\":\"Password!1\",\"age\":\"20\",\"email\":\"clover88bg@yahoo.com\",\"deleted\":\"false\"}")
                 .contentType(MediaType.APPLICATION_JSON);
 
         // Act

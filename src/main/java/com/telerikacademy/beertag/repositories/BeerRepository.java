@@ -13,8 +13,8 @@ import java.util.List;
 public interface BeerRepository extends  JpaRepository<Beer, Integer> {
 
     Beer findBeerByName (String name);
-    List<Beer> findAllByActiveIsFalse(Pageable pageable);
-    List<Beer> findAllByActiveIsTrue(Pageable pageable);
+    List<Beer> findAllByDeletedIsFalse(Pageable pageable);
+    List<Beer> findAllByDeletedIsTrue(Pageable pageable);
     List<Beer> findByTagsContent(@Param("description") String description);
     List<Beer> findBeersByBeerStyle(@Param("style") String beerStyle);
     List<Beer> findBeersByCountry(@Param("country") String country);

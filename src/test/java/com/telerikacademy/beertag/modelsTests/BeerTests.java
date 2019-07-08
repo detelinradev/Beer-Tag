@@ -4,7 +4,6 @@ import com.telerikacademy.beertag.models.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -46,7 +45,7 @@ public class BeerTests {
     }
     @Test
     public void createBeer_ShouldGetIsDeleted_WhenCorrectParsedParameters() {
-        Assert.assertFalse(beer.isActive());
+        Assert.assertFalse(beer.isDeleted());
     }
     @Test
     public void createBeer_ShouldGetCountry_WhenCorrectParsedParameters() {
