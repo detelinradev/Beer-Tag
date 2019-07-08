@@ -26,6 +26,7 @@ class NewBeer extends Component {
       image:
         "https://target.scene7.com/is/image/Target/GUEST_e8853023-d976-477f-bca5-cec1df085307?wid=488&hei=488&fmt=pjpeg",
       value: 50,
+      file:'',
       data: []
     };
   }
@@ -63,16 +64,40 @@ class NewBeer extends Component {
     this.setState({ [event.target.name]: event.target.checked });
   };
 
+  onFileChange = (event) => {
+    this.setState({
+      file: event.target.files[0]
+    });
+  };
+  uploadFile = (event) => {
+    event.preventDefault();
+    this.setState({error: '', msg: ''});
+    if(!this.state.file) {
+      this.setState({error: 'Please upload a file.'})
+      return;
+    }
+    if(this.state.file.size >= 2000000) {
+      this.setState({error: 'File size exceeds limit of 2MB.'})
+      return;
+    }
+    const token = sessionStorage.getItem("jwt");
+    let data = new FormData();
+    data.append('file', this.state.file);
+    data.append('name', this.state.file.name);
+    fetch('http://localhost:8080/image/uploadUserImage', {
+      method: 'POST',
+      headers:{Authorization:token},
+      body: data
+    }).then(response => {
+      this.setState({error: '', msg: 'Successfully uploaded file'});
+    }).catch(err => {
+      this.setState({error: err});
+    });
+  };
+
   render() {
 
-    const techCompanies = [
-      { label: "Light", value: 1 },
-      { label: "Dark", value: 2 },
-      { label: "Ale", value: 3 },
-      { label: "Strong Ale", value: 4 },
-      { label: "Wheat", value: 5 },
-      { label: "Cask ale", value: 6 },
-    ];
+
 
     return (
       <MDBContainer>
@@ -136,7 +161,14 @@ class NewBeer extends Component {
                 value={this.state.beerStyle}
             >
             </MDBInput>
-
+            <div>
+              {/*<input type="file" name ="name" onChange={this.fileChangedHandler}/>*/}
+              {/*<button type="submit" onClick={this.uploadHandler}>Upload</button>*/}
+              {/*<input type="file"  onChange={this.handleImageChange} required/>*/}
+              {/*<input type="submit"/>*/}
+              <input onChange={this.onFileChange} type="file"></input>
+              <button onClick={this.uploadFile}>Upload</button>
+            </div>
 
             {/*<MDBFormInline>*/}
             {/*  <MDBInput*/}
