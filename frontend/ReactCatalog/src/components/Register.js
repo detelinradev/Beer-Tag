@@ -54,17 +54,14 @@ class Register extends Component {
       .then(res => {
         if (res.status === 200) {
           this.setState({ open: true, message: "successful registration" });
-          console.log(res.status + "successful registration!!!");
           this.login();
         } else {
           this.setState({
             open: true,
-            message: "failed, try another username"
+            message: "Incorrect data! Please, check your details!"
           });
-          console.log(res.status + "registration failed!!!");
         }
 
-        console.log(res.status);
       })
       .catch(err => console.error(err));
   };

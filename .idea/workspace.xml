@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87ca1c62-c646-4a2c-989c-71320690a137" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
@@ -62,56 +70,66 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="143" column="2" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="2" />
+            <state relative-caret-position="-978">
+              <caret line="161" column="13" lean-forward="true" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#8238#8266#0" />
-                <element signature="e#8565#8601#0" />
-                <element signature="e#8892#9125#0" />
-                <element signature="e#9171#9561#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="380">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="91" column="58" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="58" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
+            <state relative-caret-position="351">
+              <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="718">
+              <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#8254#8282#0" />
-                <element signature="e#8581#8617#0" />
-                <element signature="e#8908#9141#0" />
-                <element signature="e#9187#9577#0" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-691">
-              <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+            <state relative-caret-position="1313">
+              <caret line="134" column="38" lean-forward="true" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -130,29 +148,32 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1651">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="97">
+              <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/2.3.0/9e761bb0474d99884a020ca562944c3a3b872bfc/mariadb-java-client-2.3.0-sources.jar!/org/mariadb/jdbc/internal/protocol/AbstractQueryProtocol.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="279" column="21" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="168" column="22" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
+            <state relative-caret-position="657">
+              <caret line="144" column="64" selection-start-line="144" selection-start-column="64" selection-end-line="144" selection-end-column="64" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#931#1528#0" />
                 <element signature="e#1535#1563#0" />
-                <element signature="e#2061#2095#0" />
-                <element signature="e#3073#3157#0" />
-                <element signature="e#3164#3195#0" />
               </folding>
             </state>
           </provider>
@@ -191,27 +212,30 @@
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Tracks.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/index.css" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewPlaylist.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.css" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/constants.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Users.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.css" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="142" />
+    <option name="y" value="76" />
     <option name="width" value="1680" />
     <option name="height" value="984" />
   </component>
@@ -223,6 +247,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,12 +282,52 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -301,7 +367,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Spring Boot.BeerTagApplication">
     <configuration name="BeerTagApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="beertag.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.telerikacademy.beertag.BeerTagApplication" />
@@ -347,7 +413,8 @@
       <workItem from="1562584470545" duration="5298000" />
       <workItem from="1562591785311" duration="259000" />
       <workItem from="1562592069674" duration="63000" />
-      <workItem from="1562592246502" duration="5010000" />
+      <workItem from="1562592246502" duration="7874000" />
+      <workItem from="1562607344160" duration="7184000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing project">
       <created>1562329050175</created>
@@ -461,17 +528,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562537623918</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dividing home beer list and logged in beer list">
+      <created>1562598159656</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1562598159656</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119340000" />
+    <option name="totallyTimeSpent" value="129388000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="984" extended-state="0" />
+    <frame x="190" y="486" width="1680" height="984" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25946277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26251528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -566,22 +640,25 @@
     <MESSAGE value="Restyling the project folder" />
     <MESSAGE value="disable create beer button when not logged" />
     <MESSAGE value="beer listing/create new beer/beer page" />
-    <option name="LAST_COMMIT_MESSAGE" value="beer listing/create new beer/beer page" />
+    <MESSAGE value="Dividing home beer list and logged in beer list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dividing home beer list and logged in beer list" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js</url>
+          <line>96</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/beertag$BeerTagApplication.ic" NAME="BeerTagApplication Coverage Results" MODIFIED="1562582949325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6c8341d2-9ba1-44de-9627-d6372f4c9bac/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.vmoptions">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -648,13 +725,6 @@
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Tracks.js" />
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/menuLink.js" />
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/List.js" />
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/assets/logo.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -669,13 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -715,24 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" selection-start-line="19" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="46" column="24" lean-forward="true" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -784,23 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/AdminPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/repositories/BeerRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -815,34 +847,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="41" column="6" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#8254#8282#0" />
-            <element signature="e#8581#8617#0" />
-            <element signature="e#8908#9141#0" />
-            <element signature="e#9187#9577#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,81 +861,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.19/24216542ede66c0366d81c5b7048427a27eb786f/tomcat-embed-core-9.0.19-sources.jar!/org/apache/tomcat/util/threads/TaskThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="109">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="143" column="2" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#8238#8266#0" />
-            <element signature="e#8565#8601#0" />
-            <element signature="e#8892#9125#0" />
-            <element signature="e#9171#9561#0" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="315">
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/AdminPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js">
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1651">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="513">
+          <caret line="27" column="58" lean-forward="true" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="58" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js">
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="545">
+          <caret line="144" column="40" lean-forward="true" selection-start-line="144" selection-start-column="40" selection-end-line="144" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="718">
+          <caret line="84" column="14" selection-start-line="84" selection-start-column="14" selection-end-line="84" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/2.3.0/9e761bb0474d99884a020ca562944c3a3b872bfc/mariadb-java-client-2.3.0-sources.jar!/org/mariadb/jdbc/internal/protocol/AbstractQueryProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="279" column="21" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="51" column="39" lean-forward="true" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="144" column="64" selection-start-line="144" selection-start-column="64" selection-end-line="144" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#931#1528#0" />
+            <element signature="e#1535#1563#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-978">
+          <caret line="161" column="13" lean-forward="true" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-691">
-          <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+        <state relative-caret-position="1313">
+          <caret line="134" column="38" lean-forward="true" selection-start-line="134" selection-start-column="38" selection-end-line="134" selection-end-column="38" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="168" column="22" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
+        <state relative-caret-position="392">
+          <caret line="91" column="58" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="58" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#931#1528#0" />
-            <element signature="e#1535#1563#0" />
-            <element signature="e#2061#2095#0" />
-            <element signature="e#3073#3157#0" />
-            <element signature="e#3164#3195#0" />
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

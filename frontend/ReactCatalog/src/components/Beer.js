@@ -84,74 +84,47 @@ class Beer extends Component {
                 >
 
                     <MDBModalBody>
-                        <MDBInput
-                            className="w-100"
-                            label="Name"
-                            outline
-                            name="name"
-                            onChange={this.handleChange}
-                            value={this.state.name}
-                        />
-                        <MDBBtn onClick={this.props.getBeer}>
-                         imeto tuk {this.state.username}--
+                        <div className="d-flex justify-content-center h-100">
+                        <MDBBtn >
+                         NAME
                         </MDBBtn>
+                        </div>
+                        <div className="d-flex justify-content-center h-100">
+                        <MDBBtn>
+                            BREWERY
+                        </MDBBtn>
+                        </div >
+                        <div className="d-flex justify-content-center h-100">
+                        <MDBBtn>
+                            COUNTRY
+                        </MDBBtn>
+                        </div>
+                                    <div className="d-flex justify-content-center h-100">
+                        <MDBBtn>
+                            DESCRIPTION
+                        </MDBBtn>
+                                    </div>
+                        <div className="d-flex justify-content-center h-100">
+                        <MDBBtn>
+                            ALCOHOL
+                        </MDBBtn>
+                        </div>
+                        <div className="d-flex justify-content-center h-100">
+                        <MDBBtn>
+                            STYLE
+                        </MDBBtn>
+                        </div>
+                            <div className="d-flex justify-content-center h-100">
+                                <MDBBtn>
+                                Image:
+                            <img src={this.state.image} height="90" alt=" image"/>
+                                </MDBBtn>
+                            </div>
 
-                        <MDBInput
-                            className="w-100"
-                            min={0}
-                            label="Brewery"
-                            outline
-                            name="breweryName"
-                            onChange={this.handleChange}
-                            value={this.state.breweryName}
-                        />
-
-                        <MDBInput
-                            className="w-100"
-                            label="Description"
-                            outline
-                            name="description"
-                            onChange={this.handleChange}
-                            value={this.state.description}
-                        />
-
-                        <MDBInput
-                            className="w-100"
-                            label="Alcohol"
-                            outline
-                            name="alcoholByVolume"
-                            onChange={this.handleChange}
-                            value={this.state.alcoholByVolume}
-                        />
-                        <MDBInput
-                            className="w-100"
-                            label="Style"
-                            outline
-                            name="beerStyle"
-                            onChange={this.handleChange}
-                            value={this.state.beerStyle}
-                        />
-
-
-                        <MDBFormInline>
-                            <MDBInput
-                                className="w-60"
-                                label="Image URL"
-                                outline
-                                name="image"
-                                onChange={this.handleChange}
-                                value={this.state.image}
-                            />
-
-                            <img src={this.state.image} height="55" alt=" image"/>
-                        </MDBFormInline>
                     </MDBModalBody>
                     <MDBModalFooter>
                         <MDBBtn color="danger" onClick={this.toggle}>
                             Close
-                        </MDBBtn>
-                        <MDBBtn color="primary" onClick={this.handleSubmit}>
-                            Save
                         </MDBBtn>
                     </MDBModalFooter>
                 </MDBModal>

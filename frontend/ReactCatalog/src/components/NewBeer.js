@@ -21,6 +21,7 @@ class NewBeer extends Component {
       description: "",
       alcoholByVolume: "",
       beerStyle: "",
+      country: "",
       open: false,
       message: "",
       image:
@@ -49,10 +50,11 @@ class NewBeer extends Component {
       description: this.state.description,
       alcoholByVolume: this.state.alcoholByVolume,
       beerStyle: this.state.beerStyle,
+      country: this.state.country
       // image: this.state.image
     };
     this.props.addProduct(newPlaylist);
-    this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "" });
+    this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "", beerStyle: "", country: "" });
     this.toggle();
   };
 
@@ -131,6 +133,16 @@ class NewBeer extends Component {
               name="breweryName"
               onChange={this.handleChange}
               value={this.state.breweryName}
+            />
+
+            <MDBInput
+              className="w-100"
+              min={0}
+              label="Country"
+              outline
+              name="country"
+              onChange={this.handleChange}
+              value={this.state.country}
             />
 
             <MDBInput

@@ -17,7 +17,7 @@ class Profile extends Component {
             age: "",
             open: false,
             message: "",
-            img: '',
+            img: 'https://www.telegraph.co.uk/content/dam/men/2016/05/24/Untitled-1_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.jpg?imwidth=450',
             title: '',
             content: '',
             image:null,
@@ -73,28 +73,6 @@ class Profile extends Component {
             })
 
     };
-    // fileChangedHandler = event => {
-    //     this.setState({ selectedFile: event.target.files[0] })
-    //     console.log(this.state.selectedFile)
-    // };
-    // uploadHandler = () => {
-    //     const token = sessionStorage.getItem("jwt");
-    //     // axios.post( 'http://localhost:8080/image/uploadUserImage',{"file": this.state.selectedFile},
-    //     //     {headers:{Authorization:token}})
-    //     fetch("http://localhost:8080/image/uploadUserImage", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "multipart/form-data",
-    //             Authorization: token
-    //         },
-    //         body: this.state.selectedFile
-    //     })
-    //         .catch(err => console.error(err));
-    //     console.log(this.state.selectedFile)
-    // };
-      // console.log(this.state.selectedFile)
-
-    // axios({ method: 'POST', url: 'you http api here', headers: {autorizacion: localStorage.token}, data: { user: 'name' } })
 
     handleChange = (e) => {
         this.setState({
@@ -102,32 +80,6 @@ class Profile extends Component {
         })
     };
 
-    // handleImageChange = (e) => {
-    //     this.setState({
-    //         image: e.target.files[0]
-    //     })
-    // };
-    //
-    // handleSubmit = (e) => {
-    //     const token = sessionStorage.getItem("jwt");
-    //     e.preventDefault();
-    //     console.log(this.state);
-    //     let form_data = new FormData();
-    //    // form_data.append('image', this.state.image, this.state.image.name);
-    //     // form_data.append('title', this.state.title);
-    //     // form_data.append('content', this.state.content);
-    //     let url = 'http://localhost:8080/image/uploadUserImage';
-    //     axios.post(url, form_data, {
-    //         headers: {
-    //            'content-type': 'multipart/form-data',
-    //             Authorization : token
-    //         }
-    //     })
-    //         .then(res => {
-    //             console.log(res.data);
-    //         })
-    //         .catch(err => console.log(err))
-    // };
     onFileChange = (event) => {
         this.setState({
             file: event.target.files[0]
@@ -153,6 +105,7 @@ class Profile extends Component {
             headers:{Authorization:token},
             body: data
         }).then(response => {
+            this.fetchLists();
             this.setState({error: '', msg: 'Successfully uploaded file'});
         }).catch(err => {
             this.setState({error: err});
@@ -188,8 +141,8 @@ class Profile extends Component {
                                     </li>
                                 </ul>
                             </div>
-                            <h3 className="wow fadeInDown delay-03s">@{this.state.username}</h3>
-                            <h3 className="wow fadeInDown delay-03s">{this.state.email}</h3>
+                            <h4 className="wow fadeInDown delay-03s">@{this.state.username}</h4>
+                            <h4 className="wow fadeInDown delay-03s">{this.state.email}</h4>
                             <h4 className="wow fadeInDown delay-03s">{this.state.age} years old</h4>
                             <div>
                                 <input onChange={this.onFileChange} type="file"></input>

@@ -17,18 +17,18 @@ class Wishlist extends Component {
     render() {
         return (
             <div>
-                {/*<MDBContainer className="mt-5">*/}
-                {/*    <MDBJumbotron>*/}
-                {/*        <h2>*/}
-                {/*            <MDBIcon icon="window-restore" className="grey-text mr-2" />*/}
-                {/*            BEERS*/}
-                {/*        </h2>*/}
-                {/*        <BeerList*/}
-                {/*            role={this.props.role}*/}
-                {/*            username={this.state.username}*/}
-                {/*        />*/}
-                {/*    </MDBJumbotron>*/}
-                {/*</MDBContainer>*/}
+                <MDBContainer className="mt-5">
+                    <MDBJumbotron>
+                        <h2>
+                            <MDBIcon icon="window-restore" className="grey-text mr-2" />
+                            BEERS
+                        </h2>
+                        <BeerList
+                            role={this.props.role}
+                            username={this.state.username}
+                        />
+                    </MDBJumbotron>
+                </MDBContainer>
             </div>
         );
     }

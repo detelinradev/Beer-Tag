@@ -74,18 +74,17 @@ class Login extends Component {
                     sessionStorage.setItem("jwt", jwtToken);
                     this.props.updateUsername(this.state.username);
                     this.props.updateRole(this.parseJwt(jwtToken).scope.substring(5));
-                    console.log(this.parseJwt(jwtToken).scope.substring(5))
                     this.setState({isAuthenticated: true});
                     this.setState({
                         modal: !this.state.modal
                     });
+                    this.props.history.push("/beerslogged");
                 } else {
                     this.setState({open: true});
                 }
             })
-            .then(        this.props.history.push("/beers"))
             .catch(err => console.error(err));
-    }
+    };
     parseJwt = (token) => {
         if (!token) {
             return;
@@ -93,7 +92,7 @@ class Login extends Component {
         const base64Url = token.split('.')[1];
         const base64 = base64Url.replace('-', '+').replace('_', '/');
         return JSON.parse(window.atob(base64));
-    }
+    };
 
 
     render() {

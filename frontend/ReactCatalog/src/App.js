@@ -67,16 +67,17 @@ class App extends Component {
 
     render() {
 
-        // const login =
-        //   this.state.username == null ? (
-        //       <Login
-        //           updateRole={this.updateRole.bind(this)}
-        //           updateUsername={this.updateUsername.bind(this)}
-        //           profile={this.profile.bind(this)}
-        //       />
-        //   ) : (
-        //       <div/>
-        //   );
+        const homebeerlist =
+            this.state.username == null ? (
+                <MDBNavbarNav style={{marginRight: "4rem"}}>
+                    <NavLink activeClassName="active" to="/beers">
+                        Beers
+                    </NavLink>
+                </MDBNavbarNav>
+            ) : (
+
+                <div/>
+            );
 
         const logoutlink =
             this.state.username == null ? (
@@ -113,8 +114,8 @@ class App extends Component {
                 <div/>
             ) : (
                 <MDBNavbarNav style={{marginRight: "4rem"}}>
-                    <NavLink exact activeClassName="active" to="/wishlist">
-                        Wishlist
+                    <NavLink exact activeClassName="active" to="/beerslogged">
+                        Beers!
                     </NavLink>
                 </MDBNavbarNav>
             );
@@ -130,22 +131,13 @@ class App extends Component {
                 <div/>
             );
 
-        // const overlay = (
-        //     <div
-        //         id="sidenav-overlay"
-        //         style={{backgroundColor: "black"}}
-        //         onClick={this.toggleCollapse("mainNavbarCollapse")}
-        //     />
-        // );
-        //
-        // const {collapseID} = this.state;
 
         const LoginContainer = () => (
             <MDBNavbarNav style={{marginRight: "4rem"}}>
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/users" component={AdminPage}/>
-                <Route exact path="/beers" render={props => <HomePageBeers username={this.state.username}/>}/>
-                <Route path="/wishlist" component={Wishlist}/>
+                <Route exact path="/beers" component={HomePageBeers}/>
+                <Route path="/beerslogged" render={() => <Wishlist username={this.state.username}/>}/>
                 <Route path="/me" component={() => <Profile/>}/>
                 <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
                                                           updateUsername={this.updateUsername.bind(this)}
@@ -202,11 +194,7 @@ class App extends Component {
                                     </NavLink>
                                 </MDBNavbarNav>
                                 <MDBNavbarNav >{wishlist}</MDBNavbarNav>
-                                <MDBNavbarNav style={{marginRight: "4rem"}}>
-                                    <NavLink exact activeClassName="active" to="/beers">
-                                        Beers
-                                    </NavLink>
-                                </MDBNavbarNav>
+                                <MDBNavbarNav >{homebeerlist}</MDBNavbarNav>
 
                                 <MDBNavbarNav >{users}</MDBNavbarNav>
                                 <MDBNavbarNav >{profile}</MDBNavbarNav>
