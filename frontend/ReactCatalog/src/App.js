@@ -32,8 +32,7 @@ class App extends Component {
         collapseID: "",
         username: null,
         role: "ANONYMOUS",
-        profile: false,
-        beerName: null
+        profile: false
     };
 
 
