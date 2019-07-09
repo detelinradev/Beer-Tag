@@ -22,7 +22,7 @@ import "./App.css";
 import Profile from "./components/Profile";
 import HomePageBeers from "./components/HomePageBeers";
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
-import Wishlist from "./components/Wishlist";
+import LoggedBeerList from "./components/LoggedBeerList";
 import Link from "react-router-dom/es/Link";
 
 
@@ -54,16 +54,6 @@ class App extends Component {
     profile = event => {
         this.setState({profile: true})
     };
-
-
-    // toggleCollapse = collapseID => () =>
-    //     this.setState(prevState => ({
-    //         collapseID: prevState.collapseID !== collapseID ? collapseID : ""
-    //     }));
-    //
-    // closeCollapse = collapseID => () =>
-    //     this.state.collapseID === collapseID && this.setState({collapseID: ""});
-
 
     render() {
 
@@ -110,12 +100,12 @@ class App extends Component {
 
 
         const wishlist =
-            this.state.role !== "USER" ? (
+            this.state.role === "ANONYMOUS" ? (
                 <div/>
             ) : (
                 <MDBNavbarNav style={{marginRight: "4rem"}}>
                     <NavLink exact activeClassName="active" to="/beerslogged">
-                        Beers!
+                        Beers
                     </NavLink>
                 </MDBNavbarNav>
             );
@@ -137,7 +127,7 @@ class App extends Component {
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/users" component={AdminPage}/>
                 <Route exact path="/beers" component={HomePageBeers}/>
-                <Route path="/beerslogged" render={() => <Wishlist username={this.state.username}/>}/>
+                <Route path="/beerslogged" render={() => <LoggedBeerList username={this.state.username}/>}/>
                 <Route path="/me" component={() => <Profile/>}/>
                 <Route path="/login" render={() => <Login updateRole={this.updateRole.bind(this)}
                                                           updateUsername={this.updateUsername.bind(this)}
@@ -155,13 +145,10 @@ class App extends Component {
             </MDBNavbarNav>
         );
 
-
         return (
             <BrowserRouter>
                 <div className="flyout">
 
-
- {/*Navbar                   */}
                     <MDBNavbar className="test"
                          transparent="true"
                         color="elegant-color"
@@ -171,22 +158,18 @@ class App extends Component {
                         scrolling
                     >
 
- {/*Navbar header                       */}
                         <MDBNavbarBrand href="/">
                             Beer Tag {"          "}
                             <Logo style={{height: "2.5rem", width: "2.5rem"}}/>
                             Welcome {this.state.username}
                         </MDBNavbarBrand>
 
-
-  {/*Navbar buttons                     */}
                         <MDBNavbarNav right>
                             <MDBCollapse
                                 id="mainNavbarCollapse"
                                 isOpen={this.state.collapseID}
                                 navbar
                             >
-
 
                                 <MDBNavbarNav style={{marginRight: "4rem"}}>
                                     <NavLink exact activeClassName="active" to="/">
@@ -214,8 +197,6 @@ class App extends Component {
                         </Switch>
                     </main>
 
-
- {/*Footer                   */}
                     <MDBFooter className="test-footer" m-5 color="elegant-color">
                         <p className="footer-copyright mb-0 py-3 text-center">
                             &copy; {new Date().getFullYear()}{" "}

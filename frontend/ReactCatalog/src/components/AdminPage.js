@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBEdgeHeader, MDBContainer, MDBIcon, MDBJumbotron } from "mdbreact";
+import { MDBContainer, MDBIcon, MDBJumbotron } from "mdbreact";
 import "./HomePage.css";
 
 import Users from "./Users";

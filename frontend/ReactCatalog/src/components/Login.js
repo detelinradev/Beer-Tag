@@ -22,11 +22,9 @@ class Login extends Component {
     }
 
     handleChange = async event => {
-
-
         this.setState({[event.target.name]: event.target.value});
-
     };
+
     handleClose = event => {
         this.setState({open: false});
     };
@@ -35,30 +33,6 @@ class Login extends Component {
         this.setState({register: true});
     };
 
-    // login = () => {
-    //   const user = {
-    //     username: this.state.username,
-    //     password: this.state.password
-    //   };
-    //   fetch(SERVER_URL + "login", {
-    //     method: "POST",
-    //     body: JSON.stringify(user)
-    //   })
-    //     .then(res => {
-    //       const jwtToken = res.headers.get("Authorization");
-    //       if (jwtToken !== null) {
-    //         sessionStorage.setItem("jwt", jwtToken);
-    //         this.props.updateUsername(this.state.username);
-    //
-    //         //this.updateRole(this.state.username);
-    //         this.setState({ isAuthenticated: true });
-    //         this.setState({modal: !this.state.modal});
-    //       } else {
-    //         this.setState({ open: true});
-    //       }
-    //     })
-    //     .catch(err => console.error(err));
-    // };
     login = () => {
         const user = {
             username: this.state.username,

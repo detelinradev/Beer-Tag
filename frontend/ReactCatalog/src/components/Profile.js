@@ -3,7 +3,6 @@ import "react-table/react-table.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import "./Profile.css";
 import {SERVER_URL} from "../constants";
-import axios from "axios";
 
 
 class Profile extends Component {
@@ -21,7 +20,6 @@ class Profile extends Component {
             title: '',
             content: '',
             image:null,
-           // selectedFile: null,
             src:null,
             error:'',
             msg:'',
@@ -56,11 +54,6 @@ class Profile extends Component {
             .catch(err => console.error(err));
     };
 
-    // handleChange = event => {
-    //     this.setState({[event.target.name]: event.target.value});
-    // };
-
-
     fetchImage = async () => {
         const token = sessionStorage.getItem("jwt");
        await fetch(`http://localhost:8080/image/downloadImage`,
@@ -85,6 +78,7 @@ class Profile extends Component {
             file: event.target.files[0]
         });
     };
+
     uploadFile = (event) => {
         event.preventDefault();
         this.setState({error: '', msg: ''});
@@ -113,8 +107,6 @@ class Profile extends Component {
     };
 
     render() {
-        // const {img} = this.state;
-        // console.log(img)
         return (
             <div>
                 <div className="d-flex justify-content-center h-40">

@@ -5,7 +5,6 @@ body {
   background-image: url("https://www.barraques.cat/pngfile/big/101-1016328_beer-bottel-beach-view-cerveza-corona-en-la.jpg");
   background-attachment: fixed;
   background-size: cover;
-  /*background-repeat: repeat-y;*/
    background-repeat: no-repeat;
   height: 100%;
   font-family: "Numans", sans-serif;

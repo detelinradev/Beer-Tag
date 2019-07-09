@@ -4,10 +4,8 @@ import {
   MDBBtn,
   MDBModal,
   MDBModalBody,
-  MDBModalHeader,
   MDBModalFooter,
   MDBInput,
-  MDBFormInline, MDBDropdownItem, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBBtnGroup
 } from "mdbreact";
 
 class NewBeer extends Component {
@@ -40,7 +38,6 @@ class NewBeer extends Component {
     });
   };
 
-  // Save and close modal form
   handleSubmit = event => {
     event.preventDefault();
 
@@ -51,7 +48,6 @@ class NewBeer extends Component {
       alcoholByVolume: this.state.alcoholByVolume,
       beerStyle: this.state.beerStyle,
       country: this.state.country
-      // image: this.state.image
     };
     this.props.addProduct(newPlaylist);
     this.setState({ name: "", breweryName: "", description: "", alcoholByVolume: "", beerStyle: "", country: "" });
@@ -71,6 +67,7 @@ class NewBeer extends Component {
       file: event.target.files[0]
     });
   };
+
   uploadFile = (event) => {
     event.preventDefault();
     this.setState({error: '', msg: ''});
@@ -98,9 +95,6 @@ class NewBeer extends Component {
   };
 
   render() {
-
-
-
     return (
       <MDBContainer>
         <MDBBtn color="primary" size="md" onClick={this.toggle} disabled={!this.state.username}>
@@ -163,7 +157,6 @@ class NewBeer extends Component {
                 value={this.state.alcoholByVolume}
             />
 
-
             <MDBInput
                 className="w-100"
                 label="Style"
@@ -174,27 +167,9 @@ class NewBeer extends Component {
             >
             </MDBInput>
             <div>
-              {/*<input type="file" name ="name" onChange={this.fileChangedHandler}/>*/}
-              {/*<button type="submit" onClick={this.uploadHandler}>Upload</button>*/}
-              {/*<input type="file"  onChange={this.handleImageChange} required/>*/}
-              {/*<input type="submit"/>*/}
               <input onChange={this.onFileChange} type="file"></input>
               <button onClick={this.uploadFile}>Upload</button>
             </div>
-
-            {/*<MDBFormInline>*/}
-            {/*  <MDBInput*/}
-            {/*    className="w-60"*/}
-            {/*    label="Image URL"*/}
-            {/*    outline*/}
-            {/*    name="image"*/}
-            {/*    onChange={this.handleChange}*/}
-            {/*    value={this.state.image}*/}
-            {/*  />*/}
-
-            {/*  <img src={this.state.image} height="55" alt=" image"/>*/}
-            {/*</MDBFormInline>*/}
-
           </MDBModalBody>
           <MDBModalFooter>
             <MDBBtn color="danger" onClick={this.toggle}>

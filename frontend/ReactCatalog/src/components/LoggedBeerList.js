@@ -2,12 +2,10 @@ import React, {Component} from "react";
 import "react-table/react-table.css";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import "./Profile.css";
-import {SERVER_URL} from "../constants";
-import {MDBCollapse, MDBContainer, MDBIcon, MDBJumbotron, MDBNavbarNav} from "mdbreact";
-import {NavLink} from "react-router-dom";
+import {MDBContainer, MDBIcon, MDBJumbotron} from "mdbreact";
 import BeerList from "./BeerList";
 
-class Wishlist extends Component {
+class LoggedBeerList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -34,4 +32,4 @@ class Wishlist extends Component {
     }
 }
 
-export default Wishlist;
+export default LoggedBeerList;

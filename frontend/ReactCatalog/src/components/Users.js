@@ -12,14 +12,16 @@ import { MDBBtn, MDBIcon } from "mdbreact";
 class Users extends Component {
   constructor(props) {
     super(props);
-    this.state = { users: [], open: false, message: "" };
+    this.state = { users: [],
+      open: false,
+      message: ""
+    };
   }
 
   componentDidMount() {
     this.fetchLists();
   }
 
-  // Fetch all users
   fetchLists = () => {
     const token = sessionStorage.getItem("jwt");
     fetch(SERVER_URL + "users", {
@@ -58,7 +60,6 @@ class Users extends Component {
     });
   };
 
-  // Delete user
   onDelClick = link => {
     const token = sessionStorage.getItem("jwt");
     fetch(link, {
@@ -78,26 +79,6 @@ class Users extends Component {
       });
   };
 
-  // // Add new user
-  // addPlaylist(playlist) {
-  //   const token = sessionStorage.getItem("jwt");
-  //   fetch(SERVER_URL + "api/users", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: token
-  //     },
-  //     body: JSON.stringify(playlist)
-  //   })
-  //     .then(res => this.fetchLists())
-  //     .catch(err => console.error(err));
-  // }
-
-  handleCheck = event => {
-    this.setState({ [event.target.name]: event.target.checked });
-  };
-
-  // Update user
   updateUser(user, link) {
     const token = sessionStorage.getItem("jwt");
     fetch(link, {
@@ -155,8 +136,8 @@ class Users extends Component {
         Cell: this.renderEditable
       },
       {
-        Header: "Active",
-        accessor: "active",
+        Header: "Deleted",
+        accessor: "deleted",
         filterable: false,
         width: 100,
         Cell: this.renderEditable

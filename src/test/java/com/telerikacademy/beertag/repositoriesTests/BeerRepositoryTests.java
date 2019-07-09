@@ -40,7 +40,7 @@ public class BeerRepositoryTests {
     }
     @Test
     public void whenFindByName_thenReturnBeer() {
-        Beer beer = repository.findByName("BeerName");
+        Beer beer = repository.findBeerByName("BeerName");
         assertThat(beer.getDescription()).isEqualTo("Description");
     }
 

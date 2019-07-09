@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./Login.css";
-
 import { MDBBtn, MDBFormInline } from "mdbreact";
 import { SERVER_URL } from "../constants";
 import Snackbar from "@material-ui/core/Snackbar";
@@ -65,27 +64,6 @@ class Register extends Component {
       })
       .catch(err => console.error(err));
   };
-
-  // Fetch all users
-  // fetchUserRole(username) {
-  //   const token = sessionStorage.getItem("jwt");
-  //   fetch(SERVER_URL + "api/users", {
-  //     headers: { Authorization: token }
-  //   })
-  //     .then(response => response.json())
-  //     .then(responseData => {
-  //       var users = responseData._embedded.users;
-  //
-  //       for (let i = 0; i < users.length; i++) {
-  //         if (username === users[i].username) {
-  //           console.log(users[i].username);
-  //           console.log(users[i].role);
-  //           this.props.updateRole(users[i].role);
-  //         }
-  //       }
-  //     })
-  //     .catch(err => console.error(err));
-  // }
 
   render() {
     return (
