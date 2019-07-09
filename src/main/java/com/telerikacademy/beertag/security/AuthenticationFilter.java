@@ -19,7 +19,7 @@ public class AuthenticationFilter extends GenericFilterBean {
             throws IOException, ServletException {
 
         try {
-            Authentication authentication = AuthenticationService.getAuthentication((HttpServletRequest) request);
+            Authentication authentication = AuthenticationServiceImpl.getAuthentication((HttpServletRequest) request);
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }catch (ExpiredJwtException ex){
             System.out.println();

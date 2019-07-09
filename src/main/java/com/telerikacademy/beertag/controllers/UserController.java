@@ -8,11 +8,11 @@ import com.telerikacademy.beertag.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @CrossOrigin(maxAge = 3600)
 @RestController
@@ -27,18 +27,30 @@ public class UserController {
     @GetMapping(value = "api/me")
     public ResponseEntity<User> getUserOwnInfo(final HttpServletRequest req) {
 
-        return new ResponseEntity<>(userRepository.findFirstByUsername(
-                authenticationService.getUsername(req)), HttpStatus.OK);
+        return Optional
+                .ofNullable( userRepository.findFirstByUsername(
+                        authenticationService.getUsername(req)) )
+                .map( user -> ResponseEntity.ok().body(user) )
+                .orElseGet( () -> ResponseEntity.notFound().build() );
+
     }
     @PatchMapping(value = "api/me/update-password")
-    public ResponseEntity<User> updateUserOwnInfo(@Valid @RequestParam final String password,final HttpServletRequest req){
-       return new ResponseEntity<>(userService.updateCurrentUserPassword(password,userRepository.findFirstByUsername(
-                authenticationService.getUsername(req))), HttpStatus.OK);
+    public ResponseEntity<User> updateUserOwnInfo(@RequestParam final String password,final HttpServletRequest req){
+
+        return Optional
+                .ofNullable( userService.updateCurrentUserPassword(password,userRepository.findFirstByUsername(
+                        authenticationService.getUsername(req))) )
+                .map( user -> ResponseEntity.ok().body(user) )
+                .orElseGet( () -> ResponseEntity.badRequest().build() );
+
     }
     @PatchMapping(value = "api/me/update-email")
-    public ResponseEntity<User> updateUserOwnEmail(@Valid @RequestParam final String email,final HttpServletRequest req){
-        return new ResponseEntity<>( userService.updateCurrentUserEmail(email,userRepository.findFirstByUsername(
-                authenticationService.getUsername(req))), HttpStatus.OK);
+    public ResponseEntity<User> updateUserOwnEmail(@RequestParam final String email,final HttpServletRequest req){
+        return Optional
+                .ofNullable( userService.updateCurrentUserEmail(email,userRepository.findFirstByUsername(
+                authenticationService.getUsername(req))) )
+                .map( user -> ResponseEntity.ok().body(user) )
+                .orElseGet( () -> ResponseEntity.badRequest().build() );
     }
 
     @PostMapping(value = "api/sign-up")

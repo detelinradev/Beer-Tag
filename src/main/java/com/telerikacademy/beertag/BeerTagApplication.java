@@ -27,17 +27,6 @@ public class BeerTagApplication {
         System.out.println();
     }
 
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
-
-    @Bean
-    public SecurityContextHolder securityContext() {
-        return new SecurityContextHolder();
-    }
-
-
     @Component
     @RequiredArgsConstructor
     class Auditor implements AuditorAware<String> {

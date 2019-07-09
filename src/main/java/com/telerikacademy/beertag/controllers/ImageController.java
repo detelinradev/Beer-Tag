@@ -39,34 +39,21 @@ public class ImageController {
     @PostMapping("/uploadUserImage")
     public ResponseEntity<Void> uploadFile(@RequestParam("file") final MultipartFile file,
                                            final HttpServletRequest req) {
-        System.out.println(11111111);
         imageService.storeUserImage(file, userRepository.findFirstByUsername(authenticationService.getUsername(req)));
         URI fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath().build().toUri();
 
         return ResponseEntity.created(fileDownloadUri).build();
     }
 
-//    @PostMapping("/uploadMultipleImages")
-//    public ResponseEntity<Void> uploadMultipleFiles(@RequestParam("files") final MultipartFile[] files, final HttpServletRequest req) {
-//        return Arrays.stream(files)
-//                .map(k -> uploadFile(k, req))
-//                .collect(Collectors.toList());
-//    }
 
     @GetMapping("/downloadImage")
     public ResponseEntity<byte[]> downloadFile(final HttpServletRequest req) {
-        System.out.println(3333333);
         Image dbFile = imageService.getFile(userRepository.findFirstByUsername(
                 authenticationService.getUsername(req)).getImage().getId());
-        System.out.println(22222222);
         HttpHeaders header = new HttpHeaders();
         header.setContentType(MediaType.valueOf(dbFile.getContentType()));
         header.setContentLength(dbFile.getData().length);
         header.set("Content-Disposition", "attachment; filename=" + dbFile.getFileName());
         return new ResponseEntity<>(dbFile.getData(), header, HttpStatus.OK);
-//        return ResponseEntity.ok()
-//                .contentType(MediaType.parseMediaType(dbFile.getContentType()))
-//                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + dbFile.getFileName() + "\"")
-//                .body(new ByteArrayResource(dbFile.getData()));
     }
 }

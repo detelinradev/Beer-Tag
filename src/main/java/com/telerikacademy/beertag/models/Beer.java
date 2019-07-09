@@ -49,9 +49,6 @@ public class Beer extends MappedAudibleBase {
     @JsonIgnore
     private Image image;
 
-//    @Formula("SELECT AVG(rate) FROM rating r WHERE r.beer.APPL_SESSION_ID =APPL_SESSION_ID;")
-//    private int averageRating;
-
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "beer")
     @JsonIgnore
     private Set<BeersDrunk> beerDrunks = new HashSet<>();

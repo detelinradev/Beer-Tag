@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Data
-public class ApiError {
+class ApiError {
 
     private HttpStatus status;
     private String message;

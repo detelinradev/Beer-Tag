@@ -19,7 +19,5 @@ public class BeersWantToDrink extends MappedAudibleBase {
     @JoinColumn(name = "user",nullable = false)
     private User user;
 
-//    @Column(nullable = false)
-//    private boolean wantToDrink;
 
 }
