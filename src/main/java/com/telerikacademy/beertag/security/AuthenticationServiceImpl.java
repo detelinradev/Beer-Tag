@@ -25,6 +25,15 @@ import static java.util.Collections.emptyList;
      private static final String SIGNINGKEY = "SecretKey";
      private static final String PREFIX = "Bearer";
 
+    public String getUsername(HttpServletRequest req) {
+        String bearerToken = req.getHeader("Authorization");
+        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
+            String token =  bearerToken.substring(7);
+            return Jwts.parser().setSigningKey(SIGNINGKEY).parseClaimsJws(token).getBody().getSubject();
+        }
+        return null;
+    }
+
     static void addToken(HttpServletResponse res, Authentication authentication) {
 
         final String authorities = authentication.getAuthorities().stream()
@@ -54,15 +63,6 @@ import static java.util.Collections.emptyList;
 
             if (claim.getSubject() != null)
                 return new UsernamePasswordAuthenticationToken(claim.getSubject(), null, authorities);
-        }
-        return null;
-    }
-
-    public String getUsername(HttpServletRequest req) {
-        String bearerToken = req.getHeader("Authorization");
-        if (bearerToken != null && bearerToken.startsWith("Bearer ")) {
-            String token =  bearerToken.substring(7);
-           return Jwts.parser().setSigningKey(SIGNINGKEY).parseClaimsJws(token).getBody().getSubject();
         }
         return null;
     }

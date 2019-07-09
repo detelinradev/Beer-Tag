@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 public class BeersDrunk extends MappedAudibleBase {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "beer",nullable = false,unique = true)
     private Beer beer;
 
