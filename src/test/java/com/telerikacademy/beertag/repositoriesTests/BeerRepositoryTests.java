@@ -34,13 +34,13 @@ public class BeerRepositoryTests {
         Set<BeersWantToDrink> beersWantToDrinks = new HashSet<>();
         Set<Tag> tags = new HashSet<>();
         Beer beer = new Beer("BeerName","BreweryName",4,"Description",
-                "BeerStyle",true,"Country",image,beerDrunks,ratings,beersWantToDrinks,tags );
+                "BeerStyle","Country",image,beerDrunks,ratings,beersWantToDrinks,tags );
 
         entityManager.persist(beer);
     }
     @Test
     public void whenFindByName_thenReturnBeer() {
-        Beer beer = repository.findByName("BeerName");
+        Beer beer = repository.findBeerByName("BeerName");
         assertThat(beer.getDescription()).isEqualTo("Description");
     }
 

@@ -28,6 +28,4 @@ public class Tag extends MappedAudibleBase {
     @NotEmpty(message = "Please write some content")
     private String content;
 
-//    @Column(nullable = false)
-//    private boolean deleted;
 }

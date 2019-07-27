@@ -22,19 +22,32 @@ public class UserServiceImpl implements UserService {
         newUser.setLastName(user.getLastName());
         newUser.setPassword(bCryptEncoder.encode(user.getPassword()));
         newUser.setAge(user.getAge());
+        newUser.setEmail(user.getEmail());
         newUser.setRole("USER");
-        newUser.setActive(true);
+        newUser.setDeleted(false);
         return userRepository.save(newUser);
     }
 
     @Override
     public User updateCurrentUserPassword(final String password,final User user){
-        user.setPassword(bCryptEncoder.encode(password));
-        return userRepository.save(user);
+       if(isPasswordValid(password)) {
+           user.setPassword(bCryptEncoder.encode(password));
+           return userRepository.save(user);
+       }else return null;
     }
     @Override
     public User updateCurrentUserEmail(final String email,final User user){
+        if(isEmailValid(email)){
         user.setEmail(email);
         return userRepository.save(user);
+        }else return null;
+    }
+    private boolean isEmailValid(String email) {
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
+    }
+    private boolean isPasswordValid(String password) {
+        String regex = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,128}$";
+        return password.matches(regex);
     }
 }

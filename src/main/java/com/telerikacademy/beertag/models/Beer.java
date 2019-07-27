@@ -1,11 +1,13 @@
 package com.telerikacademy.beertag.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.telerikacademy.beertag.models.base.MappedAudibleBase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Formula;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
@@ -19,6 +21,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 @Entity
+
 public class Beer extends MappedAudibleBase {
 
     @Column(nullable = false,unique = true)
@@ -42,8 +45,8 @@ public class Beer extends MappedAudibleBase {
 
     private String country;
 
-    @OneToOne
-    @JoinColumn(name = "image")
+    @OneToOne(mappedBy = "beer")
+    @JsonIgnore
     private Image image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "beer")

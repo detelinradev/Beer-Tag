@@ -28,7 +28,5 @@ public class Rating extends MappedAudibleBase {
     @Range(min = 1, max = 10,message = "Please enter rate in range of 1 to 10")
     private int rating;
 
-    //private boolean deleted;
-
 }
 

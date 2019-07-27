@@ -41,7 +41,7 @@ public abstract class MappedAudibleBase {
     private String modifier;
 
     @NotNull
-    private boolean active;
+    private boolean deleted;
 
 
 }

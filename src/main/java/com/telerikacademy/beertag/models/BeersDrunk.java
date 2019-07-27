@@ -12,14 +12,12 @@ import javax.persistence.*;
 @Entity
 public class BeersDrunk extends MappedAudibleBase {
 
-    @ManyToOne
-    @JoinColumn(name = "beer",nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "beer",nullable = false,unique = true)
     private Beer beer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user",nullable = false)
+    @JoinColumn(name = "user",nullable = false,unique = true)
     private User user;
 
-//    @Column(nullable = false)
-//    private boolean drank;
 }

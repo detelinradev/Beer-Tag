@@ -21,22 +21,7 @@ public class BeerTagApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BeerTagApplication.class, args);
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
-        System.out.println();
     }
-
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
-
-    @Bean
-    public SecurityContextHolder securityContext() {
-        return new SecurityContextHolder();
-    }
-
 
     @Component
     @RequiredArgsConstructor

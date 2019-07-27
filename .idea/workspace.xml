@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87ca1c62-c646-4a2c-989c-71320690a137" name="Default Changelist" comment="Initializing project">
-      <change afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="87ca1c62-c646-4a2c-989c-71320690a137" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/CountryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/ImageTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/RatingTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/TagTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/UserTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/AdminPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/AdminPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/ReactCatalog/src/components/LoggedBeerList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/repositoriesTests/BeerRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/repositoriesTests/BeerRepositoryTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -19,6 +36,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageViewManager">
+    <option name="myFlattenPackages" value="true" />
+    <option name="myElementSize" value="264" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
@@ -27,27 +62,66 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="beertag" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/BeersDrunk.java">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="-3031">
+              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1891">
+              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/controllers/UserController.java">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/LoggedBeerList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+            <state relative-caret-position="266">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="158" selection-start-line="158" selection-end-line="158" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,31 +129,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-804">
-              <caret line="80" column="15" lean-forward="true" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
+            <state relative-caret-position="2541">
+              <caret line="198" selection-start-line="198" selection-end-line="198" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/controllersTests/UserControllerTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="591">
+              <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/constants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="38">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-774">
+            <state relative-caret-position="547">
+              <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -88,22 +178,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js">
+        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="495">
+              <caret line="138" column="33" lean-forward="true" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -114,12 +195,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Anton Madzharov &lt;anton.madzharovbs@gmail.com&gt;" />
         <option value="antonmadzharov &lt;45007797+antonmadzharov@users.noreply.github.com&gt;" />
       </list>
     </option>
@@ -128,15 +211,50 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/security/AuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Register.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/idea.vmoptions" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Team.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css" />
-        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Users.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Tracks.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/index.css" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewPlaylist.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.css" />
+        <option value="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/repositoriesTests/BeerRepositoryTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/User.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/UserTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/RatingTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Country.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/CountryTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/ImageTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/TagTests.java" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/AdminPage.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js" />
         <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Users.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/Wishlist.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/components/LoggedBeerList.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/App.js" />
+        <option value="$PROJECT_DIR$/frontend/ReactCatalog/src/constants.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="12" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-70" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="954" />
@@ -181,7 +299,7 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="ReactCatalog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
@@ -190,7 +308,124 @@
               <item name="ReactCatalog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="dtos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="controllersTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="modelsTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="repositoriesTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="beertag" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Beer-Tag" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="beertag" type="462c0819:PsiDirectoryNode" />
+              <item name="serviceTests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -200,6 +435,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -207,7 +447,17 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/ReactCatalog/src/components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/frontend/ReactCatalog/public/img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -222,6 +472,57 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BeerTagApplication">
+    <configuration name="All in beertag.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="beertag.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TagTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="beertag.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.telerikacademy.beertag.modelsTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.telerikacademy.beertag.modelsTests" />
+      <option name="MAIN_CLASS_NAME" value="com.telerikacademy.beertag.modelsTests.TagTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.telerikacademy.beertag.controllersTests in beertag.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="beertag.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.telerikacademy.beertag.controllersTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.telerikacademy.beertag.controllersTests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="beertag.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.telerikacademy.beertag.modelsTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.telerikacademy.beertag.modelsTests" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BeerTagApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="beertag.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.telerikacademy.beertag.BeerTagApplication" />
@@ -242,6 +543,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="JUnit.com.telerikacademy.beertag.modelsTests in beertag.test" />
+        <item itemvalue="JUnit.com.telerikacademy.beertag.controllersTests in beertag.test" />
+        <item itemvalue="JUnit.All in beertag.test" />
+        <item itemvalue="JUnit.TagTests" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +560,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562328252634</updated>
-      <workItem from="1562328255501" duration="3400000" />
+      <workItem from="1562328255501" duration="11592000" />
+      <workItem from="1562340246440" duration="163000" />
+      <workItem from="1562340429040" duration="32704000" />
+      <workItem from="1562422777106" duration="16800000" />
+      <workItem from="1562443802755" duration="2468000" />
+      <workItem from="1562446347975" duration="7098000" />
+      <workItem from="1562490879998" duration="177000" />
+      <workItem from="1562491205611" duration="36352000" />
+      <workItem from="1562580325375" duration="1356000" />
+      <workItem from="1562584470545" duration="5298000" />
+      <workItem from="1562591785311" duration="259000" />
+      <workItem from="1562592069674" duration="63000" />
+      <workItem from="1562592246502" duration="7874000" />
+      <workItem from="1562607344160" duration="7424000" />
+      <workItem from="1562618734955" duration="9335000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing project">
       <created>1562329050175</created>
@@ -264,109 +583,603 @@
       <option name="project" value="LOCAL" />
       <updated>1562329050175</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="keep up with project">
+      <created>1562332174469</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562332174469</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create profile page">
+      <created>1562333591943</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562333591943</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create profile page">
+      <created>1562336426295</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1562336426295</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixing profile page">
+      <created>1562363938438</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562363938438</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixing homepage nav bar">
+      <created>1562368228785</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562368228786</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixing login form">
+      <created>1562408008439</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562408008440</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixing login form">
+      <created>1562408252707</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562408252707</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixing login user">
+      <created>1562419926999</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562419927000</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixing profile page">
+      <created>1562422439188</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562422439188</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixing visible components">
+      <created>1562425679097</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1562425679098</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add gitignore">
+      <created>1562439601992</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562439601992</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Removed node_modules">
+      <created>1562440036622</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1562440036622</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Restyling the project folder">
+      <created>1562454506099</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1562454506099</updated>
+    </task>
+    <task id="LOCAL-00015" summary="disable create beer button when not logged">
+      <created>1562511630157</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1562511630158</updated>
+    </task>
+    <task id="LOCAL-00016" summary="beer listing/create new beer/beer page">
+      <created>1562537623917</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1562537623918</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Dividing home beer list and logged in beer list">
+      <created>1562598159656</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1562598159656</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixing final bugs">
+      <created>1562615017315</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1562615017315</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TagTests - 2019.07.09 at 00h 36m 34s.xml">
+      <configuration name="TagTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_modelsTests_in_beertag_test - 2019.07.09 at 00h 55m 22s.xml">
+      <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_modelsTests_in_beertag_test - 2019.07.09 at 00h 57m 29s.xml">
+      <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_modelsTests_in_beertag_test - 2019.07.09 at 00h 59m 37s.xml">
+      <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TagTests - 2019.07.09 at 01h 00m 12s.xml">
+      <configuration name="TagTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_beertag_test - 2019.07.09 at 01h 03m 25s.xml">
+      <configuration name="All in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_modelsTests_in_beertag_test - 2019.07.09 at 01h 03m 59s.xml">
+      <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_controllersTests_in_beertag_test - 2019.07.09 at 01h 06m 40s.xml">
+      <configuration name="com.telerikacademy.beertag.controllersTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_modelsTests_in_beertag_test - 2019.07.09 at 01h 11m 02s.xml">
+      <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="com_telerikacademy_beertag_modelsTests_in_beertag_test - 2019.07.09 at 01h 11m 28s.xml">
+      <configuration name="com.telerikacademy.beertag.modelsTests in beertag.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3400000" />
+    <option name="totallyTimeSpent" value="138963000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="12" y="23" width="1680" height="954" extended-state="0" />
+    <frame x="120" y="23" width="1680" height="984" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="Persistence" side_tool="true" />
-      <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17765568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Build" weight="0.32946634" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32946634" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32946634" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295964" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.24775785" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39798206" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Gradle" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32946634" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" side_tool="true" weight="0.3839907" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32946634" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32847533" />
+      <window_info anchor="bottom" id="TypeScript" order="16" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.32967034" />
+      <window_info anchor="right" id="Database" order="7" weight="0.16034207" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17765568" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info id="Web" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295964" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.60313904" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39798206" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32946634" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" side_tool="true" weight="0.3839907" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32946634" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32847533" />
+      <window_info anchor="bottom" id="TypeScript" order="16" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32967034" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" weight="0.32967034" />
+      <window_info anchor="right" id="Database" order="8" weight="0.16034207" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initializing project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initializing project" />
+    <MESSAGE value="keep up with project" />
+    <MESSAGE value="Create profile page" />
+    <MESSAGE value="Fixing homepage nav bar" />
+    <MESSAGE value="fixing login form" />
+    <MESSAGE value="fixing login user" />
+    <MESSAGE value="fixing profile page" />
+    <MESSAGE value="fixing visible components" />
+    <MESSAGE value="add gitignore" />
+    <MESSAGE value="Removed node_modules" />
+    <MESSAGE value="Restyling the project folder" />
+    <MESSAGE value="disable create beer button when not logged" />
+    <MESSAGE value="beer listing/create new beer/beer page" />
+    <MESSAGE value="Dividing home beer list and logged in beer list" />
+    <MESSAGE value="fixing final bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing final bugs" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/beertag$com_telerikacademy_beertag_modelsTests_in_beertag_test.ic" NAME="com.telerikacademy.beertag.modelsTests in beertag.test Coverage Results" MODIFIED="1562623175502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.telerikacademy.beertag.modelsTests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/beertag$BeerTagApplication.ic" NAME="BeerTagApplication Coverage Results" MODIFIED="1562582949325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/beertag$UserTests.ic" NAME="UserTests Coverage Results" MODIFIED="1562621083544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.telerikacademy.beertag.modelsTests.*</FILTER>
+    </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/BeersDrunk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/logo.svg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/logo.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js">
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="23" selection-end-column="24" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App-clear.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-804">
-          <caret line="80" column="15" lean-forward="true" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
+        <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/users/Login.js">
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-774">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="444" column="8" selection-start-line="444" selection-start-column="8" selection-end-line="444" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.19/24216542ede66c0366d81c5b7048427a27eb786f/tomcat-embed-core-9.0.19-sources.jar!/org/apache/catalina/connector/Connector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="1013" column="56" lean-forward="true" selection-start-line="1013" selection-start-column="56" selection-end-line="1013" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/repositories/BeerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.webworker.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="1435" column="4" selection-start-line="1435" selection-start-column="4" selection-end-line="1435" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.19/24216542ede66c0366d81c5b7048427a27eb786f/tomcat-embed-core-9.0.19-sources.jar!/org/apache/tomcat/util/threads/TaskThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="32" selection-end-line="60" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mariadb.jdbc/mariadb-java-client/2.3.0/9e761bb0474d99884a020ca562944c3a3b872bfc/mariadb-java-client-2.3.0-sources.jar!/org/mariadb/jdbc/internal/protocol/AbstractQueryProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3040">
+          <caret line="279" column="21" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/dtos/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Beer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/BeerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="51" column="58" lean-forward="true" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/RatingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Rating.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/Country.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/CountryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/ImageTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/UserTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="22" selection-start-line="22" selection-end-line="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1435#1436#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#1777#1778#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/modelsTests/TagTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-226">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/BeersWantToDrink.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/telerikacademy/beertag/models/BeersDrunk.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/repositoriesTests/BeerRepositoryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="47" column="16" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/serviceTests/FooServiceUnitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <folding>
+            <element signature="e#0#1514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/serviceTests/UserServiceImplTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomeBeerList.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Beer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/AdminPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-955">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/BeerList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/HomePageBeers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="74" column="33" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/NewBeer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -375,11 +1188,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+        <state relative-caret-position="495">
+          <caret line="138" column="33" lean-forward="true" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3031">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/Users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1891">
+          <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/components/LoggedBeerList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2541">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/telerikacademy/beertag/controllersTests/UserControllerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/ReactCatalog/src/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

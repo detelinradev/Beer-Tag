@@ -69,9 +69,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         List<String> errors = new ArrayList<>();
         for (ConstraintViolation<?> violation : ex.getConstraintViolations()) {
             errors.add(
-//                    violation.getRootBeanClass().getName() + " " +
-//                    violation.getPropertyPath() + ": " +
-                            violation.getMessage());
+                    violation.getMessage());
         }
 
         ApiError apiError =
@@ -144,14 +142,11 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
                 apiError, new HttpHeaders(), apiError.getStatus());
 
     }
-    // API
-
-    // 400
 
     @ExceptionHandler({DataIntegrityViolationException.class})
     public ResponseEntity<Object> handleBadRequest(final DataIntegrityViolationException ex, final WebRequest request) {
         ApiError apiError = new ApiError(
-                HttpStatus.BAD_REQUEST,ex.getLocalizedMessage(),"Missing or wrong statement");
+                HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), "Missing or wrong statement");
 
         return new ResponseEntity<>(
                 apiError, new HttpHeaders(), apiError.getStatus());
@@ -161,20 +156,17 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleHttpMessageNotReadable(final HttpMessageNotReadableException ex,
                                                                   final HttpHeaders headers, final HttpStatus status,
                                                                   final WebRequest request) {
-        ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST,ex.getLocalizedMessage()
-                ,"Message not properly formatted");
+        ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage()
+                , "Message not properly formatted");
         return new ResponseEntity<>(
                 apiError, new HttpHeaders(), apiError.getStatus());
     }
 
-    // 403
     @ExceptionHandler({AccessDeniedException.class})
     public ResponseEntity<Object> handleAccessDeniedException(final Exception ex, final WebRequest request) {
         System.out.println("request" + request.getUserPrincipal());
         return new ResponseEntity<>("Access denied", new HttpHeaders(), HttpStatus.FORBIDDEN);
     }
-
-    // 409
 
     @ExceptionHandler({InvalidDataAccessApiUsageException.class, DataAccessException.class})
     protected ResponseEntity<Object> handleConflict(final RuntimeException ex, final WebRequest request) {
@@ -182,17 +174,10 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.CONFLICT, request);
     }
 
-    // 412
-
-    // 500
-
     @ExceptionHandler({NullPointerException.class, IllegalArgumentException.class, IllegalStateException.class})
-    /*500*/ public ResponseEntity<Object> handleInternal(final RuntimeException ex, final WebRequest request) {
-        ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST,ex.getLocalizedMessage()
-                ,"Missing or wrong argument");
-//        logger.error("500 Status Code", ex);
-//        final String bodyOfResponse = "Missing or wrong arguments";
-        //return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
+    public ResponseEntity<Object> handleInternal(final RuntimeException ex, final WebRequest request) {
+        ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage()
+                , "Missing or wrong argument");
         return new ResponseEntity<>(
                 apiError, new HttpHeaders(), apiError.getStatus());
     }

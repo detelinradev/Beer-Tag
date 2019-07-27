@@ -1,3 +1,21 @@
 h4 {
   color: white;
 }
+
+.test {
+  height: 8%;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.test-footer {
+  height: 8%;
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+
+.ReactTable.-striped.-highlight {
+  width: 800px;
+}

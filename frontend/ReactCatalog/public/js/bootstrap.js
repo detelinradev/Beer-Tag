@@ -1379,7 +1379,7 @@
 
     if ($this.parent('li').hasClass('active')) return
 
-    var previous = $ul.find('.active:last a')[0]
+    var previous = $ul.find('.deleted:last a')[0]
     var e        = $.Event('show.bs.tab', {
       relatedTarget: previous
     })
@@ -1879,7 +1879,7 @@
     this.activeTarget = target
 
     $(this.selector)
-      .parents('.active')
+      .parents('.deleted')
       .removeClass('active')
 
     var selector = this.selector

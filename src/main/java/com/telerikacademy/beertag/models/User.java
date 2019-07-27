@@ -52,10 +52,8 @@ public class User extends MappedAudibleBase {
     @Column(nullable = false)
     private String role;
 
-   // private boolean deleted;
-
-    @OneToOne
-    @JoinColumn(name = "image")
+    @OneToOne(mappedBy = "user")
+    @JsonIgnore
     private Image image;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -72,6 +70,6 @@ public class User extends MappedAudibleBase {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     @JsonIgnore
-    private List<Tag> tags = new ArrayList<>();
+    private Set<Tag> tags = new HashSet<>();
 
 }

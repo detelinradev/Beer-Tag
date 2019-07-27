@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -37,7 +38,9 @@ public class UserDto {
     @Range(min = 18,max = 150)
     private int age;
 
-   // @NotNull
+    @Email
+    private String email;
+
     private boolean active;
 
 }

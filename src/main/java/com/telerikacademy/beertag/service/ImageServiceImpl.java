@@ -2,7 +2,10 @@ package com.telerikacademy.beertag.service;
 
 import com.telerikacademy.beertag.exceptions.FileStorageException;
 import com.telerikacademy.beertag.exceptions.MyFileNotFoundException;
+import com.telerikacademy.beertag.models.Beer;
 import com.telerikacademy.beertag.models.Image;
+import com.telerikacademy.beertag.models.User;
+import com.telerikacademy.beertag.repositories.BeerRepository;
 import com.telerikacademy.beertag.repositories.UserImageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,18 +19,34 @@ import java.io.IOException;
 public class ImageServiceImpl implements ImageService {
 
     private final UserImageRepository userImageRepository;
+    private final BeerRepository beerRepository;
 
-    public Image storeFile(final MultipartFile file) {
+    public void storeBeerImage(final MultipartFile file , final int beerID) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-
         try {
             if(fileName.contains("..")) {
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
+            Image image = new Image(file.getOriginalFilename(),
+                    file.getContentType(),
+                    file.getBytes(),beerRepository.getOne(beerID));
 
-            Image dbFile = new Image(fileName, file.getContentType(),file.getBytes());
+             userImageRepository.save(image);
+        } catch (IOException ex) {
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+        }
+    }
+    public void storeUserImage(final MultipartFile file,final User user) {
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        try {
+            if(fileName.contains("..")) {
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+            Image image = new Image(file.getOriginalFilename(),
+                    file.getContentType(),
+                    file.getBytes(),user);
 
-            return userImageRepository.save(dbFile);
+            userImageRepository.save(image);
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
